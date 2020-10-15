@@ -393,6 +393,7 @@ succession_gender_laws = {
 				has_doctrine = doctrine_gender_male_dominated
 				religion_tag = islam_religion
 			}
+			has_government = monastic_government
 		}
 		succession = {
 			gender_law = male_only
@@ -412,6 +413,7 @@ succession_gender_laws = {
 	male_preference_law = {
 		can_title_have = {
 			can_title_have_law_general_trigger = yes
+			NOT = { has_government = monastic_government }
 		}
 		can_keep = {
 			custom_description = {
@@ -420,9 +422,11 @@ succession_gender_laws = {
 					NOT = { has_doctrine = doctrine_gender_female_dominated }
 				}
 			}
+			NOT = { has_government = monastic_government }
 		}
 		can_pass = {
 			can_change_succession_law_trigger = yes
+			NOT = { has_government = monastic_government }
 		}
 		should_start_with = {
 			OR = {
@@ -432,6 +436,7 @@ succession_gender_laws = {
 					}
 					has_doctrine = doctrine_gender_male_dominated
 				}
+				NOT = { has_government = monastic_government }
 				has_realm_law = male_only_law # For when male_only_law ceases to be a legal option
 			}
 		}
