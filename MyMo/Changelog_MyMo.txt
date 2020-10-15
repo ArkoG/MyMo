@@ -1,0 +1,22 @@
+##################################
+## CK3 MOD _ [MYMO] My Monastery
+# by Arko
+
+
+
+CURRENT_DEV 0.1 for CK3 v1.11
+
+MAJOR:
+-
+
+MINOR and VARIOUS:
+-
+
+BALANCE:
+
+-
+BUGFIX:
+-
+
+INITIAL COMMIT 0.0 for CK3 v1.11
+
