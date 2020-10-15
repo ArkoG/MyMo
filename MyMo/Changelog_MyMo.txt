@@ -13,10 +13,12 @@ MINOR and VARIOUS:
 -
 
 BALANCE:
-
 -
+
 BUGFIX:
 -
 
-INITIAL COMMIT 0.0 for CK3 v1.11
-
+INITIAL COMMIT 0.0 for CK3 v1.11 2020-10-15
+MAJOR:
+-new holding type: monastery + art + titles + loc
+-new succession law
