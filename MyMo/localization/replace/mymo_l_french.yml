@@ -1,0 +1,18 @@
+﻿l_french:
+ baron_monastic_male:0 "Prieur"
+ baron_monastic_female:0 "Prieure"
+ barony_monastic:0 "Prieuré"
+ count_monastic_male:0 "Prince-abbé"
+ count_monastic_female:0 "Prince-abbesse"
+ county_monastic:0 "Abbaye territoriale"
+ duke_monastic_male:0 "Grand Prince-abbé"
+ duke_monastic_female:0 "Grande Prince-abbesse"
+ duchy_monastic:0 "Principauté abbatiale"
+ king_monastic_male:0 "Roi-abbé"
+ king_monastic_female:0 "Reine-abbesse"
+ kingdom_monastic:0 "Orbre monastique"
+ emperor_monastic_male:0 "Empereur-abbé"
+ emperor_monastic_female:0 "Impératrice-abbesse"
+ empire_monastic:0 "Abbaye impériale"
+
+ monastic_succession_law: "Election monastique"
