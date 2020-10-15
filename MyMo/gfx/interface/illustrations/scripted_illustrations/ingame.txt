@@ -869,6 +869,14 @@ religion_holding = {
 
 ### Holding image based on title
 title_holding = {
+	###
+	texture = {
+		trigger = {
+			has_government = monastic_government
+		}
+		reference = "holding_types/monastery_christian.dds"
+	}
+	###
 	texture = {
 		trigger = {
 			OR = {
