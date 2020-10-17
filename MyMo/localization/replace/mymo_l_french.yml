@@ -1,4 +1,8 @@
 ﻿l_french:
+
+ monastery_holding:0 "Monastère"
+ monastery_holding_concept_key:0 "[Monastère|E]"
+ 
  baron_monastic_male:0 "Prieur"
  baron_monastic_female:0 "Prieure"
  barony_monastic:0 "Prieuré"
@@ -16,3 +20,14 @@
  empire_monastic:0 "Abbaye impériale"
 
  monastic_succession_law: "Election monastique"
+ monastic_succession_law_subname: "ggggfdh"
+ monastic_succession_law_effects: "kkkkgfdgf"
+   
+ monastic_government:0 "Théocratie monastique"
+ monastic_government_adjective:0 "théocratique"
+ monastic_government_realm:0 "Théocratie monastique"
+ monastic_government_desc:1 "$game_concept_theocracy_desc$\n\n#F Dans un gouvernement théocratique, toute autorité appartient à une institution religieuse. Il est dirigé par un prêtre ou une prêtresse qui accomplit la volonté divine sur Terre.#!"
+ monastic_government_vassals_label:1 "Les [obligations|El] théocratiques reposent sur le [piety_level|El] du [liege|El]"
+ monastic_government_vassal_contribution_wrong_faith:0 "@warning_icon!#X Le [liege|El] est de la mauvaise [faith|El]#!"
+ monastic_government_vassal_contribution_piety_level:0 "Le [liege|El] est [GetPietyLevelName(liege.GetPietyLevel)|L]"
+ 

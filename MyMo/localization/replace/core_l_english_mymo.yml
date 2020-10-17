@@ -1,9 +1,5 @@
 ﻿l_english:
- ARMY_NAME:1 "Army of [PROVINCE.GetNameNoTooltip]"
- ARMY_NAME_RAIDER:1 "Raiders of [PROVINCE.GetNameNoTooltip]"
- 
- monastery_holding:0 "Monastery"
- monastery_holding_concept_key:0 "[Monastery|E]"
+
  building_type_monastery_01:0 "Monastery"
  building_type_monastery_01_desc:1 "A place of worship ruled by the clergy, surrounded by a town of faithful peasants."
  building_monastery_01:1 "Priory"
@@ -38,6 +34,7 @@
  councillor_court_chaplain_christian_empire_female:0 "Court chaplain"
  councillor_court_chaplain_christian_empire_possessive:0 "Court chaplain's"
  councillor_court_chaplain_christian_empire_female_possessive:0 "Court chaplain's"
+
  #Orthodox
  councillor_court_chaplain_orthodox_county:1 "Court patriarch"
  councillor_court_chaplain_orthodox_county_possessive:1 "Court patriarch's"
@@ -51,12 +48,3 @@
  councillor_court_chaplain_orthodox_empire_female:0 "Court matriarch"
  councillor_court_chaplain_orthodox_empire_possessive:0 "Court patriarch's"
  councillor_court_chaplain_orthodox_empire_female_possessive:0 "Court matriarch's"
- 
- monastic_government:0 "Monastic theocracy"
- monastic_government_adjective:0 "Theocratic"
- monastic_government_realm:0 "Monastic realm"
- monastic_government_desc:1 "$game_concept_theocracy_desc$\n\n#F In a theocratic government, all authority belongs to a religious institution. It is ruled by a priest or priestess who carries out the will of the divine on Earth.#!"
- monastic_government_vassals_label:1 "Theocratic [obligations|E] are based on [piety_level|E] of [liege|E]"
- monastic_government_vassal_contribution_wrong_faith:0 "@warning_icon!#X [liege|E] is of wrong [faith|E]#!"
- monastic_government_vassal_contribution_piety_level:0 "[liege|E] is [GetPietyLevelName(liege.GetPietyLevel)|L]"
- 
