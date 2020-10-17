@@ -1,0 +1,4 @@
+name="-My Monastery-"
+supported_version="1.1.3"
+path="d:/Docs/Paradox Interactive/Crusader Kings III/mod/MyMo"
+remote_file_id="2260384841"
