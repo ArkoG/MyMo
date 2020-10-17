@@ -846,6 +846,13 @@ religion_interior = {
 religion_holding = {
 	texture = {
 		trigger = {
+			has_government = monastic_government
+		}
+		reference = "holding_types/monastery_christian.dds"
+	}
+
+	texture = {
+		trigger = {
 			religion = religion:christianity_religion
 		}
 		reference = "holding_types/temple_christian.dds"
