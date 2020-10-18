@@ -14,12 +14,14 @@ monastery_01 = {
 	can_construct_potential = {
 		building_requirement_tribal = no
 		barony_cannot_construct_holding = no
+		faith = faith:catholic #MYMO totoro change this to doctrine monasticism		
 	}
 	
 	can_construct = {
 		culture = {
 			has_innovation = innovation_city_planning
 		}
+		faith = faith:catholic #MYMO totoro change this to doctrine monasticism
 	}
 	
 	can_construct_showing_failures_only = {
