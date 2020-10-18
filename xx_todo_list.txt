@@ -1,0 +1,11 @@
+
+
+loc to do
+
+ monastic_government_desc:2 "$game_concept_theocracy_desc$\n\n#F Dans un gouvernement théocratique, toute autorité appartient à une institution religieuse. Il est dirigé par un prêtre ou une prêtresse qui accomplit la volonté divine sur Terre.#!"
+ game_concept_monastery_holding_desc:2 "Temples are a [holding_type|E] that can be held by members of the [clergy|E] as [church_property|E] (the [theocratic|E] [government_form|E]). However, in [faiths|E] with the [GetFaithDoctrine('doctrine_theocracy_lay_clergy').GetBaseName] [doctrine|E], anyone can hold Temples without penalty.\n\nTemples provide a fairly even mix of [levies|E] and [taxes|E]."
+
+send to monastery interaction/decision
+cour regulation monasteries (don't accept women)
+
+prononcer les voeux, prisonnier
