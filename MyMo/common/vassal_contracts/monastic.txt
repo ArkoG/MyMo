@@ -1,0 +1,45 @@
+﻿monastic_government_obligations = {
+	obligation_levels = {
+		default = {
+			levies = {
+				if = {
+					limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
+					value = 0.0
+				}
+				else = {
+					value = 0.5
+					multiply = scope:liege.piety_level
+				}
+			}
+			tax = {
+				#wrong faith is 0.0
+				if = {
+					limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
+					value = 0.0
+				}
+				#else base is 0.2
+				else = {
+					value = 0.2
+				}	
+				#increased if liege is over 1st piety level and increased further by piety level
+				else_if = {
+					limit = { scope:liege.piety_level >= 1 }
+					add = 0.05
+					add = {
+						value = 0.1
+						multiply = scope:liege.piety_level
+					}
+				}
+			}
+			contribution_desc = {
+				first_valid = {
+					triggered_desc = {
+						trigger = { NOT = { scope:liege.faith = scope:vassal.faith } }
+						desc = "monastic_government_vassal_contribution_wrong_faith"
+					}
+					desc = "monastic_government_vassal_contribution_piety_level"
+				}
+			}
+		}
+	}
+}
