@@ -370,6 +370,23 @@
 			pool_character_config = pool_city_succession
 		}
 	}
+	monastic_succession_law = {
+		can_keep = {
+			can_have_monastic_succession_law_trigger = yes # same as can_have
+		}
+		can_have = {
+			can_have_monastic_succession_law_trigger = yes
+		}
+		should_start_with = {
+			always = yes
+		}
+		succession = {
+			#order_of_succession = election
+			order_of_succession = theocratic
+			faith = same_faith
+			pool_character_config = pool_monastic_succession
+		}
+	}
 }
 
 succession_gender_laws = {
