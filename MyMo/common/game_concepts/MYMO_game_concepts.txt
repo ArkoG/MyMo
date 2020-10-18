@@ -1,5 +1,5 @@
 ﻿monastery_holding = {
-	alias = { monastery_holdings }
+	alias = { monastery monasteries monastery_holdings }
 	parent = holding_type
-	texture = "gfx/interface/icons/icon_holding_monastery.dds"
+	texture = "gfx/interface/icons/monastery_holding.dds"
 }
