@@ -21,7 +21,7 @@
  emperor_monastic_female:0 "Impératrice-abbesse"
  empire_monastic:0 "Abbaye impériale"
 
- monastic_succession_law: "Election monastique"
+ monastic_succession_law: "Élection monastique"
  monastic_succession_law_subname:2 "ggggfdh"
  monastic_succession_law_effects:2 "kkkkgfdgf"
    
@@ -33,3 +33,9 @@
  monastic_government_vassal_contribution_wrong_faith:0 "@warning_icon!#X Le [liege|El] est de la mauvaise [faith|El]#!"
  monastic_government_vassal_contribution_piety_level:0 "Le [liege|El] est [GetPietyLevelName(liege.GetPietyLevel)|L]"
  monastic_government_obligations:0 "[Obligations|E] monastiques"
+ 
+ game_concept_monastery_holding:0 "Propriété monastique"
+ game_concept_monastery:0 "Monastère"
+ game_concept_monasteries:0 "Monastères"
+ game_concept_monastery_holdings:0 "Propriétés monastiques"
+ game_concept_monastery_holding_desc:2 "Les temples sont un [holding_type|El] qui peut être détenu par des membres du [clergy|El] comme [church_property|El] (la [government_form|El] [theocratic|El]). Cependant, dans les [faiths|El] avec la [doctrine|El] [GetFaithDoctrine('doctrine_theocracy_lay_clergy').GetBaseName], n'importe qui peut détenir des temples sans pénalité.\n\nLes temples fournissent un mélange assez égal de [levies|El] et d'[taxes|El]."
