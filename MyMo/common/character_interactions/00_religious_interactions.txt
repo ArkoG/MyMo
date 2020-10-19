@@ -2566,7 +2566,56 @@ take_vows_interaction = {
 				send_child_to_clergy_effect = yes
 			}
 			scope:recipient = {
+				##MYMO monastic gov first
+				#lower tier first
 				if = {
+					limit = {
+						scope:actor.top_liege = {
+							any_vassal_or_below = {
+								has_government = monastic_government
+								#primary_title.tier > tier_barony
+								faith = scope:actor.faith
+							}
+						}
+					}
+					scope:actor.top_liege = {
+						random_vassal_or_below = {
+							limit = {
+								has_government = monastic_government
+								#primary_title.tier > tier_barony
+								faith = scope:actor.faith
+							}
+							save_scope_as = theocratic_travel_target
+						}
+					}
+					visit_court_of = scope:theocratic_travel_target
+				}
+				#county or above next
+				else_if = {
+					limit = {
+						scope:actor.top_liege = {
+							any_vassal_or_below = {
+								has_government = monastic_government
+								primary_title.tier > tier_barony
+								faith = scope:actor.faith
+							}
+						}
+					}
+					scope:actor.top_liege = {
+						random_vassal_or_below = {
+							limit = {
+								has_government = monastic_government
+								primary_title.tier > tier_barony
+								faith = scope:actor.faith
+							}
+							save_scope_as = theocratic_travel_target
+						}
+					}
+					visit_court_of = scope:theocratic_travel_target
+				}
+				#other temple next
+				##
+				else_if = {
 					limit = {
 						scope:actor.top_liege = {
 							any_vassal_or_below = {
@@ -2782,6 +2831,16 @@ take_vows_interaction = {
 							is_clergy = yes
 						}
 					}
+					##MYMO add
+					any_relation = {
+						type = friend
+						has_government = monastic_government
+					}
+					any_relation = {
+						type = best_friend
+						has_government = monastic_government
+					}
+					##
 				}
 			}
 			desc = TAKE_THE_VOWS_INSPIRING_CLERGY
