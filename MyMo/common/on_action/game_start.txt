@@ -7,10 +7,35 @@ on_game_start = {
 			limit = {
 				faith = { has_doctrine = tenet_monasticism }
 				has_holding_type = church_holding
-				is_county_capital = no
 			}
 			random = {
 				chance = 50
+				modifier = {
+					factor = 0
+					OR = {
+						# List of baronies which will stay Temple
+						barony = title:b_toul
+						barony = title:b_champs
+					}
+				}
+				modifier = {
+					factor = 2
+					OR = {
+						# List of baronies which will become Monastery
+						barony = title:b_cluny
+						barony = title:b_mortain
+						barony = title:b_saint_denis
+						barony = title:b_sankt_gallen
+					}
+				}
+				modifier = {
+					factor = 0
+					is_county_capital = yes
+					NOT = {
+						# List of baronies which are county capital and will become Monastery
+						barony = title:b_sankt_gallen
+					}
+				}
 				set_holding_type = monastery_holding
 				save_scope_as = monastery_province
 				create_character = {
