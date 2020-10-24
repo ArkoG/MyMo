@@ -12,8 +12,9 @@
 
 		modifier = {
 			add = 1000
-			is_courtier_of = root
-		}		
+			is_courtier_of = scope:base
+		}
+		
 		compare_modifier = {
 			value = learning
 		}
