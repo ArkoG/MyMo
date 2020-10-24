@@ -271,10 +271,7 @@ monastic_schools_01 = {
 		modifier = {
 			add = 500
 			scope:holder = {
-				OR = {
-					has_government = theocracy_government
-					is_theocratic_lessee = yes
-				}
+				has_government = monastic_government
 			}
 		}
 		modifier = {
