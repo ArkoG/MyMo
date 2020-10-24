@@ -5,9 +5,9 @@
  game_concept_monastery_holding:0 "Propriété monastique"
  game_concept_monastery_holding_desc:0 "[Propriété monastique|E]"
  
- baron_monastic_male:0 "Prieur"
- baron_monastic_female:0 "Prieure"
- barony_monastic:0 "Prieuré"
+ baron_monastic_male:0 "Abbé"
+ baron_monastic_female:0 "Abbesse"
+ barony_monastic:0 "Abbaye"
  count_monastic_male:0 "Prince-abbé"
  count_monastic_female:0 "Prince-abbesse"
  county_monastic:0 "Abbaye territoriale"
@@ -25,7 +25,7 @@
  monastic_succession_law_subname:2 "ggggfdh"
  monastic_succession_law_effects:2 "kkkkgfdgf"
    
- monastic_government:0 "Théocratie monastique"
+ monastic_government:0 "Monachisme"
  monastic_government_adjective:0 "monastique"
  monastic_government_realm:0 "Théocratie monastique"
  monastic_government_desc:2 "$game_concept_theocracy_desc$\n\n#F Dans un gouvernement théocratique, toute autorité appartient à une institution religieuse. Il est dirigé par un prêtre ou une prêtresse qui accomplit la volonté divine sur Terre.#!"
