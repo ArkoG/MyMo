@@ -39,3 +39,11 @@
  game_concept_monasteries:0 "Monasteries"
  game_concept_monastery_holdings:0 "Monastery Holdings"
  game_concept_monastery_holding_desc:2 "Temples are a [holding_type|E] that can be held by members of the [clergy|E] as [church_property|E] (the [theocratic|E] [government_form|E]). However, in [faiths|E] with the [GetFaithDoctrine('doctrine_theocracy_lay_clergy').GetBaseName] [doctrine|E], anyone can hold Temples without penalty.\n\nTemples provide a fairly even mix of [levies|E] and [taxes|E]."
+
+ avouerie_obligations:0 "Advocatus"
+ avouerie_none:0 "No Advocatus"
+ avouerie_none_short:0 "None"
+ avouerie_none_desc:0 "None desc bla bla bla"
+ avouerie_protection:0 "Advocatus protection"
+ avouerie_protection_short:0 "Protection"
+ avouerie_protection_desc:0 "Advocatus desc bla bla bla"

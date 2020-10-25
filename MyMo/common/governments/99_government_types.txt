@@ -27,7 +27,10 @@
 	court_generate_spouses = no
 	court_generate_commanders = no
 
-	vassal_contract = { monastic_government_obligations }
+	vassal_contract = { 
+		monastic_government_obligations
+		avouerie_obligations
+	}
 	
 	color = hsv{ 0.50 0.50 1.00 }
 }
