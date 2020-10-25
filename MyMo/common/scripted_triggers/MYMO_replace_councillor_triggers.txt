@@ -13,8 +13,26 @@ can_be_court_chaplain_trigger = {
 		OR = {
 			is_ruler = no
 			has_government = theocracy_government
-			has_government = monastic_government
 		}
+#		OR = {
+#			AND = {
+#				is_ruler = yes
+#				has_government = theocracy_government
+#			}
+#			AND = {
+#				is_ruler = yes
+#				has_government = monastic_government
+#			}
+#			AND = {
+#				is_ruler = no
+#				#is_capable_adult = yes
+#				#scope:base.faith = { has_allowed_gender_for_clergy = root }
+#				#is_imprisoned = no
+#				#is_married = no
+#				has_education_learning_trigger = yes
+#				#pool_character_config = pool_court_chaplain
+#			}
+#		}
 	}
 	trigger_if = {
 		limit = {
