@@ -15,4 +15,6 @@ open the council to monastic rulers (undone)
 
 generate some courtiers, pool guys for monasteries
 
-avouerie as vassal contract
+avouerie as vassal contract (WIP)
+
+deal with non monastic faiths (and other monastic faits too)
