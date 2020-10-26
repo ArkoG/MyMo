@@ -5,7 +5,7 @@ on_game_start = {
 		### MyMo : 50% of non county temple become monasteries ###
 		every_province = {
 			limit = {
-				faith = faith:catholic
+				faith = { has_doctrine = tenet_monasticism }
 				has_holding_type = church_holding
 				is_county_capital = no
 			}
