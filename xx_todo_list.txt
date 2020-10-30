@@ -20,3 +20,8 @@ avouerie as vassal contract (WIP)
 deal with non monastic faiths (and other monastic faits too)
 
 verify send to monastery is working
+
+necropolis
+
+adding basic ressources for monasteries : beer and wine chains
+ohter building chains : monastic barns, sciptorium libray, hospital
