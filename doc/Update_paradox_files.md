@@ -28,7 +28,7 @@ You need to install Python 3. You can do it by installing [Miniconda](https://do
 
 When done, you can create a script file (.bat on Windows, .sh on Linux) with the following command to run the Python script.
 ```
-"<path_to_python>\python update_source.py" "<path_to_steam>\Steam\steamapps\common\Crusader Kings III\game" "<path_to_github>\GitHub\MyMo\MyMo"
+"<path_to_python>\python" update_source.py "<path_to_steam>\Steam\steamapps\common\Crusader Kings III\game" "<path_to_github>\GitHub\MyMo\MyMo"
 ```
 
 Example of a more complete .bat file:
