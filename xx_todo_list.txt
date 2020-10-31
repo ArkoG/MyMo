@@ -24,4 +24,4 @@ verify send to monastery is working
 necropolis
 
 adding basic ressources for monasteries : beer and wine chains
-ohter building chains : monastic barns, sciptorium libray, hospital
+ohter building chains : monastic barns, scriptorium library, hospital
