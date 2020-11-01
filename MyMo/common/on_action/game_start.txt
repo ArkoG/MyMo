@@ -23,6 +23,7 @@ on_game_start = {
 				modifier = {
 					factor = 0
 					is_county_capital = yes
+					#no capital county but historical ones
 					NOT = {
 						# List of baronies which are county capital and will become Monastery
 						mymo_historic_abbey_county_level = yes
