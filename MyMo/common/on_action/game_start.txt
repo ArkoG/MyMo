@@ -12,28 +12,20 @@ on_game_start = {
 				chance = 50
 				modifier = {
 					factor = 0
-					OR = {
-						# List of baronies which will stay Temple
-						barony = title:b_toul
-						barony = title:b_champs
-					}
+					# List of baronies which will stay Temple
+					mymo_historic_bishopric = yes
 				}
 				modifier = {
 					factor = 2
-					OR = {
-						# List of baronies which will become Monastery
-						barony = title:b_cluny
-						barony = title:b_mortain
-						barony = title:b_saint_denis
-						barony = title:b_sankt_gallen
-					}
+					# List of baronies which will become Monastery
+					mymo_historic_abbey = yes
 				}
 				modifier = {
 					factor = 0
 					is_county_capital = yes
 					NOT = {
 						# List of baronies which are county capital and will become Monastery
-						barony = title:b_sankt_gallen
+						mymo_historic_abbey_county_level = yes
 					}
 				}
 				set_holding_type = monastery_holding

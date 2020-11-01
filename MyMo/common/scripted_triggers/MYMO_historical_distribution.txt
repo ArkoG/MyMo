@@ -1,0 +1,24 @@
+﻿#vanilla map + MyMo
+mymo_historic_bishopric = {
+	OR = {
+		barony = title:b_toul
+		barony = title:b_belley
+		barony = title:b_laon
+		barony = title:b_beauvais
+		barony = title:b_saint_denis
+	}
+}
+mymo_historic_abbey = {
+	OR = {
+		barony = title:b_cluny
+		barony = title:b_sankt_gallen
+	}
+}
+mymo_historic_abbey_county_level = {
+	OR = {
+		barony = title:b_sankt_gallen
+	}
+}
+#other maps + MyMo
+#
+#
