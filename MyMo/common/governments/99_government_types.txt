@@ -29,7 +29,7 @@
 
 	vassal_contract = { 
 		monastic_government_obligations
-		avouerie_obligations
+		#avouerie_obligations
 	}
 	
 	color = hsv{ 0.50 0.50 1.00 }

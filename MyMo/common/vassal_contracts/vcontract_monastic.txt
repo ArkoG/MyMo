@@ -20,8 +20,9 @@ monastic_government_obligations = {
 	icon = gold_icon #needs a specific icon MyMo
 	#display_mode = tree
 	obligation_levels = {
-		mon_1 = {
-			default = yes
+		#mon_1 = {
+		#	default = yes
+		default = {
 			position = { 0 0 }
 			levies = {
 				if = {
@@ -63,69 +64,7 @@ monastic_government_obligations = {
 				}
 			}
 		}
-		mon_2 = {
-			parent = mon_1
-			position = { 1 0 }
-			levies = 0.35
-			tax = 0.66
-			contribution_desc = {
-				first_valid = {
-					triggered_desc = {
-						trigger = { NOT = { scope:liege.faith = scope:vassal.faith } }
-						desc = "monastic_government_vassal_contribution_wrong_faith"
-					}
-					desc = "monastic_government_vassal_contribution_piety_level"
-				}
-			}
-		}
 	}
 }
-avouerie_obligations = {
-	display_mode = tree
-	icon = skill_prowess_icon #needs a specific icon MyMo
-	is_shown = {
-		#scope:vassal.primary_title = { 
-		#	has_government = feudal_governement 
-		#}
-	}
-	obligation_levels = {
-		avouerie_none = {
-			default = yes
-			position = { 0 0 }
 
-			vassal_opinion = 10
-			
-			vassal_modifier = {
-				monthly_prestige_gain_mult = 0.1
-			}		
-			
-			ai_liege_desire = 0
-			ai_vassal_desire = @ai_standard_vassal_desire
-		}
-		avouerie_protection = {
-			parent = avouerie_none
-			position = { 1 0 }
-
-			vassal_opinion = -15
-			tax = 0.3
-			
-			liege_modifier = {
-				monthly_prestige_gain_mult = 0.05
-				monthly_piety_gain_mult = 0.05
-				army_maintenance_mult = 0.02
-			}
-			vassal_modifier = {
-				monthly_prestige_gain_mult = -0.05
-				county_opinion_add = 10
-				levy_size = -0.5
-				army_maintenance_mult = -0.5
-			}
-			
-			flag = has_avouerie_contract
-			
-			ai_liege_desire = @ai_standard_liege_desire
-			ai_vassal_desire = 0
-		}		
-	}
-}
 
