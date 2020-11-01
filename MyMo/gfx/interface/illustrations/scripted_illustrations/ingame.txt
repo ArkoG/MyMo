@@ -846,13 +846,6 @@ religion_interior = {
 religion_holding = {
 	texture = {
 		trigger = {
-			has_government = monastic_government
-		}
-		reference = "holding_types/monastery_christian.dds"
-	}
-
-	texture = {
-		trigger = {
 			religion = religion:christianity_religion
 		}
 		reference = "holding_types/temple_christian.dds"
@@ -879,7 +872,11 @@ title_holding = {
 	###
 	texture = {
 		trigger = {
-			has_government = monastic_government
+			title_illustration_save_province_temporary = yes
+			scope:province = {
+				has_holding_type = monastery_holding
+				#has_government = monastic_government
+			}
 		}
 		reference = "holding_types/monastery_christian.dds"
 	}
