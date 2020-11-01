@@ -11,6 +11,8 @@ mymo_historic_bishopric = {
 mymo_historic_abbey = {
 	OR = {
 		barony = title:b_cluny
+		barony = title:b_citeaux
+		barony = title:b_vezelay
 		barony = title:b_sankt_gallen
 	}
 }
