@@ -8,7 +8,7 @@ loc to do
 send to monastery interaction/decision (done)
 cour regulation monasteries (don't accept women)
 
-prononcer les voeux  (done)
+prononcer les voeux  (done)(might review it for women)
 prisonnier (not needed)
 
 open the council to monastic rulers (undone)
