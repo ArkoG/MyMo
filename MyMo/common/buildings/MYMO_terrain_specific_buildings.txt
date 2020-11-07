@@ -1,0 +1,158 @@
+﻿##############################
+# Terrain Specific Buildings #
+##############################
+
+### Vegetables / Hop / Beer chain
+
+beer_01 = { #parcelle de potager et houblon
+	construction_time = very_quick_construction_time #365
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
+	can_construct_potential = {
+		#building_cereal_fields_requirement_terrain = yes
+		OR = {
+			terrain = farmlands
+			terrain = plains
+			terrain = floodplains
+		}
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = cheap_building_tier_1_cost
+	
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_1
+		supply_limit = 250
+	}
+	
+	next_building = beer_02
+
+	type_icon = "icon_building_brewery.dds"
+	
+	ai_value = {
+		base = 10
+		modifier = {
+			factor = 0
+			has_building_or_higher = wine_01
+		}
+	}
+}
+
+beer_02 = { #culture maraichère
+	construction_time = quick_construction_time #730
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
+	can_construct_potential = {
+		#building_cereal_fields_requirement_terrain = yes
+		OR = {
+			terrain = farmlands
+			terrain = plains
+			terrain = floodplains
+		}
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = cheap_building_tier_2_cost
+	
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_2
+		supply_limit = 500
+	}
+	
+	#next_building = beer_03
+	
+	ai_value = {
+		base = 9
+	}
+}
+
+
+### Vineyard / Winery / Wine 
+
+wine_01 = { #parcelle de vigne
+	construction_time = quick_construction_time #730
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
+	can_construct_potential = {
+		#building_cereal_fields_requirement_terrain = yes
+		OR = {
+			terrain = hills
+			#terrain = mountains
+			#terrain = forest
+		}
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = cheap_building_tier_1_cost
+	
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_1
+	}
+	
+	next_building = wine_02
+
+	type_icon = "icon_building_winery.dds"
+	
+	ai_value = {
+		base = 10
+		modifier = {
+			factor = 0
+			has_building_or_higher = beer_01
+		}
+	}
+}
+
+wine_02 = { #petit vignoble
+	construction_time = standard_construction_time  #1095
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
+	can_construct_potential = {
+		#building_cereal_fields_requirement_terrain = yes
+		OR = {
+			terrain = hills
+			#terrain = mountains
+			#terrain = forest
+		}
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = normal_building_tier_2_cost
+	
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_2
+	}
+	
+	#next_building = wine_03
+	
+	ai_value = {
+		base = 9
+	}
+}
