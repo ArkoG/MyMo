@@ -13,6 +13,8 @@
 		orchards_01
 		monastic_schools_01
 		special_greenhouse_01
+		beer_01
+		wine_01
 	}
 	flag = monastery
 }
