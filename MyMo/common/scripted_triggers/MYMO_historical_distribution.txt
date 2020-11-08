@@ -37,7 +37,7 @@ mymo_historic_abbey = {
 		barony = title:b_vezelay
 		barony = title:b_limoux
 		#HRE
-		#barony = title:b_sankt_gallen
+		barony = title:b_sankt_gallen
 		
 		#nowadays Portugal
 		#not on map as temple : province of Porto:Tibães and Leça-do-Bailio. province of Coimbra: Monastery of Santa Cruz and Monastry of Lorvão. In Lisboa you have the Monastery of Batalha	

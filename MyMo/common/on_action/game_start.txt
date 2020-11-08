@@ -36,7 +36,15 @@ on_game_start = {
 					employer = scope:monastery_province.province_owner
 					culture = scope:monastery_province.culture
 					faith = scope:monastery_province.faith
-					after_creation = { get_title = scope:monastery_province.barony }
+					after_creation = {
+						if = {
+							limit = { scope:monastery_province = { is_county_capital = yes } }
+							get_title = scope:monastery_province.county
+						}
+						else = {
+							get_title = scope:monastery_province.barony
+						}
+					}
 				}
 			}
 		}
