@@ -111,7 +111,7 @@
 					set_obligation_if_changed_effect = { OBLIGATION_TYPE = title_revocation_rights }
 					##mymo obligations
 					set_obligation_if_changed_effect = { OBLIGATION_TYPE = monastic_government_obligations }
-					set_obligation_if_changed_effect = { OBLIGATION_TYPE = avouerie_obligations }
+					#set_obligation_if_changed_effect = { OBLIGATION_TYPE = avouerie_obligations }
 					#mymo obligations
 				}
 			}
@@ -212,7 +212,7 @@ vassal_modify_vassal_contract_interaction = {
 				set_obligation_if_changed_effect = { OBLIGATION_TYPE = title_revocation_rights }
 				##mymo obligations
 				set_obligation_if_changed_effect = { OBLIGATION_TYPE = monastic_government_obligations }
-				set_obligation_if_changed_effect = { OBLIGATION_TYPE = avouerie_obligations }
+				#set_obligation_if_changed_effect = { OBLIGATION_TYPE = avouerie_obligations }
 				#mymo obligations
 			}
 		}

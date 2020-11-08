@@ -121,18 +121,18 @@ count_obligation_improvements_for_vassal = {
 		}
 	}
 	##Mymo
-	if = {
-		limit = {
-			local_var:avouerie_obligations != vassal_contract_obligation_level:avouerie_obligations
-		}
-		if = {
-			limit = { local_var:avouerie_obligations != 0 }
-			add = 1
-		}
-		else = {
-			subtract = 1
-		}
-	}
+	# if = {
+		# limit = {
+			# local_var:avouerie_obligations != vassal_contract_obligation_level:avouerie_obligations
+		# }
+		# if = {
+			# limit = { local_var:avouerie_obligations != 0 }
+			# add = 1
+		# }
+		# else = {
+			# subtract = 1
+		# }
+	# }
 	#Mymo
 }
 
