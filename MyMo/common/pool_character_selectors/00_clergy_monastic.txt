@@ -69,7 +69,7 @@
 		age = { 35 65 }
 	}
 	
-	selection_count = 25
+	selection_count = 1
 	
 	pool = faith
 	gender = clergy
