@@ -2,6 +2,7 @@
 
  building_type_monastery_01:0 "Monastery"
  building_type_monastery_01_desc:1 "A place of worship ruled by the clergy, surrounded by a town of faithful peasants."
+ #add ermitage
  building_monastery_01:1 "Priory"
  building_monastery_01_desc:0 "$building_type_monastery_01_desc$"
  building_monastery_02:1 "Monastery"
