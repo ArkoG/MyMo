@@ -44,6 +44,7 @@ on_game_start = {
 						else = {
 							get_title = scope:monastery_province.barony
 						}
+						trigger_event = mymo.1
 					}
 				}
 			}
