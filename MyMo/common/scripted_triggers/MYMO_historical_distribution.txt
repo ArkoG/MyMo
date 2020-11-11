@@ -1,57 +1,139 @@
 ﻿#vanilla map + MyMo
 mymo_historic_bishopric = {
-	OR = {
-		#nowadays France
-		barony = title:b_beauvais
-		barony = title:b_noyon
-		barony = title:b_coutances
-		barony = title:b_toul
-		barony = title:b_lausanne
-		barony = title:b_belley
-		barony = title:b_laon
-		barony = title:b_beauvais
-		barony = title:b_saint_denis
-		barony = title:b_embrun
-		barony = title:b_avignon
-		barony = title:b_digne
-		barony = title:b_bazadais
-		barony = title:b_dax
-		barony = title:b_pamiers
-		#nowadays Portugal
-		barony = title:b_lagos
-		#not on map as temple : Braga, Lisboa, Porto
-		#nowadays Swiss
-		barony = title:b_basel	
-		#nowadays England
-		barony = title:b_canterbury		
-		
+	AND = {
+		NOT = { has_game_rule = arkomod_on }
+		OR = {
+			#nowadays France
+			barony = title:b_beauvais
+			barony = title:b_noyon
+			barony = title:b_coutances
+			barony = title:b_toul
+			barony = title:b_lausanne
+			barony = title:b_belley
+			barony = title:b_laon
+			barony = title:b_beauvais
+			barony = title:b_saint_denis
+			barony = title:b_embrun
+			barony = title:b_avignon
+			barony = title:b_digne
+			barony = title:b_bazadais
+			barony = title:b_dax
+			barony = title:b_pamiers
+			barony = title:b_velay #*
+			#nowadays Portugal
+			barony = title:b_lagos
+			#not on map as temple : Braga, Lisboa, Porto
+			#nowadays Swiss
+			barony = title:b_basel	
+			#nowadays England
+			barony = title:b_canterbury		
+			
+		}
 	}
 }
 mymo_historic_abbey = {
-	OR = {
-		#nowadays France
-		barony = title:b_fecamp
-		barony = title:b_lure
-		barony = title:b_cluny
-		barony = title:b_citeaux
-		barony = title:b_vezelay
-		barony = title:b_limoux
-		#HRE
-		#barony = title:b_sankt_gallen
-		
-		#nowadays Portugal
-		#not on map as temple : province of Porto:Tibães and Leça-do-Bailio. province of Coimbra: Monastery of Santa Cruz and Monastry of Lorvão. In Lisboa you have the Monastery of Batalha	
-		#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
-		#nowadays HRE
-		barony = title:b_prum
+	AND = {
+		NOT = { has_game_rule = arkomod_on }
+		OR = {
+			#nowadays France
+			barony = title:b_fecamp
+			barony = title:b_lure
+			barony = title:b_cluny
+			barony = title:b_citeaux
+			barony = title:b_vezelay
+			barony = title:b_limoux
+			#HRE
+			#barony = title:b_sankt_gallen
+			
+			#nowadays Portugal
+			#not on map as temple : province of Porto:Tibães and Leça-do-Bailio. province of Coimbra: Monastery of Santa Cruz and Monastry of Lorvão. In Lisboa you have the Monastery of Batalha	
+			#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
+			#nowadays HRE
+			barony = title:b_prum
+		}
 	}
 }
 mymo_historic_abbey_county_level = {
-	OR = {
-		#HRE
-		barony = title:b_sankt_gallen
+	AND = {
+		NOT = { has_game_rule = arkomod_on }
+		OR = {
+			#HRE
+			barony = title:b_sankt_gallen
+		}
 	}
 }
+
 #other maps + MyMo
-#
-#
+mymo_historic_bishopric = {
+	AND = {
+		has_game_rule = arkomod_on
+		OR = {
+			#nowadays France
+			barony = title:b_beauvais
+			barony = title:b_noyon
+			barony = title:b_coutances
+			barony = title:b_toul
+			barony = title:b_lausanne
+			barony = title:b_belley
+			barony = title:b_laon
+			barony = title:b_beauvais
+			barony = title:b_saint_denis
+			barony = title:b_embrun
+			barony = title:b_avignon
+			barony = title:b_digne
+			barony = title:b_bazadais
+			barony = title:b_dax
+			barony = title:b_pamiers
+			barony = title:b_le_puy #*
+			barony = title:b_clermont_auvergne #*
+			barony = title:b_aurillac #*
+			barony = title:b_mende #*
+			barony = title:b_langres #*
+			barony = title:b_verdun #*
+			#nowadays HRE
+			barony = title:b_strassburg #*
+			#nowadays Portugal
+			barony = title:b_lagos
+			#not on map as temple : Braga, Lisboa, Porto
+			#nowadays Swiss
+			barony = title:b_basel	
+			#nowadays England
+			barony = title:b_canterbury		
+			
+		}
+	}
+}
+mymo_historic_abbey = {
+	AND = {
+		has_game_rule = arkomod_on
+		OR = {
+			#nowadays France
+			barony = title:b_fecamp
+			barony = title:b_lure
+			barony = title:b_cluny
+			barony = title:b_citeaux
+			barony = title:b_vezelay
+			barony = title:b_limoux
+			barony = title:b_brioude #*
+			barony = title:b_moyenmoutier #*
+			barony = title:b_gorze #*
+			#HRE
+			#barony = title:b_sankt_gallen
+			
+			#nowadays Portugal
+			#not on map as temple : province of Porto:Tibães and Leça-do-Bailio. province of Coimbra: Monastery of Santa Cruz and Monastry of Lorvão. In Lisboa you have the Monastery of Batalha	
+			#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
+			#nowadays HRE
+			barony = title:b_prum
+		}
+	}
+}
+mymo_historic_abbey_county_level = {
+	AND = {
+		has_game_rule = arkomod_on
+		OR = {
+			#HRE
+			#barony = title:b_sankt_gallen
+		}
+	}
+}
