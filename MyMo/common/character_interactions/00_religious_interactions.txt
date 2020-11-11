@@ -2589,6 +2589,10 @@ take_vows_interaction = {
 						}
 					}
 					visit_court_of = scope:theocratic_travel_target
+					add_character_flag = {
+						flag = blocked_from_leaving
+						years = 100
+					}
 				}
 				#county or above next
 				else_if = {
@@ -2612,6 +2616,10 @@ take_vows_interaction = {
 						}
 					}
 					visit_court_of = scope:theocratic_travel_target
+					add_character_flag = {
+						flag = blocked_from_leaving
+						years = 100
+					}
 				}
 				#other temple next
 				##
