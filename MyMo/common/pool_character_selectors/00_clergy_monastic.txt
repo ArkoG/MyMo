@@ -2,7 +2,7 @@
 	valid_character = {
 		is_capable_adult = yes
 		scope:base.faith = { has_allowed_gender_for_clergy = root }
-		is_claimant = no
+		#is_claimant = no
 		is_imprisoned = no
 		is_married = no
 	}
@@ -46,7 +46,7 @@
 			scope:base.faith = { has_preferred_gender_for_clergy = root }
 		}
 		modifier = {
-			add = 50
+			add = 100
 			has_education_learning_trigger = yes
 		}
 		modifier = {
@@ -55,7 +55,7 @@
 		}
 		modifier = {
 			add = 500
-			has_monastic_trigger = yes
+			has_monastic_trigger = yes #>> has_trait = devoted
 		}
 		modifier = {
 			add = 1000		
@@ -65,11 +65,11 @@
 	
 	
 	config = {
-		background = clergy
+		#background = clergy #>> trait = education_learning
 		age = { 35 65 }
 	}
 	
-	selection_count = 1
+	selection_count = 15
 	
 	pool = faith
 	gender = clergy
