@@ -56,7 +56,6 @@ take_vows_debug = {
 			scope:actor = { has_strong_hook = scope:recipient }
 		}
 	}
-
 	send_option = {
 		is_valid = {
 			scope:actor = {
@@ -73,73 +72,29 @@ take_vows_debug = {
 
 	send_options_exclusive = no
 
-	on_send = {
-		scope:recipient = {
-			##MYMO monastic gov first
-			#lower tier first
-			if = {
-				limit = {
+	redirect = {
+		scope:actor = {
+			scope:recipient = {
+				save_scope_as = secondary_recipient
+				if = {
+					limit = {
+						scope:actor.top_liege = {
+							any_vassal_or_below = {
+								has_government = monastic_government
+								#primary_title.tier < tier_county
+								faith = scope:actor.faith
+							}
+						}
+					}
 					scope:actor.top_liege = {
-						any_vassal_or_below = {
-							has_government = monastic_government
-							primary_title.tier < tier_county
-							faith = scope:actor.faith
+						random_vassal_or_below = {
+							limit = {
+								has_government = monastic_government
+								#primary_title.tier < tier_county
+								faith = scope:actor.faith
+							}
+							save_scope_as = secondary_actor
 						}
-					}
-				}
-				scope:actor.top_liege = {
-					random_vassal_or_below = {
-						limit = {
-							has_government = monastic_government
-							primary_title.tier < tier_county
-							faith = scope:actor.faith
-						}
-						save_scope_as = theocratic_travel_target
-					}
-				}
-			}
-			#county or above next
-			else_if = {
-				limit = {
-					scope:actor.top_liege = {
-						any_vassal_or_below = {
-							has_government = monastic_government
-							primary_title.tier > tier_barony
-							faith = scope:actor.faith
-						}
-					}
-				}
-				scope:actor.top_liege = {
-					random_vassal_or_below = {
-						limit = {
-							has_government = monastic_government
-							primary_title.tier > tier_barony
-							faith = scope:actor.faith
-						}
-						save_scope_as = theocratic_travel_target
-					}
-				}
-			}
-			#other temple next
-			##
-			else_if = {
-				limit = {
-					scope:actor.top_liege = {
-						any_vassal_or_below = {
-							has_government = theocracy_government
-							#primary_title.tier > tier_barony
-							faith = scope:actor.faith
-						}
-					}
-				}
-				scope:actor.top_liege = {
-					random_vassal_or_below = {
-						limit = {
-							has_government = theocracy_government
-							#primary_title.tier > tier_barony
-							faith = scope:actor.faith
-						}
-						save_scope_as = theocratic_travel_target
 					}
 				}
 			}
@@ -157,87 +112,11 @@ take_vows_debug = {
 				send_child_to_clergy_effect = yes
 			}
 			scope:recipient = {
-				##MYMO monastic gov first
-				#lower tier first
-				if = {
-					limit = {
-						scope:actor.top_liege = {
-							any_vassal_or_below = {
-								has_government = monastic_government
-								primary_title.tier < tier_county
-								faith = scope:actor.faith
-							}
-						}
-					}
-					scope:actor.top_liege = {
-						random_vassal_or_below = {
-							limit = {
-								has_government = monastic_government
-								primary_title.tier < tier_county
-								faith = scope:actor.faith
-							}
-							save_scope_as = theocratic_travel_target
-						}
-					}
-					#visit_court_of = scope:theocratic_travel_target
-					scope:theocratic_travel_target = { add_courtier = scope:recipient }
-					add_character_flag = {
-						flag = blocked_from_leaving
-						years = 100
-					}
-				}
-				#county or above next
-				else_if = {
-					limit = {
-						scope:actor.top_liege = {
-							any_vassal_or_below = {
-								has_government = monastic_government
-								primary_title.tier > tier_barony
-								faith = scope:actor.faith
-							}
-						}
-					}
-					scope:actor.top_liege = {
-						random_vassal_or_below = {
-							limit = {
-								has_government = monastic_government
-								primary_title.tier > tier_barony
-								faith = scope:actor.faith
-							}
-							save_scope_as = theocratic_travel_target
-						}
-					}
-					#visit_court_of = scope:theocratic_travel_target
-					scope:theocratic_travel_target = { add_courtier = scope:recipient }
-					add_character_flag = {
-						flag = blocked_from_leaving
-						years = 100
-					}
-				}
-				#other temple next
-				##
-				else_if = {
-					limit = {
-						scope:actor.top_liege = {
-							any_vassal_or_below = {
-								has_government = theocracy_government
-								#primary_title.tier > tier_barony
-								faith = scope:actor.faith
-							}
-						}
-					}
-					scope:actor.top_liege = {
-						random_vassal_or_below = {
-							limit = {
-								has_government = theocracy_government
-								#primary_title.tier > tier_barony
-								faith = scope:actor.faith
-							}
-							save_scope_as = theocratic_travel_target
-						}
-					}
-					#visit_court_of = scope:theocratic_travel_target
-					scope:theocratic_travel_target = { add_courtier = scope:recipient }
+				visit_court_of = scope:secondary_actor
+				scope:secondary_actor = { add_courtier = scope:recipient }
+				add_character_flag = {
+					flag = blocked_from_leaving
+					years = 100
 				}
 				else_if = {
 					limit = {
@@ -248,6 +127,18 @@ take_vows_debug = {
 				kick_from_court_interaction_warning_tooltip_effect = yes
 			}
 			trigger_event = holy_order.0002
+			if = {
+				limit = {
+					exists = scope:secondary_actor
+				}
+				scope:secondary_actor = {
+					add_opinion = {
+						target = scope:actor
+						modifier = pious_opinion
+						opinion = 25
+					}
+				}
+			}
 			if = {
 				limit = {
 					exists = cp:councillor_court_chaplain
