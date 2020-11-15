@@ -1,24 +1,21 @@
 ##################################
 ## CK3 MOD _ [MYMO] My Monastery
-# by Arko
+# by Arko & Mouchi
 
 
-
-CURRENT_DEV 0.1 for CK3 v1.11
-
-MAJOR:
--50% of temple holdings are replaced by monastery
-
-MINOR and VARIOUS:
--
-
-BALANCE:
--
-
-BUGFIX:
--
+MYMO v0.3 for CK3 v1.1.3
+CHANGES:
+-all faiths with monastism can get monasteries
+-50% of temple holdings are replaced by monastery for all faiths with monastism
+-added some historical distribution for monasteries vs bishoprics (mostly France area)
+-ordering to take vows send people in priority to a monastery with a priority to same culture_group abbot court
+-fixed vanilla bug where take vows interaction send people to a different court than announced at first
+-some courtiers are generated in monasteries courts
+-abbots' successor is likely picked in his court, someone ordered to take vows can be picked as well
+-new monastery holding illustration by "Trash"
+-improved localization setup, all languages have some text displayed
 
 INITIAL COMMIT 0.0 for CK3 v1.11 2020-10-15
-MAJOR:
+CHANGES:
 -new holding type: monastery + art + titles + loc
 -new succession law
