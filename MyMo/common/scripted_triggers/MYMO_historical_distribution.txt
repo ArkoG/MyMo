@@ -1,7 +1,7 @@
 ﻿#vanilla map + MyMo
 mymo_historic_bishopric = {
 	AND = {
-		NOT = { has_game_rule = arkomod_on }
+		NOT = { has_global_variable = arkomod_active }
 		OR = {
 			#nowadays France
 			barony = title:b_beauvais
@@ -33,7 +33,7 @@ mymo_historic_bishopric = {
 }
 mymo_historic_abbey = {
 	AND = {
-		NOT = { has_game_rule = arkomod_on }
+		NOT = { has_global_variable = arkomod_active }
 		OR = {
 			#nowadays France
 			barony = title:b_fecamp
@@ -55,7 +55,7 @@ mymo_historic_abbey = {
 }
 mymo_historic_abbey_county_level = {
 	AND = {
-		NOT = { has_game_rule = arkomod_on }
+		NOT = { has_global_variable = arkomod_active }
 		OR = {
 			#HRE
 			barony = title:b_sankt_gallen
@@ -66,7 +66,7 @@ mymo_historic_abbey_county_level = {
 #other maps + MyMo
 mymo_historic_bishopric = {
 	AND = {
-		has_game_rule = arkomod_on
+		has_global_variable = arkomod_active
 		OR = {
 			#nowadays France
 			barony = title:b_beauvais
@@ -105,7 +105,7 @@ mymo_historic_bishopric = {
 }
 mymo_historic_abbey = {
 	AND = {
-		has_game_rule = arkomod_on
+		has_global_variable = arkomod_active
 		OR = {
 			#nowadays France
 			barony = title:b_fecamp
@@ -130,7 +130,7 @@ mymo_historic_abbey = {
 }
 mymo_historic_abbey_county_level = {
 	AND = {
-		has_game_rule = arkomod_on
+		has_global_variable = arkomod_active
 		OR = {
 			#HRE
 			#barony = title:b_sankt_gallen
