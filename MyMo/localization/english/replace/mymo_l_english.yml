@@ -47,3 +47,5 @@
  avouerie_protection:0 "Advocatus protection"
  avouerie_protection_short:0 "Protection"
  avouerie_protection_desc:0 "Advocatus desc bla bla bla"
+ 
+ actor_secondary_take_vows_interaction:0 "Abbot"
