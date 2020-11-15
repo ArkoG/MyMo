@@ -21,6 +21,7 @@ take_vows_debug = {
 	notification_text = REQUEST_VOWS_NOTIFICATION_TEXT
 
 	is_shown = {
+		debug_only = yes
 		scope:recipient = {
 			is_courtier_of = scope:actor
 			NOR = { 
