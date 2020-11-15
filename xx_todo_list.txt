@@ -19,7 +19,7 @@ avouerie as vassal contract (WIP)
 
 deal with non monastic faiths (and other monastic faits too)
 
-verify send to monastery is working
+verify send to monastery is working (OK)
 
 necropolis
 
