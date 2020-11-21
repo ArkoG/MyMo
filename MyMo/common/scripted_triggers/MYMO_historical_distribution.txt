@@ -116,6 +116,7 @@ mymo_historic_abbey_vanilla = {
 		barony = title:b_saint_denis
 		barony = title:b_mimizan
 		barony = title:b_figeac
+		barony = title:b_beaumont_sur_leze #Blagnac #*
 		barony = title:b_limoux #under abbey of st-hialire under Narbonne archbishops
 		#HRE
 		#barony = title:b_sankt_gallen
@@ -145,6 +146,7 @@ mymo_historic_abbey_arkomod = {
 		barony = title:b_mimizan
 		barony = title:b_figeac
 		barony = title:b_castelnaudary
+		barony = title:b_blagnac #*
 		#HRE
 		barony = title:b_sankt_gallen
 		
