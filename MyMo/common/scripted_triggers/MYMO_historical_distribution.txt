@@ -6,7 +6,7 @@
 		}
 		AND = {
 			has_global_variable = arkomod_active
-			mymo_historic_bishopric_arko_mod = yes
+			mymo_historic_bishopric_arkomod = yes
 		}
 	}
 }
@@ -19,7 +19,7 @@ mymo_historic_abbey = {
 		}
 		AND = {
 			has_global_variable = arkomod_active
-			mymo_historic_abbey_arko_mod = yes
+			mymo_historic_abbey_arkomod = yes
 		}
 	}
 }
@@ -32,7 +32,7 @@ mymo_historic_abbey_county_level = {
 		}
 		AND = {
 			has_global_variable = arkomod_active
-			mymo_historic_abbey_county_level_arko_mod = yes
+			mymo_historic_abbey_county_level_arkomod = yes
 		}
 	}
 }
@@ -60,11 +60,13 @@ mymo_historic_bishopric_vanilla	= {
 		#nowadays Swiss
 		barony = title:b_basel	
 		#nowadays England
-		barony = title:b_canterbury		
+		barony = title:b_canterbury	
+		#spains
+		barony = title:b_andorra #Seu d'Urgell
 	}
 }
 
-mymo_historic_bishopric_arko_mod = {
+mymo_historic_bishopric_arkomod = {
 	OR = {
 		#nowadays France
 		barony = title:b_beauvais
@@ -94,8 +96,9 @@ mymo_historic_bishopric_arko_mod = {
 		#nowadays Swiss
 		barony = title:b_basel	
 		#nowadays England
-		barony = title:b_canterbury		
-		
+		barony = title:b_canterbury
+		#spains
+		barony = title:b_andorra #Seu d'Urgell		
 	}
 }		
 
@@ -121,7 +124,7 @@ mymo_historic_abbey_vanilla = {
 }
 
 
-mymo_historic_abbey_arko_mod = {
+mymo_historic_abbey_arkomod = {
 	OR = {
 		#nowadays France
 		barony = title:b_fecamp
@@ -152,7 +155,7 @@ mymo_historic_abbey_county_level_vanilla = {
 	}
 }
 
-mymo_historic_abbey_county_level_arko_mod = {
+mymo_historic_abbey_county_level_arkomod = {
 	always = no
 }
 
