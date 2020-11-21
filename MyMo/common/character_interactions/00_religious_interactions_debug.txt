@@ -119,7 +119,7 @@ take_vows_debug = {
 					flag = blocked_from_leaving
 					years = 100
 				}
-				else_if = {
+				if = {
 					limit = {
 						exists = scope:actor.capital_province
 					}
