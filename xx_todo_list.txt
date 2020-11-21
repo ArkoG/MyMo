@@ -25,3 +25,5 @@ necropolis
 
 adding basic ressources for monasteries : beer and wine chains
 ohter building chains : monastic barns, scriptorium library, hospital
+
+review take vows decision triggers and acceptance, to feed monasteries and churches with more courtiers
