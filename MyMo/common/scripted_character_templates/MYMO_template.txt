@@ -1,9 +1,10 @@
 ﻿
 monk_character = {
-	age = { 35 65 }
+	age = { 20 50 }
 	gender = male
 	random_traits_list = {
 		count = 1
+		education_learning_1 = {}
 		education_learning_2 = {}
 		education_learning_3 = {}
 		education_learning_4 = {}
