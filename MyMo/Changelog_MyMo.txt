@@ -3,6 +3,13 @@
 # by Arko & Mouchi
 
 
+current DEV for MYMO v0.4 for CK3 v1.1.3
+CHANGES:
+-taking vows now removes all claims the character could have
+-"devoted" trait now fordibs inheriting any claims
+-abbots' successors should now only be chosen from their court
+-you can now grant titles to characters with "devoted" trait
+
 MYMO v0.3 for CK3 v1.1.3
 CHANGES:
 -all faiths with monastism can get monasteries
