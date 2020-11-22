@@ -22,8 +22,8 @@
  empire_monastic:0 "Abbaye impériale"
 
  monastic_succession_law: "Élection monastique"
- monastic_succession_law_subname:2 "ggggfdh"
- monastic_succession_law_effects:2 "kkkkgfdgf"
+ monastic_succession_law_subname:2 "[GetTrait('devoted').GetName( GetNullCharacter )]"
+ monastic_succession_law_effects:2 "Lors de la succession, tous les [titles|El] de l'Abbé sont donnés à son successeur, qui est généralement le [GetTrait('devoted').GetName( GetNullCharacter )] avec l'aptitude en [learning|El] la plus élevée.""
    
  monastic_government:0 "Monachisme"
  monastic_government_adjective:0 "monastique"
