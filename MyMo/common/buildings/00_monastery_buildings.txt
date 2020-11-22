@@ -242,7 +242,10 @@ monastic_schools_01 = {
 	}
 
 	can_construct_potential = {
-		has_building_or_higher = monastery_01
+		OR = {
+			has_building_or_higher = monastery_01
+			has_building_or_higher = temple_01
+		}
 	}
 
 	can_construct_showing_failures_only = {
@@ -289,7 +292,10 @@ monastic_schools_02 = {
 	}
 
 	can_construct_potential = {
-		has_building_or_higher = monastery_01
+		OR = {
+			has_building_or_higher = monastery_01
+			has_building_or_higher = temple_01
+		}
 		culture = {
 			has_innovation = innovation_city_planning
 		}
@@ -326,7 +332,10 @@ monastic_schools_03 = {
 	}
 
 	can_construct = {
-		has_building_or_higher = monastery_02
+		OR = {
+			has_building_or_higher = monastery_02
+			has_building_or_higher = temple_02
+		}
 		culture = {
 			has_innovation = innovation_manorialism
 		}
@@ -363,7 +372,10 @@ monastic_schools_04 = {
 	}
 
 	can_construct = {
-		has_building_or_higher = monastery_02
+		OR = {
+			has_building_or_higher = monastery_02
+			has_building_or_higher = temple_02
+		}
 		culture = {
 			has_innovation = innovation_manorialism
 		}
@@ -400,7 +412,10 @@ monastic_schools_05 = {
 	}
 
 	can_construct = {
-		has_building_or_higher = monastery_03
+		OR = {
+			has_building_or_higher = monastery_03
+			has_building_or_higher = temple_03
+		}
 		culture = {
 			has_innovation = innovation_windmills
 		}
@@ -437,7 +452,10 @@ monastic_schools_06 = {
 	}
 
 	can_construct = {
-		has_building_or_higher = monastery_03
+		OR = {
+			has_building_or_higher = monastery_03
+			has_building_or_higher = temple_03
+		}
 		culture = {
 			has_innovation = innovation_windmills
 		}
@@ -474,7 +492,10 @@ monastic_schools_07 = {
 	}
 
 	can_construct = {
-		has_building_or_higher = monastery_04
+		OR = {
+			has_building_or_higher = monastery_04
+			has_building_or_higher = temple_04
+		}
 		culture = {
 			has_innovation = innovation_cranes
 		}
@@ -511,7 +532,10 @@ monastic_schools_08 = {
 	}
 
 	can_construct = {
-		has_building_or_higher = monastery_04
+		OR = {
+			has_building_or_higher = monastery_04
+			has_building_or_higher = temple_04
+		}
 		culture = {
 			has_innovation = innovation_cranes
 		}
