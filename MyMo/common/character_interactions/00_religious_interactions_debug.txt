@@ -133,6 +133,11 @@ take_vows_debug = {
 				kick_from_court_interaction_warning_tooltip_effect = yes
 			}
 			trigger_event = holy_order.0002
+			scope:recipient = {
+				every_claim = {
+					scope:recipient = { remove_claim = prev }
+				}
+			}
 			if = {
 				limit = {
 					exists = scope:secondary_actor
