@@ -2525,7 +2525,16 @@ take_vows_interaction = {
 		scope:recipient = {
 			age >= 10
 			can_take_religious_vows_trigger = yes #Triggers that applies to both Monastery or Holy Order requirements
+			OR = {
+				exists = betrothed
+				is_married = yes
+			}
+			is_primary_heir_of = scope:actor
+			NOT = {
+				is_close_or_extended_family_of = scope:actor
+			}
 		}
+		
 	}
 	
 	#Use hook
@@ -2636,16 +2645,21 @@ take_vows_interaction = {
 			}
 			
 			show_as_tooltip = {
-				send_child_to_clergy_effect = yes
+				send_child_to_clergy_effect = yes #devoted trait is given here
 			}
 			scope:recipient = {
-				visit_court_of = scope:secondary_actor #clearer information
-				scope:secondary_actor = { add_courtier = scope:recipient }
-				add_character_flag = {
-					flag = blocked_from_leaving
-					years = 100
-				}
 				if = {
+					limit = {
+						exists = scope:secondary_actor
+					}
+					visit_court_of = scope:secondary_actor #clearer information
+					scope:secondary_actor = { add_courtier = scope:recipient }
+					add_character_flag = {
+						flag = blocked_from_leaving
+						years = 100
+					}
+				}
+				else_if = {
 					limit = {
 						exists = scope:actor.capital_province
 					}
@@ -3306,7 +3320,8 @@ take_vows_interaction = {
 				scope:actor.primary_title = {
 					place_in_line_of_succession = {
 						target = prev
-						value <= 7
+						#value <= 7
+						value <= 5
 					}
 				}
 			}
@@ -3328,7 +3343,8 @@ take_vows_interaction = {
 				scope:actor.primary_title = {
 					place_in_line_of_succession = {
 						target = prev
-						value <= 7
+						#value <= 7
+						value <= 5
 					}
 				}
 			}

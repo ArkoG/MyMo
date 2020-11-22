@@ -113,13 +113,18 @@ take_vows_debug = {
 				send_child_to_clergy_effect = yes
 			}
 			scope:recipient = {
-				visit_court_of = scope:secondary_actor
-				scope:secondary_actor = { add_courtier = scope:recipient }
-				add_character_flag = {
-					flag = blocked_from_leaving
-					years = 100
-				}
 				if = {
+					limit = {
+						exists = scope:secondary_actor
+					}
+					visit_court_of = scope:secondary_actor #clearer information
+					scope:secondary_actor = { add_courtier = scope:recipient }
+					add_character_flag = {
+						flag = blocked_from_leaving
+						years = 100
+					}
+				}
+				else_if = {
 					limit = {
 						exists = scope:actor.capital_province
 					}
