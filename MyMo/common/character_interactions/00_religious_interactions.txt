@@ -2580,14 +2580,62 @@ take_vows_interaction = {
 						}
 					}
 					scope:actor.top_liege = {
-						random_vassal_or_below = {
-							limit = {
-								has_government = monastic_government
-								#primary_title.tier < tier_county
-								faith = scope:actor.faith
-								culture_group = scope:actor.culture_group
+						random_list = {
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
 							}
-							save_scope_as = secondary_actor
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
 						}
 					}
 				}
@@ -2648,6 +2696,17 @@ take_vows_interaction = {
 				send_child_to_clergy_effect = yes #devoted trait is given here
 			}
 			scope:recipient = {
+				
+				####totoro
+				#avoid female joining abbey for real
+				#
+				#
+				#
+				#
+				#
+				#
+				#
+				
 				if = {
 					limit = {
 						exists = scope:secondary_actor

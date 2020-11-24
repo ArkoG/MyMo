@@ -84,6 +84,77 @@ take_vows_debug = {
 								has_government = monastic_government
 								#primary_title.tier < tier_county
 								faith = scope:actor.faith
+								culture_group = scope:actor.culture_group
+							}
+						}
+					}
+					scope:actor.top_liege = {
+						random_list = {
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+							10 = {
+								random_vassal_or_below = {
+									limit = {
+										has_government = monastic_government
+										#primary_title.tier < tier_county
+										faith = scope:actor.faith
+										culture_group = scope:actor.culture_group
+									}
+									save_scope_as = secondary_actor
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						scope:actor.top_liege = {
+							any_vassal_or_below = {
+								has_government = monastic_government
+								#primary_title.tier < tier_county
+								faith = scope:actor.faith
 							}
 						}
 					}
@@ -91,6 +162,27 @@ take_vows_debug = {
 						random_vassal_or_below = {
 							limit = {
 								has_government = monastic_government
+								#primary_title.tier < tier_county
+								faith = scope:actor.faith
+							}
+							save_scope_as = secondary_actor
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						scope:actor.top_liege = {
+							any_vassal_or_below = {
+								has_government = theocracy_government
+								#primary_title.tier < tier_county
+								faith = scope:actor.faith
+							}
+						}
+					}
+					scope:actor.top_liege = {
+						random_vassal_or_below = {
+							limit = {
+								has_government = theocracy_government
 								#primary_title.tier < tier_county
 								faith = scope:actor.faith
 							}
