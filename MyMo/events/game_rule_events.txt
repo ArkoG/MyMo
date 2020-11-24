@@ -1,5 +1,7 @@
 ﻿namespace = game_rule
 
+##MYMO avoids family generation for monastic courts
+
 # Generated families 	- 1001
 # Gender equality 		- 1010
 
@@ -128,7 +130,7 @@ game_rule.1001 = { #by Mathilda Bjarnehed
 		NOR = {
 			has_government = republic_government
 			has_government = theocracy_government
-			has_government = monastic_government
+			has_government = monastic_government ##MYMO
 			AND = {
 				exists = character:7757
 				this = character:7757 #Matilda Canossa, her bookmark start is about overcoming the issue of no heir
