@@ -30,6 +30,7 @@ theocracy_lease = {
 				base = 0
 				opinion_modifier = { # Opinion Factor
 					min = 0
+					#max = 50 #MYMO
 					who = scope:lessee
 					opinion_target = scope:ruler
 					multiplier = {
