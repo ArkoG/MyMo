@@ -11,7 +11,7 @@ This mod's core feature is adding a new holding type: the monastery, as well as 
 
 Current content, to be expanded:
 
-    ordering to take vows send to a monastic court, women will become guest or wanderers
+    ordering to take vows send to a monastic court, you can choose which one. women will become guest or wanderers
     populated with monasteries (random + historical)
     all faiths with monasticism (either historical or from reformation) can hold or build monasteries
     some monks are generated to populate courts, they can be elected abbot on succession
@@ -62,7 +62,7 @@ CHANGELOG:
 This mod's core feature is adding a new holding type: the monastery, as well as some flavour around it.
 
 [u]Current content, to be expanded:[/u][LIST]
-[*]ordering to take vows send to a monastic court, women will become guest or wanderers
+[*]ordering to take vows send to a monastic court, you can choose which one. women will become guest or wanderers
 [*]populated with monasteries (random + historical)
 [*]all faiths with monasticism (either historical or from reformation) can hold or build monasteries
 [*]some monks are generated to populate courts, they can be elected abbot on succession
