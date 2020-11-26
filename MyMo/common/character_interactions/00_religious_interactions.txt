@@ -1861,7 +1861,9 @@ send_to_holy_order_interaction = {
 				always = yes
 			}
 		}
-		NOT = { is_primary_heir_of = scope:actor } ##MYMO
+		scope:recipient = {
+			NOT = { is_primary_heir_of = scope:actor } ##MYMO
+		}
 	}
 	
 	is_valid_showing_failures_only = {
@@ -2164,60 +2166,18 @@ send_to_holy_order_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						has_trait = bastard
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						has_trait = bastard
-					}
-				}
+				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
-		}
-		modifier = { # MYMO Try to send out of mariage chilfren
-			add = 15
-			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = child_of_concubine_female
-							has_trait = wild_oat
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						OR = {
-							has_trait = child_of_concubine_male
-							has_trait = wild_oat
-						}
-					}
-				}
-			}
-			desc = TAKE_THE_VOWS_OUT_MARRIAGE
 		}
 		modifier = { # MYMO Try to send doubtfull or atifical lineage
 			add = 25
 			scope:recipient = {
 				OR = {
 					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = legitimized_bastard
-							has_trait = disputed_heritage 
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
+						scope:actor = { faith = { 
+							has_doctrine_parameter = doctrine_parameter_bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -2448,60 +2408,18 @@ send_to_holy_order_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						has_trait = bastard
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						has_trait = bastard
-					}
-				}
+				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
-		}
-		modifier = { # MYMO Try to send out of mariage chilfren
-			add = 15
-			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = child_of_concubine_female
-							has_trait = wild_oat
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						OR = {
-							has_trait = child_of_concubine_male
-							has_trait = wild_oat
-						}
-					}
-				}
-			}
-			desc = TAKE_THE_VOWS_OUT_MARRIAGE
 		}
 		modifier = { # MYMO Try to send doubtfull or atifical lineage
 			add = 25
 			scope:recipient = {
 				OR = {
 					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = legitimized_bastard
-							has_trait = disputed_heritage 
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
+						scope:actor = { faith = { 
+							has_doctrine_parameter = doctrine_parameter_bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -2511,7 +2429,6 @@ send_to_holy_order_interaction = {
 			}
 			desc = TAKE_THE_VOWS_DOUBTFULL
 		}
-		##MYMO
 
 		modifier = { # Try to send people who would make poor heirs
 			add = 50
@@ -2692,7 +2609,9 @@ take_vows_interaction = {
 		scope:actor.faith = {
 			has_doctrine_parameter = take_vows_active # Faith has Monastery order that recipient can be sent to
 		}
-		NOT = { is_primary_heir_of = scope:actor } ##MYMO
+		scope:recipient = {
+			NOT = { is_primary_heir_of = scope:actor } ##MYMO
+		}
 	}
 	
 	is_valid_showing_failures_only = {
@@ -2818,12 +2737,16 @@ take_vows_interaction = {
 				}
 				kick_from_court_interaction_warning_tooltip_effect = yes
 			}
-			trigger_event = holy_order.0002
 			scope:recipient = {
-				every_claim = {
-					scope:recipient = { remove_claim = prev }
+				custom_tooltip = RENOUNCE_CLAIMS_mymo
+				hidden_tooltip = {
+					every_claim = {
+						scope:recipient = { remove_claim = prev }
+					}
 				}
 			}
+			trigger_event = holy_order.0002
+			
 			if = {
 				limit = {
 					exists = scope:secondary_actor
@@ -3182,60 +3105,18 @@ take_vows_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						has_trait = bastard
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						has_trait = bastard
-					}
-				}
+				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
-		}
-		modifier = { # MYMO Try to send out of mariage chilfren
-			add = 15
-			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = child_of_concubine_female
-							has_trait = wild_oat
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						OR = {
-							has_trait = child_of_concubine_male
-							has_trait = wild_oat
-						}
-					}
-				}
-			}
-			desc = TAKE_THE_VOWS_OUT_MARRIAGE
 		}
 		modifier = { # MYMO Try to send doubtfull or atifical lineage
 			add = 25
 			scope:recipient = {
 				OR = {
 					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = legitimized_bastard
-							has_trait = disputed_heritage 
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
+						scope:actor = { faith = { 
+							has_doctrine_parameter = doctrine_parameter_bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -3245,7 +3126,6 @@ take_vows_interaction = {
 			}
 			desc = TAKE_THE_VOWS_DOUBTFULL
 		}
-		##MYMO
 
 		#Negative Personality Modifiers
 		modifier = {
@@ -3494,60 +3374,18 @@ take_vows_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						has_trait = bastard
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						has_trait = bastard
-					}
-				}
+				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
-		}
-		modifier = { # MYMO Try to send out of mariage chilfren
-			add = 15
-			scope:recipient = {
-				OR = {
-					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = child_of_concubine_female
-							has_trait = wild_oat
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
-						OR = {
-							has_trait = child_of_concubine_male
-							has_trait = wild_oat
-						}
-					}
-				}
-			}
-			desc = TAKE_THE_VOWS_OUT_MARRIAGE
 		}
 		modifier = { # MYMO Try to send doubtfull or atifical lineage
 			add = 25
 			scope:recipient = {
 				OR = {
 					AND = {
-						is_female = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_female_crime } }
-						OR = {
-							has_trait = legitimized_bastard
-							has_trait = disputed_heritage 
-						}
-					}
-					AND = {
-						is_male = yes
-						scope:actor = { faith = { has_doctrine_parameter = adultery_male_crime } }
+						scope:actor = { faith = { 
+							has_doctrine_parameter = doctrine_parameter_bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -3557,7 +3395,6 @@ take_vows_interaction = {
 			}
 			desc = TAKE_THE_VOWS_DOUBTFULL
 		}
-		##MYMO
 		
 		modifier = { # Try to send people who would make poor heirs
 			add = 50
