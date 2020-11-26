@@ -2,6 +2,7 @@
 
 
 coa_theocratic_trigger = {
+	exists = root
 	OR = {
 		has_government = theocracy_government
 		has_government = monastic_government

@@ -4,6 +4,7 @@
 # Monk for christian male, Nun for christian female. Devoted for others.
 devoted = {
 	index = 167
+	fame = yes
 	# potential = {
 		# is_ruler = no
 	# }
@@ -13,6 +14,8 @@ devoted = {
 	
 	flag = can_not_marry
 	can_inherit = no
+
+	shown_in_ruler_designer = no
 
 	##MYMO
 	blocks_from_claim_inheritance_from_dynasty = yes
