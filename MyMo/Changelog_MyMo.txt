@@ -8,11 +8,11 @@ CHANGES:
 -updating the mod to vanilla's 1.2.1 version
 -monastic/religion schools are buildable both in temple holdings and monastic ones
 -monasteries can start with a monastic school building
--you can now choose the exact monastery you want to send someone to
+-you can now choose the exact monastery you want to send someone to, women will become guest or wanderer for now
 -changed some of the AI logic to send a character to a holy order or monastery (batards for example)
 -patron of a holy order is more likely to send someone to join a holy order
 -patron of a monastery is more likely to send someone to take vows at a monastery
--taking vows now removes all claims the character could have
+-taking vows now removes all claims the target could have
 -"devoted" trait now fordibs inheriting any claims
 -abbots' successors should now only be chosen from their court
 -you can now grant titles to characters with "devoted" trait
