@@ -2682,14 +2682,20 @@ take_vows_interaction = {
 	
 	##forces to select a court !! if we want women to go to the pool instead
 	populate_actor_list = {
+		if = {
+			limit = {
+				scope:recipient = { is_female = yes }
+			}
+			scope:actor.cp:councillor_court_chaplain = {
+				add_to_list = characters
+			}
+		}
 		scope:actor.top_liege = {
 			every_vassal_or_below = {
 				limit = {
+					scope:recipient = { is_male = yes }
 					has_government = monastic_government #could filter temples vs monsteries in the future
-					#OR_____ has_government = theocracy_government
-					#primary_title.tier < tier_county
 					faith = scope:actor.faith
-					#culture_group = scope:actor.culture_group
 				}
 				add_to_list = characters
 			}
@@ -2720,6 +2726,7 @@ take_vows_interaction = {
 				
 				if = {
 					limit = {
+						is_male = yes
 						exists = scope:secondary_actor
 					}
 					visit_court_of = scope:secondary_actor #clearer information
@@ -2750,6 +2757,7 @@ take_vows_interaction = {
 			if = {
 				limit = {
 					exists = scope:secondary_actor
+					scope:recipient = { is_male = yes }
 				}
 				scope:secondary_actor = {
 					add_opinion = {
