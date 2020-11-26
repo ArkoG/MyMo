@@ -50,5 +50,5 @@
  
  actor_secondary_take_vows_interaction:0 "Host"
  TAKE_THE_VOWS_BASTARD:0 "[bastard|E]: $VALUE|=+0$"
- TAKE_THE_VOWS_OUT_MARRIAGE:0 "[out of marriage|E]: $VALUE|=+0$"
- TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or dusputed lineage|E]: $VALUE|=+0$"
+ TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or disputed lineage|E]: $VALUE|=+0$"
+ RENOUNCE_CLAIMS_mymo:0 "Renounces to every held [claims|E]"
