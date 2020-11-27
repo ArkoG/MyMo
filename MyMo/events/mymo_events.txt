@@ -18,13 +18,11 @@ mymo.1 = { # Fill all the monastery courts which are empty
 			create_character = {
 				template = monk_character
 				employer = scope:monastery_province.province_owner
-				culture = scope:monastery_province.province_owner.culture
-				faith = scope:monastery_province.province_owner.faith
+				culture = scope:monastery_province.culture
+				faith = scope:monastery_province.faith
 				after_creation = {
-					add_character_flag = {
-						flag = blocked_from_leaving
-						years = 100
-					}
+					add_character_flag = blocked_from_leaving
+					add_character_flag = monastic_courtier
 				}
 			}			
 		}
