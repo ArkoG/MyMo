@@ -535,11 +535,12 @@ window = {
 						text = "[faith|E]:"
 					}
 
-					icon = {
-						size = { 22 22 }
-						datacontext = "[Province.GetCounty.GetFaith]"
-						texture = "[Faith.GetIcon]"
-					}
+					#MYMO removed as it doesn't look good
+					#icon = {
+					#	size = { 22 22 }
+					#	datacontext = "[Province.GetCounty.GetFaith]"
+					#	texture = "[Faith.GetIcon]"
+					#}
 
 					button_group = {
 						# shortcut = "faith_window"
@@ -614,32 +615,11 @@ window = {
 						}
 					}
 				}
+				
 			}
 
 			expand = {}
 
-			vbox = {
-				layoutpolicy_vertical = expanding
-				margin = { 7 3 }
-
-				dynamicgridbox = {
-					name = "holding_modifiers_grid"
-					datamodel = "[HoldingView.GetHoldingModifiers]"
-					flipdirection = yes
-
-					item = {
-						icon = {
-							size = { 40 40 }
-							alwaystransparent = no
-							texture = "[ModifierItem.GetIcon]"
-							using = tooltip_ne
-							tooltip = "[ModifierItem.GetTooltip]"
-						}
-					}
-				}
-
-				expand = {}
-			}
 		}
 
 		####################################
@@ -1145,37 +1125,31 @@ window = {
 							name = "show submenu"
 							visible = "[HoldingView.HasHolding]" #MYMO
 							texture = "gfx/interface/buttons/button_icons/icon_convert_holding.dds"
-							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenu').Show]"
+							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuA').Show]"
+							onclick = "[PdxGuiWidget.AccessParent.FindChild('show submenu').Hide]"
 							onclick = "[PdxGuiWidget.AccessParent.FindChild('hide submenu').Show]"
+							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuB').Show]"
 							onclick = "[PdxGuiWidget.Hide]"
-							size = {60 60}
+							size = { 52 52 }
 						}
 
 						button = {
 							name = "hide submenu"
 							visible = no
-							texture = "gfx/interface/buttons/button_icons/icon_convert_holding.dds"
-							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenu').Hide]"
+							texture = "gfx/interface/buttons/button_icons/icon_change_to_city_alt.dds"
+							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuA').Hide]"
 							onclick = "[PdxGuiWidget.AccessParent.FindChild('show submenu').Show]"
+							onclick = "[PdxGuiWidget.AccessParent.FindChild('hide submenu').Hide]"
+							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuB').Hide]"
 							onclick = "[PdxGuiWidget.Hide]"
-							size = {60 60}
+							size = { 52 52 }
 						}
-
 						flowcontainer = {
-							direction = vertical
+							position = { -30 20 }
+							direction = horizontal
 							ignoreinvisible = yes
-							name = "submenu"
-							visible = no
-							button = {
-								name = "gui_fh_make_castle_button"
-								datacontext = "[GetScriptedGui('fh_make_castle_button')]"
-								texture = "gfx/interface/buttons/button_icons/icon_change_to_castle.dds"
-								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								size = {60 60}
-							}
+							name = "submenuA"
+							#visible = yes
 							button = {
 								name = "gui_fh_make_temple_button"
 								datacontext = "[GetScriptedGui('fh_make_temple_button')]"
@@ -1184,17 +1158,24 @@ window = {
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								size = {60 60}
+								size = { 52 52 }
 							}
+						#}
+						#flowcontainer = {
+							#position = { -30 20 }
+							#direction = vertical
+							#ignoreinvisible = yes
+							#name = "submenuB"
+							#visible = yes
 							button = {
-								name = "gui_fh_make_city_button"
-								datacontext = "[GetScriptedGui('fh_make_city_button')]"
-								texture = "gfx/interface/buttons/button_icons/icon_change_to_city.dds"
+								name = "gui_fh_make_monastery_button"
+								datacontext = "[GetScriptedGui('fh_make_monastery_button')]"
+								texture = "gfx/interface/buttons/button_icons/icon_change_to_monastery.dds"
 								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								size = {60 60}
+								size = { 52 52 }
 							}
 						}
 						
@@ -1220,7 +1201,28 @@ window = {
 						tooltip = "HOLDING_TERRAIN_TOOLTIP"
 					}
 
-					#moved to mid bar "holding_modifiers_grid"
+					vbox = {
+						layoutpolicy_vertical = expanding
+						margin = { 7 3 }
+
+						dynamicgridbox = {
+							name = "holding_modifiers_grid"
+							datamodel = "[HoldingView.GetHoldingModifiers]"
+							flipdirection = yes
+
+							item = {
+								icon = {
+									size = { 40 40 }
+									alwaystransparent = no
+									texture = "[ModifierItem.GetIcon]"
+									using = tooltip_ne
+									tooltip = "[ModifierItem.GetTooltip]"
+								}
+							}
+						}
+
+						expand = {}
+					}
 
 					expand = {}
 				}
