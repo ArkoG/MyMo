@@ -1,39 +1,14 @@
-﻿fh_make_castle_button = {
+﻿fh_make_temple_button = {
     scope = province
 	saved_scopes = {
 		builder
     }
     is_shown = {
 		NOT = {
-			has_holding_type = castle_holding 
-		}
-		fh_can_convert_holding_trigger = yes
-    }
-    is_valid = {
-        scope:builder = {
-			gold >= 500
-		}
-    }
-	ai_is_valid = {
-		always = no
-	}
-    effect = {
-        set_variable = fh_convert_to_castle
-		custom_tooltip = fh_convert_to_castle.tt
-		fh_start_convert_holding_type_effect = yes
-        province_owner = {
-        	remove_long_term_gold = 500
-        }
-    }
-}
-
-fh_make_temple_button = {
-    scope = province
-	saved_scopes = {
-		builder
-    }
-    is_shown = {
-		NOT = {
+			has_holding_type = none
+			has_holding_type = tribal_holding
+			has_holding_type = castle_holding
+			has_holding_type = city_holding
 			has_holding_type = church_holding 
 		}
 		fh_can_convert_holding_trigger = yes
@@ -51,20 +26,23 @@ fh_make_temple_button = {
 		custom_tooltip = fh_convert_to_church.tt
 		
 		fh_start_convert_holding_type_effect = yes
-        province_owner = {
+        scope:builder = {
         	remove_long_term_gold = 500
         }
     }
 }
-
-fh_make_city_button = {
+fh_make_monastery_button = {
     scope = province
 	saved_scopes = {
 		builder
     }
     is_shown = {
 		NOT = {
-			has_holding_type = city_holding 
+			has_holding_type = none
+			has_holding_type = tribal_holding
+			has_holding_type = castle_holding
+			has_holding_type = city_holding
+			has_holding_type = monastery_holding 
 		}
 		fh_can_convert_holding_trigger = yes
     }
@@ -77,11 +55,11 @@ fh_make_city_button = {
 		always = no
 	}
     effect = {
-        set_variable = fh_convert_to_city
-		custom_tooltip = fh_convert_to_city.tt
+        set_variable = fh_convert_to_monastery
+		custom_tooltip = fh_convert_to_monastery.tt
 		
 		fh_start_convert_holding_type_effect = yes
-        province_owner = {
+        scope:builder = {
         	remove_long_term_gold = 500
         }
     }

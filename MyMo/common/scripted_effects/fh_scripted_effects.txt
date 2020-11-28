@@ -18,7 +18,12 @@ fh_apply_convert_holding_type_effect = {
 		limit = {has_variable = fh_convert_to_church}
 		set_holding_type = church_holding
 	}
+	if = {
+		limit = {has_variable = fh_convert_to_monastery}
+		set_holding_type = monastery_holding
+	}
 	remove_variable = fh_convert_to_castle
 	remove_variable = fh_convert_to_city
 	remove_variable = fh_convert_to_church
+	remove_variable = fh_convert_to_monastery
 }
