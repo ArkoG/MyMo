@@ -3,7 +3,15 @@
 # by Arko & Mouchi
 
 
-current DEV for MYMO v0.4 for CK3 v1.2.1
+current DEV for MYMO v0.5 for CK3 v1.2.1
+CHANGES:
+-monks generated for courts are now of local province faith and culture
+-refined monastery holding icon
+-added proper monastery icon in the gamepedia
+-
+
+MYMO v0.4 for CK3 v1.2.1
+
 CHANGES:
 -updating the mod to vanilla's 1.2.1 version
 -monastic/religion schools are buildable both in temple holdings and monastic ones
