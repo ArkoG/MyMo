@@ -882,7 +882,7 @@ title_holding = {
 				}
 			}
 		}
-		reference = "holding_types/monastery_christian_med.dds"
+		reference = "holding_types/title_monastery_christian_med.dds"
 	}
 	texture = {
 		trigger = {
