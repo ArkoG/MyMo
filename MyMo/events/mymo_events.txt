@@ -28,3 +28,93 @@ mymo.1 = { # Fill all the monastery courts which are empty
 		}
 	}
 }
+
+mymo.2 = {
+	type = character_event
+	title = mymo.2.t
+	desc = {
+		desc = mymo.2.desc0
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:holding_2_convert = {
+						has_holding_type = church_holding
+					}
+				}
+				desc = mymo.2.descA
+			}
+			triggered_desc = {
+				trigger = {
+					scope:holding_2_convert = {
+						has_holding_type = monastery_holding
+					}
+				}
+				desc = mymo.2.descB
+			}
+			desc = mymo.2.descC
+		}
+	}
+	
+	left_portrait = {
+		character = scope:builder
+		animation = personality_rational 
+	}
+	right_portrait = { 
+		character = scope:holding_current_holder
+		animation = worry
+	}
+	
+	theme = faith
+	
+    trigger = {
+		scope:holding_2_convert = {
+			NOT = { has_holding_type = none }
+			OR = {
+				has_holding_type = church_holding
+				has_holding_type = monastery_holding
+			}
+			NOT = {
+				has_province_modifier = fh_government_conversion
+			}
+			OR = {
+				province_owner = scope:builder
+				AND = {
+					province_owner = {
+						highest_held_title_tier = 1
+						liege = scope:builder
+					}
+				}
+			}
+		}
+		#ai = no
+    }
+	
+ 	immediate = {
+		scope:builder = {
+        	remove_long_term_gold = 50
+			# ex 500
+		}
+	}
+
+	option = {
+		name = mymo.2.A	
+		scope:holding_2_convert = { 
+			add_province_modifier = { modifier = fh_government_conversion years = 2 }
+			trigger_event = {id = fh.10 years = 2}
+		}
+	}
+	option = {
+		name = mymo.2.B	
+		scope:holding_2_convert = { 
+			add_province_modifier = { modifier = fh_government_conversion years = 2 }
+			trigger_event = {id = fh.10 years = 2}
+		}
+	}
+	option = {
+		name = mymo.2.C
+		#scope:holding_2_convert = { 
+		#	add_province_modifier = { modifier = fh_government_conversion years = 2 }
+		#	trigger_event = {id = fh.10 years = 2}
+		#}
+	}
+}
