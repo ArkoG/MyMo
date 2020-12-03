@@ -1120,7 +1120,7 @@ window = {
 					flowcontainer = {
 						direction = vertical
 						ignoreinvisible = yes
-						visible = "[ObjectsEqual( HoldingView.GetCountyTitle.GetHolder, GetPlayer, HasHolding )]"
+						visible = "[ObjectsEqual( HoldingView.GetCountyTitle.GetHolder, GetPlayer, HoldingView.HasHolding )]"
 #						button = {
 #							name = "show submenu"
 #							visible = "[HoldingView.HasHolding]" #MYMO
@@ -1201,32 +1201,24 @@ window = {
 						tooltip = "HOLDING_TERRAIN_TOOLTIP"
 					}
 
-					vbox = {
-						layoutpolicy_vertical = expanding
-						margin = { 7 3 }
+					dynamicgridbox = {
+						name = "holding_modifiers_grid"
+						datamodel = "[HoldingView.GetHoldingModifiers]"
+						flipdirection = yes
 
-						dynamicgridbox = {
-							name = "holding_modifiers_grid"
-							datamodel = "[HoldingView.GetHoldingModifiers]"
-							flipdirection = yes
-
-							item = {
-								icon = {
-									size = { 40 40 }
-									alwaystransparent = no
-									texture = "[ModifierItem.GetIcon]"
-									using = tooltip_ne
-									tooltip = "[ModifierItem.GetTooltip]"
-								}
+						item = {
+							icon = {
+								size = { 40 40 }
+								alwaystransparent = no
+								texture = "[ModifierItem.GetIcon]"
+								using = tooltip_ne
+								tooltip = "[ModifierItem.GetTooltip]"
 							}
 						}
-
-						expand = {}
 					}
 
 					expand = {}
 				}
-		
 
 				vbox = {
 					layoutpolicy_vertical = expanding
