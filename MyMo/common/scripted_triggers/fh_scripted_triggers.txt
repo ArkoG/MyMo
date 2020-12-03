@@ -1,4 +1,4 @@
-fh_province_is_under_conversion_trigger = {
+﻿fh_province_is_under_conversion_trigger = {
 	has_province_modifier = fh_government_conversion
 }
 
