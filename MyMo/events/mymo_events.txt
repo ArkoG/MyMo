@@ -91,6 +91,7 @@ mymo.2 = {
 	
  	immediate = {
 		scope:holding_2_convert.barony = { save_scope_as = title_revoke }
+		scope:holding_2_convert.county = { save_scope_as = title_county }
 	}
 
 	option = {
@@ -209,6 +210,7 @@ mymo.3 = { # Notification
 				send_interface_toast = {
 					title = holding_conversion_done
 					left_icon = root.county
+					right_icon = scope:title_revoke
 					custom_tooltip = holding_converts_toA
 				}
 			}
@@ -221,6 +223,7 @@ mymo.3 = { # Notification
 				send_interface_toast = {
 					title = holding_conversion_done
 					left_icon = root.county
+					right_icon = scope:title_revoke
 					custom_tooltip = holding_converts_toB
 				}
 			}
