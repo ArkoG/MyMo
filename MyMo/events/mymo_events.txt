@@ -130,7 +130,6 @@ mymo.2 = {
 			#			
 			
 			#
-			#have to kick existing ruler if secular clergy
 			#
 
 		}
