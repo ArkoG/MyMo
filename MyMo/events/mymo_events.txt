@@ -200,11 +200,29 @@ mymo.3 = { # Notification
 	hidden = yes
 
 	immediate = {
-		county_controller = {
-			send_interface_toast = {
-				title = holding_conversion_done
-				left_icon = root.county
-				custom_tooltip = holding_converts_to
+		
+		if = {
+			limit = {
+				has_holding_type = monastery_holding
+			}
+			county_controller = {
+				send_interface_toast = {
+					title = holding_conversion_done
+					left_icon = root.county
+					custom_tooltip = holding_converts_toA
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_holding_type = church_holding
+			}
+			county_controller = {
+				send_interface_toast = {
+					title = holding_conversion_done
+					left_icon = root.county
+					custom_tooltip = holding_converts_toB
+				}
 			}
 		}
 	}

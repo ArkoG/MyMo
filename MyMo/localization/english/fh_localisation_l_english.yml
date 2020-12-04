@@ -1,7 +1,10 @@
 ﻿l_english:
  fh_government_conversion:1 "Changing Administration (Holding Type Conversion)"
  holding_conversion_done:1 "Holding Type Changed"
- holding_converts_to:1 "[holding_2_convert.GetName] becomes a [holding_2_convert.GetTitle.GetTierAsNameNoTooltip]"
- holding_converts_toB:1 "[holding_2_convert.GetName] becomes a [holding_2_convert.GetTitle.GetTierAsNameNoTooltip]"
- fh_convert_to_church.tt:1 "Will become a church holding"
- fh_convert_to_monastery.tt:"Will become a monastery holding"
+ holding_converts_toA:1 "The $building_type_temple_01$ in [holding_2_convert.GetName] will become a $building_type_monastery_01$"
+ holding_converts_toB:1 "The $building_type_monastery_01$ in [holding_2_convert.GetName] will become a $building_type_temple_01$"
+ #holding_converts_toA:1 "The $building_type_temple_01$ in [holding_2_convert.GetName] becomes a [holding_2_convert.GetTitle.GetTierAsNameNoTooltip]."
+ #holding_converts_toB:1 "The $building_type_monastery_01$ in [holding_2_convert.GetName] becomes a [holding_2_convert.GetTitle.GetTierAsNameNoTooltip].$"
+
+ fh_convert_to_church.tt:1 "Will be converted to a church holding"
+ fh_convert_to_monastery.tt:"Will be converted to a monastery holding"
