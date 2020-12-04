@@ -1,6 +1,8 @@
 ﻿l_english:
-fh_government_conversion:1 "Changing Administration (Holding Type Conversion)"
-fh_holding_conversion.success:1 "Holding Type Changed"
-fh_convert_to_city.tt:1 "Will be converted to a city holding"
-fh_convert_to_church.tt:1 "Will be converted to a church holding"
-fh_convert_to_castle.tt:1 "Will be converted to a castle holding"
+ fh_government_conversion:1 "Changing Administration (Holding Type Conversion)"
+ holding_conversion_done:1 "Holding Type Changed"
+ holding_converts_toA:1 "The $building_type_temple_01$ in [holding_2_convert.GetName] will become a $building_type_monastery_01$"
+ holding_converts_toB:1 "The $building_type_monastery_01$ in [holding_2_convert.GetName] will become a $building_type_temple_01$"
+ fh_convert_to_church.tt:1 "Will be converted to a church holding"
+ fh_convert_to_castle.tt:1 "Will be converted to a castle holding"
+ fh_convert_to_monastery.tt:"Will be converted to a monastery holding"
