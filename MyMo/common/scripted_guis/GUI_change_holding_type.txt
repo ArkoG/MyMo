@@ -1,15 +1,34 @@
-﻿fh_make_temple_button = {
+﻿make_temple_button = {
     scope = province
 	saved_scopes = {
 		builder
     }
     is_shown = {
-		NOT = { has_holding_type = none }
 		has_holding_type = monastery_holding
-		
-		fh_can_convert_holding_trigger = yes
+		NOT = { 
+			has_province_modifier = fh_government_conversion
+			#+other funding methods
+		}
+
+		OR = {
+			province_owner = scope:builder
+			AND = {
+				province_owner = {
+					highest_held_title_tier = 1
+					liege = scope:builder
+				}
+			}
+		}
     }
     is_valid = {
+		custom_description = {
+			text = "CONVERT_PROP_mymo"
+			NOT = { has_variable = convert_prop }
+		}
+		
+		NOT = { has_province_modifier = fh_government_conversion }
+		NOT = { has_variable = recent_temple_conversion }
+		has_holding_type = monastery_holding
         scope:builder = {
 			gold >= 500
 		}
@@ -22,10 +41,13 @@
 		scope:holding_2_convert.province_owner = { 
 			save_scope_as = holding_current_holder
 		}
+		set_variable = convert_prop
 		scope:builder = { trigger_event = mymo.2 }
 
         set_variable = fh_convert_to_church
 		custom_tooltip = fh_convert_to_church.tt
+		
+
 		
 		#fh_start_convert_holding_type_effect = yes
         #scope:builder = {
@@ -33,18 +55,36 @@
         #}
     }
 }
-fh_make_monastery_button = {
+make_monastery_button = {
     scope = province
 	saved_scopes = {
 		builder
     }
     is_shown = {
-		NOT = { has_holding_type = none }
 		has_holding_type = church_holding
-		
-		fh_can_convert_holding_trigger = yes
+		NOT = { 
+			has_province_modifier = fh_government_conversion
+			#+other funding methods
+		}	
+		OR = {
+			province_owner = scope:builder
+			AND = {
+				province_owner = {
+					highest_held_title_tier = 1
+					liege = scope:builder
+				}
+			}
+		}
     }
     is_valid = {
+		custom_description = {
+			text = "CONVERT_PROP_mymo"
+			NOT = { has_variable = convert_prop }
+		}
+		
+		NOT = { has_province_modifier = fh_government_conversion }
+		NOT = { has_variable = recent_temple_conversion }
+		has_holding_type = church_holding
         scope:builder = {
 			gold >= 500
 		}
@@ -57,10 +97,12 @@ fh_make_monastery_button = {
 		scope:holding_2_convert.barony.lessee = { 
 			save_scope_as = holding_current_holder
 		}
+		set_variable = convert_prop
 		scope:builder = { trigger_event = mymo.2 }
 
         set_variable = fh_convert_to_monastery
 		custom_tooltip = fh_convert_to_monastery.tt
+		
 		
 		#fh_start_convert_holding_type_effect = yes
 		# scope:builder = {
