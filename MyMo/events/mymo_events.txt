@@ -90,31 +90,130 @@ mymo.2 = {
     }
 	
  	immediate = {
-		scope:builder = {
-        	remove_long_term_gold = 50
-			# ex 500
-		}
 	}
 
 	option = {
+		#immediate
 		name = mymo.2.A	
 		scope:holding_2_convert = { 
-			add_province_modifier = { modifier = fh_government_conversion years = 2 }
-			trigger_event = {id = fh.10 years = 2}
+			if = {
+				limit = {has_variable = fh_convert_to_church}
+				set_holding_type = church_holding
+			}
+			if = {
+				limit = {has_variable = fh_convert_to_monastery}
+				set_holding_type = monastery_holding
+			}
+			
+			scope:builder = { remove_long_term_gold = 500 }
+			add_province_modifier = { modifier = fh_government_conversion months = 6 } #totoro use a different modifiers there
+			
+			set_variable = recent_temple_conversion
+			trigger_event = {id = mymo.3 days = 1} #test value
+			trigger_event = {id = mymo.3 years = 2}
+		
+
+			
+			
+			#
+			#deal with building levels
+			#			
+			
+			#
+			#have to kick existing ruler if secular clergy
+			#
+
 		}
+
 	}
 	option = {
+		#front cost + taxes
 		name = mymo.2.B	
-		scope:holding_2_convert = { 
-			add_province_modifier = { modifier = fh_government_conversion years = 2 }
-			trigger_event = {id = fh.10 years = 2}
+		scope:holding_2_convert = {
+			if = {
+				limit = {has_variable = fh_convert_to_church}
+				set_holding_type = church_holding
+			}
+			if = {
+				limit = {has_variable = fh_convert_to_monastery}
+				set_holding_type = monastery_holding
+			}
+			
+			scope:builder = { remove_long_term_gold = 250 }
+			add_province_modifier = { modifier = fh_government_conversion years = 1 } #totoro use a different modifiers there
+			
+			set_variable = recent_temple_conversion
+			trigger_event = {id = mymo.3 days = 1} #test value
+			trigger_event = {id = mymo.3 years = 2}
 		}
 	}
 	option = {
-		name = mymo.2.C
+		#taxes only
+		name = mymo.2.C	
+		scope:holding_2_convert = {
+			if = {
+				limit = {has_variable = fh_convert_to_church}
+				set_holding_type = church_holding
+			}
+			if = {
+				limit = {has_variable = fh_convert_to_monastery}
+				set_holding_type = monastery_holding
+			}
+			add_province_modifier = { modifier = fh_government_conversion years = 2 }
+			
+			set_variable = recent_temple_conversion
+			trigger_event = {id = mymo.3 days = 1} #test value
+			trigger_event = {id = mymo.3 years = 2}
+		}
+
+	}
+	option = {
+		#no/not yet
+		name = mymo.2.D
 		#scope:holding_2_convert = { 
 		#	add_province_modifier = { modifier = fh_government_conversion years = 2 }
 		#	trigger_event = {id = fh.10 years = 2}
 		#}
+	}
+	after = {
+		scope:holding_2_convert = { remove_variable = convert_prop }
+	}
+}
+
+
+mymo.3 = { # Notification
+	type = province
+	hidden = yes
+
+	immediate = {
+		
+		if = {
+			limit = {
+				has_holding_type = monastery_holding
+			}
+			county_controller = {
+				send_interface_toast = {
+					title = holding_conversion_done
+					left_icon = root.county
+					custom_tooltip = holding_converts_toA
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_holding_type = church_holding
+			}
+			county_controller = {
+				send_interface_toast = {
+					title = holding_conversion_done
+					left_icon = root.county
+					custom_tooltip = holding_converts_toB
+				}
+			}
+		}
+		after = {
+			remove_variable = fh_convert_to_church
+			remove_variable = fh_convert_to_monastery
+		}
 	}
 }
