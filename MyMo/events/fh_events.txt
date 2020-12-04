@@ -1,4 +1,4 @@
-namespace = fh
+﻿namespace = fh
 
 fh.10 = { # Holding Type Conversion Done
 	type = province
