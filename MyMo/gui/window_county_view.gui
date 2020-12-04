@@ -1113,6 +1113,7 @@ window = {
 				expand = {}
 
 			###FROM convert holding mod
+
 				vbox = {
 					layoutpolicy_vertical = expanding
 					margin = { 0 3 }
@@ -1120,39 +1121,15 @@ window = {
 					flowcontainer = {
 						direction = vertical
 						ignoreinvisible = yes
-						visible = "[ObjectsEqual( HoldingView.GetCountyTitle.GetHolder, GetPlayer, HoldingView.HasHolding )]"
-#						button = {
-#							name = "show submenu"
-#							visible = "[HoldingView.HasHolding]" #MYMO
-#							texture = "gfx/interface/buttons/button_icons/icon_convert_holding.dds"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuA').Show]"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('show submenu').Hide]"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('hide submenu').Show]"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuB').Show]"
-#							onclick = "[PdxGuiWidget.Hide]"
-#							size = { 52 52 }
-#						}
-#
-#						button = {
-#							name = "hide submenu"
-#							visible = no
-#							texture = "gfx/interface/buttons/button_icons/icon_change_to_city_alt.dds"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuA').Hide]"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('show submenu').Show]"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('hide submenu').Hide]"
-#							onclick = "[PdxGuiWidget.AccessParent.FindChild('submenuB').Hide]"
-#							onclick = "[PdxGuiWidget.Hide]"
-#							size = { 52 52 }
-#						}
+						#visible = "[ObjectsEqual( HoldingView.GetCountyTitle.GetHolder, GetPlayer, HoldingView.HasHolding )]"
+						visible = "[HoldingView.HasHolding]"
 						flowcontainer = {
 							position = { -30 20 }
 							direction = horizontal
 							ignoreinvisible = yes
-							name = "submenuA"
-							#visible = yes
 							button = {
-								name = "gui_fh_make_temple_button"
-								datacontext = "[GetScriptedGui('fh_make_temple_button')]"
+								name = "gui_make_temple_button"
+								datacontext = "[GetScriptedGui('make_temple_button')]"
 								texture = "gfx/interface/buttons/button_icons/icon_change_to_temple.dds"
 								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
@@ -1160,16 +1137,9 @@ window = {
 								tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								size = { 52 52 }
 							}
-						#}
-						#flowcontainer = {
-							#position = { -30 20 }
-							#direction = vertical
-							#ignoreinvisible = yes
-							#name = "submenuB"
-							#visible = yes
 							button = {
-								name = "gui_fh_make_monastery_button"
-								datacontext = "[GetScriptedGui('fh_make_monastery_button')]"
+								name = "gui_make_monastery_button"
+								datacontext = "[GetScriptedGui('make_monastery_button')]"
 								texture = "gfx/interface/buttons/button_icons/icon_change_to_monastery.dds"
 								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
@@ -1178,14 +1148,9 @@ window = {
 								size = { 52 52 }
 							}
 						}
-						
-						
 					 }
-					
-					
 					expand = {}
 				}
-
 
 			###END FROM convert holding mod
 
