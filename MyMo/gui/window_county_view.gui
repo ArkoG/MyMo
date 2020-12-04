@@ -964,8 +964,10 @@ window = {
 							name = "grant_to_local_noble"
 							visible = "[And( And( And( ObjectsEqual( HoldingView.GetTitle.GetHolder, GetPlayer ), HoldingView.GetTitle.CanUseFindVassal( GetPlayer ) ), HoldingView.GetTitle.IsBarony ), Not(HoldingView.GetTitle.IsLeasedOut))]"
 							text = "GRANT_TO_LOCAL_NOBLE_HEADER"
-							onclick = "[HoldingView.GetTitle.CreateHolderForBarony]"
+							#onclick = "[HoldingView.GetTitle.CreateHolderForBarony]"
 							tooltip = "GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP"
+							onclick = "[HoldingView.ToggleFindVassalListWindow]"
+							#tooltip = "FIND_VASSAL_BUTTON_HOLDING_VIEW_TOOLTIP"
 						}
 
 						expand = {}
