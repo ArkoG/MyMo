@@ -25,7 +25,7 @@
 			text = "CONVERT_PROP_mymo"
 			NOT = { has_variable = convert_prop }
 		}
-		
+		has_ongoing_construction = no
 		NOT = { has_province_modifier = fh_government_conversion }
 		NOT = { has_variable = recent_temple_conversion }
 		has_holding_type = monastery_holding
@@ -81,7 +81,7 @@ make_monastery_button = {
 			text = "CONVERT_PROP_mymo"
 			NOT = { has_variable = convert_prop }
 		}
-		
+		has_ongoing_construction = no
 		NOT = { has_province_modifier = fh_government_conversion }
 		NOT = { has_variable = recent_temple_conversion }
 		has_holding_type = church_holding
