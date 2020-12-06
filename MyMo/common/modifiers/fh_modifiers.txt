@@ -4,3 +4,7 @@
 	build_gold_cost = 0.5
 	tax_mult = -0.5
 }
+taxing_reduction = {
+	icon = county_modifier_development_negative
+	vassal_tax_contribution_mult = -0.5
+}
