@@ -423,6 +423,39 @@ on_game_start_after_lobby = {
 						VALUE = yes
 					}
 				}
+			
+				### RULER DESIGNER ACHIEVEMENT BLOCKS ###
+				if = {
+					limit = {
+						num_virtuous_traits >= 3
+					}
+					add_achievement_flag = { FLAG = rd_character_blocked_paragon_of_virtue_achievement_flag	}	
+				}
+				if = {
+					limit = {
+						any_child = {
+							count >= 10
+							is_alive = yes
+						}
+					}
+					add_achievement_flag = { FLAG = rd_character_blocked_the_succession_is_safe_achievement_flag }	
+				}
+				if = {
+					limit = {
+						any_child = {
+							has_trait = inbred
+						}	
+					}
+					add_achievement_flag = { FLAG = rd_character_blocked_keeping_it_in_the_family_achievement_flag }
+				}
+
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_empire
+						should_be_naked_trigger = yes	
+					}
+					add_achievement_flag = { FLAG = rd_character_blocked_the_emperors_new_clothes_achievement_flag }
+				}
 			}
 		}
 	}
