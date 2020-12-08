@@ -1,0 +1,12 @@
+l_german:
+ FIND_VASSAL_HEADER:0 "Grant to..."
+ FIND_VASSAL_BUTTON_TOOLTIP:0 "#T $FIND_VASSAL_HEADER$#!\nChoose someone to grant this [title|El] to.\n\n$FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT$"
+ FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT:0 "You can grant [titles|El] to one of your [vassals|El], or one of your [guests|El] or any [courtiers|El] in your [realm|El]"
+ #GRANT_TO_LOCAL_NOBLE_HEADER:0 "Grant to Low Noble"
+ #GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP:0 "#T $GRANT_TO_LOCAL_NOBLE_HEADER$#!\nGrant this [barony|E] to a random notable member of the low nobility"
+
+ FIND_VASSAL_BUTTON_HOLDING_VIEW_TOOLTIP:0 "#T $FIND_VASSAL_HEADER$#!\nChoose someone to grant the [HoldingView.GetCountyTitle.GetNameNoTooltip|E] to.\n\n$FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT$"
+
+ GRANT_TO_LOCAL_NOBLE_HEADER:0 "Grant to..."
+ GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP:0 "#T $GRANT_TO_LOCAL_NOBLE_HEADER$#!\nChoose someone to grant the [HoldingView.GetTitle.GetNameNoTooltip|E] to.\n\n$GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP_SEGMENT$"
+ GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP_SEGMENT:0 "You can grant [titles|El] to one of your [vassals|El], or one of your [guests|El] or any [courtiers|El] in your [realm|El]"
