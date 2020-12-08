@@ -1691,11 +1691,10 @@ window = {
 															text = "[GUIPotentialBuildingItem.GetBuilding.GetTypeName]"
 															using = Font_Size_Medium
 															align = left
+															autoresize = no
 														}
 
 														hbox = {
-															layoutpolicy_horizontal = expanding
-
 															button_standard_small = {
 																text = "CONSTRUCT_BUILDINGS_DETAILS"
 
@@ -1829,6 +1828,7 @@ window = {
 															layoutpolicy_horizontal = expanding
 															datacontext = "[GUIPotentialBuildingItem.GetBuilding]"
 															text = CV_BUILDING_LEVEL_AND_NAME
+															autoresize = no
 														}
 													}
 
