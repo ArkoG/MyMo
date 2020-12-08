@@ -1501,9 +1501,6 @@ window = {
 
 window = {
 	name = "holding_tracks_view"
-	#parentanchor = bottom|left
-	#widgetanchor = top|left
-	#position = { 605 -1000 }
 	size = { 100% 100% }
 	movable = no
 	layer = windows_layer
@@ -1521,7 +1518,6 @@ window = {
 	}
 
 	alwaystransparent = yes
-
 
 	hbox = {
 		expand = {
@@ -1638,17 +1634,17 @@ window = {
 
 													vbox = {
 														spacing = 5
-
+														layoutpolicy_horizontal = expanding
+														
 														text_single = {
 															layoutpolicy_horizontal = expanding
 															text = "[GUIPotentialBuildingItem.GetBuilding.GetTypeName]"
 															using = Font_Size_Medium
 															align = left
+															autoresize = no
 														}
 
 														hbox = {
-															layoutpolicy_horizontal = expanding
-
 															button_standard_small = {
 																text = "CONSTRUCT_BUILDINGS_DETAILS"
 
@@ -1782,6 +1778,7 @@ window = {
 															layoutpolicy_horizontal = expanding
 															datacontext = "[GUIPotentialBuildingItem.GetBuilding]"
 															text = CV_BUILDING_LEVEL_AND_NAME
+															autoresize = no
 														}
 													}
 
