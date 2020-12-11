@@ -4,9 +4,9 @@
 		builder
     }
     is_shown = {
-		has_holding_type = monastery_holding
+		ROOT = { has_holding_type = monastery_holding }
 		NOT = { 
-			title_province = { has_province_modifier = fh_government_conversion }
+			has_province_modifier = fh_government_conversion
 			#+other funding methods
 		}
 
@@ -26,6 +26,7 @@
 			NOT = { exists = var:convert_prop }
 			#NOT = { has_variable = convert_prop } #same
 		}
+		NOT = { faith = { has_doctrine = tenet_monasticism }}
 		has_ongoing_construction = no
 		NOT = { has_province_modifier = fh_government_conversion }
 		NOT = { has_variable = recent_temple_conversion }
@@ -62,9 +63,9 @@ make_monastery_button = {
 		builder
     }
     is_shown = {
-		has_holding_type = church_holding
+		ROOT = { has_holding_type = church_holding }
 		NOT = { 
-			title_province = { has_province_modifier = fh_government_conversion }
+			has_province_modifier = fh_government_conversion
 			#+other funding methods
 		}	
 		OR = {
@@ -82,6 +83,7 @@ make_monastery_button = {
 			text = "CONVERT_PROP_mymo"
 			NOT = { has_variable = convert_prop }
 		}
+		faith = { has_doctrine = tenet_monasticism }
 		has_ongoing_construction = no
 		NOT = { has_province_modifier = fh_government_conversion }
 		NOT = { has_variable = recent_temple_conversion }
