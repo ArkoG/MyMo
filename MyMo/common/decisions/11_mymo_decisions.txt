@@ -1,0 +1,57 @@
+﻿gold_donation_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+
+	desc = gold_donation_decision_desc
+	selection_tooltip = gold_donation_decision_tooltip
+
+	cost = { gold = standard_activity_cost }
+
+	cooldown = { years = 10 }
+
+	ai_check_interval = 60
+
+	is_shown = {
+		any_realm_province = {
+			has_holding_type = monastery_holding
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		add_piety  = 50
+	}
+	
+	ai_potential = {
+		short_term_gold > standard_activity_cost
+		NOT = {
+			has_trait = reclusive
+		}
+	}
+
+	ai_will_do = {
+		base = 10
+
+
+		modifier = {
+			add = 10
+			has_trait = zealous
+		}
+		modifier = {
+			add = 10
+			has_trait = theologian
+		}
+		
+		modifier = {
+			substract = 10
+			has_trait = cynical
+		}
+		
+		modifier = {
+			substract = 10
+			has_trait = craven
+		}
+	}
+}
