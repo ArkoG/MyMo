@@ -1,8 +1,6 @@
 ﻿namespace = arko
 
 arko.1 = { # starting dev adjusting
-	hidden = yes
-
 	type = character_event
 	title = arko.1.t
 	desc = {
@@ -10,78 +8,49 @@ arko.1 = { # starting dev adjusting
 	}
 	
 	right_portrait = {
-		character = scope:target
-		#animation = personality_rational
+		character = root
 	}
 
 	theme = stewardship
 	
-    trigger = {
-		#has_global_variable = arkomod_active_test
-		NOT = { has_global_variable = game_started }
-		NOT = { has_government = tribal_government }
-		#any_realm_province = {
-		#	NOT = { 
-		#		terrain = desert
-		#		terrain = desert_mountains
-		#		terrain = steppe
-		#		terrain = wetlands
-		#	}
-		#}
-		highest_held_title_tier >= tier_county
-    }
-
- 	immediate = {
-		set_global_variable = game_started
-		ROOT = { save_scope_as = target }
-		every_realm_province = {
-			limit = { county_controller = ROOT }
-			if = {
-				limit = {
-					OR = {
-						terrain = floodplains
-						terrain = farmlands
-					}
-				}
-				save_scope_as = province_origin_terrain
-
-			}
-		}
-	}
-
 	option = {
 		name = arko.1.0_start_year	
 		every_realm_county  = {
 			limit = { holder = ROOT }
-			
-
-
+	
 			#START YEAR
 			if = {
 				limit = { current_date < 1000 }
-				#county = {
-					random_list = {
-						50 = { set_variable = changed_by_867_0 } #add 0
-						50 = { 
+				random_list = {
+					50 = {
+						set_variable = changed_by_867_0
+					}
+					50 = { 
 						change_development_level = { add = 1 }
 						set_variable = changed_by_867_1
 						custom_tooltip = dev_due_to_867_random
-						}
 					}
-					
-				#}
-				
+				}
 			}
 			if = {
 				limit = { current_date > 1000 }
-				#county = {
-					random_list = {
-						50 = { change_development_level = { add = 1 }}
-						35 = { change_development_level = { add = 2 }}
-						10 = { change_development_level = { add = 3 }}						
-						 5 = { change_development_level = { add = 5 }}
+				random_list = {
+					50 = {
+						change_development_level = { add = 1 }
+						set_variable = changed_by_1066_1
 					}
-				#}
+					35 = {
+						change_development_level = { add = 2 }
+						set_variable = changed_by_1066_2
+					}
+					10 = {
+						change_development_level = { add = 3 }
+						set_variable = changed_by_1066_3}
+					 5 = {
+						change_development_level = { add = 5 }
+						set_variable = changed_by_1066_5
+					}
+				}
 				custom_tooltip = dev_due_to_1066_random
 			}
 		}
@@ -89,6 +58,19 @@ arko.1 = { # starting dev adjusting
 
 	option = {
 		name = arko.1.A_innovation
+		trigger = {
+			any_realm_county = {
+				culture = { 
+					OR = {
+					#second era innovations
+						has_innovation = innovation_baliffs
+						has_innovation = innovation_manorialism
+						has_innovation = innovation_currency_02 #AKA Coinage
+						has_innovation = innovation_development_02 #AKA Communal governement
+					}
+				}
+			}
+		}
 		every_realm_county  = {
 			limit = { holder = ROOT }			
 			#INNOVATIONS
@@ -103,21 +85,19 @@ arko.1 = { # starting dev adjusting
 							has_innovation = innovation_development_02 #AKA Communal governement
 						}
 					}
-					
 				}
-				#county = {
-					random_list = {
-						50 = { 
-							change_development_level = { add = 0 }
-							custom_tooltip = dev_due_to_innovation1
-						}
-						50 = { 
-							change_development_level = { add = 1 }
-							custom_tooltip = dev_due_to_innovation1
-						}
+				random_list = {
+					50 = { 
+						change_development_level = { add = 0 }
+						custom_tooltip = dev_due_to_innovation1
+						set_variable = changed_by_innovation1_0
 					}
-				#}
-
+					50 = { 
+						change_development_level = { add = 1 }
+						custom_tooltip = dev_due_to_innovation1
+						set_variable = changed_by_innovation1_1
+					}
+				}
 			}
 			if = {
 				limit = { 
@@ -129,26 +109,32 @@ arko.1 = { # starting dev adjusting
 						}
 					}
 				}
-				#county = {
-					random_list = {
-						50 = { 
-							change_development_level = { add = 1 }
-							custom_tooltip = dev_due_to_innovation2
-							}
-						50 = { 
-							change_development_level = { add = 2 }
-							custom_tooltip = dev_due_to_innovation2
+				random_list = {
+					50 = { 
+						change_development_level = { add = 1 }
+						custom_tooltip = dev_due_to_innovation2
+						set_variable = changed_by_innovation2_1
 						}
+					50 = { 
+						change_development_level = { add = 2 }
+						custom_tooltip = dev_due_to_innovation2
+						set_variable = changed_by_innovation2_2
 					}
-				#}
+				}
 			}
-
-			
 		}
 	}
 	#TERRAIN
 	option = {
 		name = arko.1.B_terrain
+		trigger = {
+			any_realm_province = {
+				OR = {
+					terrain = floodplains
+					terrain = farmlands
+				}
+			}
+		}
 		every_realm_province = {
 			limit = { county_controller = ROOT }
 			if = {
@@ -162,6 +148,7 @@ arko.1 = { # starting dev adjusting
 				county = {
 					change_development_level = { add = 7 }
 					custom_tooltip = dev_due_to_terrain_HQ7
+						set_variable = changed_by_terrain_7
 				}
 			}
 			if = {
@@ -170,10 +157,12 @@ arko.1 = { # starting dev adjusting
 					random_list = {
 						50 = {
 							custom_tooltip = dev_due_to_terrain_Q0
+							set_variable = changed_by_terrain_0
 						}
 						50 = { 
 							change_development_level = { add = 8 }
 							custom_tooltip = dev_due_to_terrain_Q8
+							set_variable = changed_by_terrain_8
 						}
 					}
 				}
@@ -192,6 +181,7 @@ arko.1 = { # starting dev adjusting
 				change_development_level = {
 					add = 1
 				}
+				set_variable = changed_by_title_1
 				custom_tooltip = dev_duke_or
 			}
 		}
@@ -204,6 +194,7 @@ arko.1 = { # starting dev adjusting
 					add = 2
 				}
 				custom_tooltip = dev_king_or
+				set_variable = changed_by_title_2
 			}
 		}
 		if = {
@@ -215,14 +206,13 @@ arko.1 = { # starting dev adjusting
 					add = 3
 				}
 				custom_tooltip = dev_emperor
+				set_variable = changed_by_title_3
 			}
 		}
 	}
+	
 	option = {
 		name = arko.1.D_quit
-	}
-	
-	after = {
-
+		set_variable = not_changed
 	}
 }

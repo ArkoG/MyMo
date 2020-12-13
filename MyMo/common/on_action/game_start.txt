@@ -2,13 +2,16 @@
 # Empty scope
 on_game_start = {
 	effect = {
-		#every_ruler = {
-		#	limit = {
-		#			NOT = { has_government = tribal_government }
-		#			highest_held_title_tier >= tier_county
-		#	}
-		#	trigger_event = arko.1
-		#}
+		every_ruler = {
+			limit = {
+				NOT = { has_government = tribal_government }
+				highest_held_title_tier >= tier_county
+			}
+			trigger_event = {
+				id = arko.1
+				days = 1
+			}
+		}
 		### MyMo : 50% of non county temple become monasteries ###
 		every_province = {
 			limit = {
@@ -218,9 +221,6 @@ on_game_start = {
 				}
 			}
 		}
-	}
-	events = {
-		arko.1
 	}
 }
 
@@ -521,6 +521,5 @@ on_game_start_after_lobby = {
 	events = {
 		game_rule.1000	#Autopopulate families.
 		game_rule.1011	#Hungarian Migration management.
-		arko.1
 	}
 }
