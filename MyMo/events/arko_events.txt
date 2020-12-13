@@ -1,0 +1,228 @@
+﻿namespace = arko
+
+arko.1 = { # starting dev adjusting
+	hidden = yes
+
+	type = character_event
+	title = arko.1.t
+	desc = {
+		desc = arko.1.desc0
+	}
+	
+	right_portrait = {
+		character = scope:target
+		#animation = personality_rational
+	}
+
+	theme = stewardship
+	
+    trigger = {
+		#has_global_variable = arkomod_active_test
+		NOT = { has_global_variable = game_started }
+		NOT = { has_government = tribal_government }
+		#any_realm_province = {
+		#	NOT = { 
+		#		terrain = desert
+		#		terrain = desert_mountains
+		#		terrain = steppe
+		#		terrain = wetlands
+		#	}
+		#}
+		highest_held_title_tier >= tier_county
+    }
+
+ 	immediate = {
+		set_global_variable = game_started
+		ROOT = { save_scope_as = target }
+		every_realm_province = {
+			limit = { county_controller = ROOT }
+			if = {
+				limit = {
+					OR = {
+						terrain = floodplains
+						terrain = farmlands
+					}
+				}
+				save_scope_as = province_origin_terrain
+
+			}
+		}
+	}
+
+	option = {
+		name = arko.1.0_start_year	
+		every_realm_county  = {
+			limit = { holder = ROOT }
+			
+
+
+			#START YEAR
+			if = {
+				limit = { current_date < 1000 }
+				#county = {
+					random_list = {
+						50 = { set_variable = changed_by_867_0 } #add 0
+						50 = { 
+						change_development_level = { add = 1 }
+						set_variable = changed_by_867_1
+						custom_tooltip = dev_due_to_867_random
+						}
+					}
+					
+				#}
+				
+			}
+			if = {
+				limit = { current_date > 1000 }
+				#county = {
+					random_list = {
+						50 = { change_development_level = { add = 1 }}
+						35 = { change_development_level = { add = 2 }}
+						10 = { change_development_level = { add = 3 }}						
+						 5 = { change_development_level = { add = 5 }}
+					}
+				#}
+				custom_tooltip = dev_due_to_1066_random
+			}
+		}
+	}
+
+	option = {
+		name = arko.1.A_innovation
+		every_realm_county  = {
+			limit = { holder = ROOT }			
+			#INNOVATIONS
+			if = {
+				limit = { 
+					culture = { 
+						OR = {
+						#second era innovations
+							has_innovation = innovation_baliffs
+							has_innovation = innovation_manorialism
+							has_innovation = innovation_currency_02 #AKA Coinage
+							has_innovation = innovation_development_02 #AKA Communal governement
+						}
+					}
+					
+				}
+				#county = {
+					random_list = {
+						50 = { 
+							change_development_level = { add = 0 }
+							custom_tooltip = dev_due_to_innovation1
+						}
+						50 = { 
+							change_development_level = { add = 1 }
+							custom_tooltip = dev_due_to_innovation1
+						}
+					}
+				#}
+
+			}
+			if = {
+				limit = { 
+					culture = { 
+						OR = {
+						#second era innovations
+							has_innovation = innovation_manorialism
+							has_innovation = innovation_development_02 #AKA Communal governement
+						}
+					}
+				}
+				#county = {
+					random_list = {
+						50 = { 
+							change_development_level = { add = 1 }
+							custom_tooltip = dev_due_to_innovation2
+							}
+						50 = { 
+							change_development_level = { add = 2 }
+							custom_tooltip = dev_due_to_innovation2
+						}
+					}
+				#}
+			}
+
+			
+		}
+	}
+	#TERRAIN
+	option = {
+		name = arko.1.B_terrain
+		every_realm_province = {
+			limit = { county_controller = ROOT }
+			if = {
+				limit = {
+					OR = {
+						terrain = floodplains
+						terrain = farmlands
+					}
+				}
+				save_scope_as = province_origin_terrain
+				county = {
+					change_development_level = { add = 7 }
+					custom_tooltip = dev_due_to_terrain_HQ7
+				}
+			}
+			if = {
+				limit = { terrain = oasis }
+				county = {
+					random_list = {
+						50 = {
+							custom_tooltip = dev_due_to_terrain_Q0
+						}
+						50 = { 
+							change_development_level = { add = 8 }
+							custom_tooltip = dev_due_to_terrain_Q8
+						}
+					}
+				}
+				
+			}			
+		}		
+	}
+	option = {
+		name = arko.1.C_rank
+		#HOLDER HIGHEST RANK
+		if = {
+			limit = {
+				highest_held_title_tier > 2 #Dukes or above
+			}
+			capital_county = {
+				change_development_level = {
+					add = 1
+				}
+				custom_tooltip = dev_duke_or
+			}
+		}
+		if = {
+			limit = { 
+				highest_held_title_tier > 3 #Kings or above
+			}
+			capital_county = {
+				change_development_level = {
+					add = 2
+				}
+				custom_tooltip = dev_king_or
+			}
+		}
+		if = {
+			limit = { 
+				highest_held_title_tier > 4 #Emperor
+			}
+			capital_county = {
+				change_development_level = {
+					add = 3
+				}
+				custom_tooltip = dev_emperor
+			}
+		}
+	}
+	option = {
+		name = arko.1.D_quit
+	}
+	
+	after = {
+
+	}
+}
