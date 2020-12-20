@@ -45,12 +45,12 @@
 		}
 		
 		modifier = {
-			substract = 10
+			subtract = 10
 			has_trait = cynical
 		}
 		
 		modifier = {
-			substract = 10
+			subtract = 10
 			has_trait = craven
 		}
 	}
