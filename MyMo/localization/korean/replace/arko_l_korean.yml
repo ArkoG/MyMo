@@ -1,0 +1,5 @@
+l_korean:
+ dev_due_to_terrain_HQ7:0 "from [province_origin_terrain.GetName)]"
+ dev_duke_or:0 "because [target.GetFirstName] is [duke|El] or above"
+ dev_king_or:0 "because [target.GetFirstName] is [king|El] or above"
+ dev_emperor:0 "because [target.GetFirstName] is [emperor|El]"

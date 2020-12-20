@@ -52,3 +52,8 @@ l_korean:
  TAKE_THE_VOWS_BASTARD:0 "[bastard|E]: $VALUE|=+0$"
  TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or disputed lineage|E]: $VALUE|=+0$"
  RENOUNCE_CLAIMS_mymo:0 "Renounces to every held [claims|E]"
+ 
+ gold_donation_interaction:0 "Faire un don au monastère"
+ gold_donation_interaction_desc:0 "Le don aux monastères vise, par l’intermédiaire des moines, à accomplir l’obligation d’assistance aux nécessiteux, de pratiquer la caritas, de reproduire l’amour de Dieu qui \"a tant aimé le monde qu’il lui a donné son Fils unique\" (Jn 3,13). La charité est la condition de la valeur spirituelle de l’aumône.\n\nLe don permet ainsi au donateur laïc d’intégrer la communauté rituelle du monastère et de prendre place dans les échanges avec Dieu. Car l’homme médiéval est conscient de la dette envers Celui qui a donné à l’homme toutes les richesses terrestres, dont on est débiteur et qu’il faut rétribuer." # Source : https://www.cairn.info/revue-du-mauss-2002-1-page-309.htm
+ NO_PIETY_GIFT_WARNING:0 "@warning_icon!#X Vous avez déjà fait un don à un monastère il y a moins d'un an. Vous ne gagnerez pas de #underline piété#! avec un nouveau don.#!"
+ 
