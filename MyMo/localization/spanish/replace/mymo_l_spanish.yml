@@ -53,7 +53,7 @@ l_spanish:
  TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or disputed lineage|E]: $VALUE|=+0$"
  RENOUNCE_CLAIMS_mymo:0 "Renounces to every held [claims|E]"
  
- gold_donation_interaction:0 "Faire un don au monastère"
- gold_donation_interaction_desc:0 "Le don aux monastères vise, par l’intermédiaire des moines, à accomplir l’obligation d’assistance aux nécessiteux, de pratiquer la caritas, de reproduire l’amour de Dieu qui \"a tant aimé le monde qu’il lui a donné son Fils unique\" (Jn 3,13). La charité est la condition de la valeur spirituelle de l’aumône.\n\nLe don permet ainsi au donateur laïc d’intégrer la communauté rituelle du monastère et de prendre place dans les échanges avec Dieu. Car l’homme médiéval est conscient de la dette envers Celui qui a donné à l’homme toutes les richesses terrestres, dont on est débiteur et qu’il faut rétribuer." # Source : https://www.cairn.info/revue-du-mauss-2002-1-page-309.htm
- NO_PIETY_GIFT_WARNING:0 "@warning_icon!#X Vous avez déjà fait un don à un monastère il y a moins d'un an. Vous ne gagnerez pas de #underline piété#! avec un nouveau don.#!"
+ gold_donation_interaction:0 "Make a donation to the monastery"
+ gold_donation_interaction_desc:0 "Make a [donation|El] to increase the opinion [recipient.Custom('EN_du_Char_U_Pi')][recipient.GetShortUINameNoTooltip] towards you and to obtain piety.\n\nThe donation to monasteries aims, through the monks, to fulfill the obligation of assistance to the needy, to practice caritas, to reproduce the love of God who \"so loved the world that he gave his only Son to it\" (Jn 3:13). Charity is the condition of the spiritual value of almsgiving.\n\nThe gift thus allows the lay donor to integrate the ritual community of the monastery and to take his place in the exchange with God. For medieval man is conscious of the debt he owes to Him who gave to man all the earthly riches, of which he is indebted and for which he must be paid." # Source : https://www.cairn.info/revue-du-mauss-2002-1-page-309.htm
+ NO_PIETY_GIFT_WARNING:0 "@warning_icon!#X You have already made a donation to a monastery less than a year ago. You will not earn #underline piety#! with a new donation.#!"
  
