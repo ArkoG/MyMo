@@ -2,16 +2,7 @@
 # Empty scope
 on_game_start = {
 	effect = {
-		every_ruler = {
-			limit = {
-				NOT = { has_government = tribal_government }
-				highest_held_title_tier >= tier_county
-			}
-			trigger_event = {
-				id = arko.1
-				days = 1
-			}
-		}
+
 		### MyMo : 50% of non county temple become monasteries ###
 		every_province = {
 			limit = {
@@ -57,6 +48,16 @@ on_game_start = {
 						trigger_event = mymo.1
 					}
 				}
+			}
+		}
+		every_ruler = {
+			limit = {
+				#NOT = { has_government = tribal_government }
+				highest_held_title_tier >= tier_barony
+			}
+			trigger_event = {
+				id = arko.1
+				days = 1
 			}
 		}
 		
