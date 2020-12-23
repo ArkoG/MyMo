@@ -50,16 +50,17 @@ on_game_start = {
 				}
 			}
 		}
-		every_ruler = {
-			limit = {
-				#NOT = { has_government = tribal_government }
-				highest_held_title_tier >= tier_barony
-			}
-			trigger_event = {
-				id = arko.1
-				days = 1
-			}
-		}
+		##made inactive for now
+		#every_ruler = {
+		#	limit = {
+		#		#NOT = { has_government = tribal_government }
+		#		highest_held_title_tier >= tier_barony
+		#	}
+		#	trigger_event = {
+		#		id = arko.1
+		#		days = 1
+		#	}
+		#}
 		
 		### 867 - WRATH OF THE NORTHMEN ###
 		#Æthelred dying (probably)
