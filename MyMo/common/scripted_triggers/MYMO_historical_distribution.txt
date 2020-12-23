@@ -42,6 +42,8 @@ mymo_historic_bishopric_vanilla	= {
 		#nowadays France
 		barony = title:b_beauvais
 		barony = title:b_noyon
+		barony = title:b_reims
+		barony = title:b_chalons		
 		barony = title:b_chartres
 		barony = title:b_bourges
 		barony = title:b_coutances
@@ -78,6 +80,8 @@ mymo_historic_bishopric_arkomod = {
 		#nowadays France
 		barony = title:b_beauvais
 		barony = title:b_noyon
+		barony = title:b_reims
+		barony = title:b_chalons
 		barony = title:b_coutances
 		barony = title:b_toul
 		barony = title:b_lausanne
