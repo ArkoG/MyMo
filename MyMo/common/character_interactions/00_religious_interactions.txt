@@ -2166,7 +2166,7 @@ send_to_holy_order_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				scope:actor = { faith = { has_doctrine_parameter = bastards_always } }
 				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
@@ -2176,8 +2176,7 @@ send_to_holy_order_interaction = {
 			scope:recipient = {
 				OR = {
 					AND = {
-						scope:actor = { faith = { 
-							has_doctrine_parameter = doctrine_parameter_bastards_always } }
+						scope:actor = { faith = {  has_doctrine_parameter = bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -2408,7 +2407,7 @@ send_to_holy_order_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				scope:actor = { faith = { has_doctrine_parameter = bastards_always } }
 				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
@@ -2419,7 +2418,7 @@ send_to_holy_order_interaction = {
 				OR = {
 					AND = {
 						scope:actor = { faith = { 
-							has_doctrine_parameter = doctrine_parameter_bastards_always } }
+							has_doctrine_parameter = bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -3113,7 +3112,7 @@ take_vows_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				scope:actor = { faith = { has_doctrine_parameter = bastards_always } }
 				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
@@ -3123,8 +3122,7 @@ take_vows_interaction = {
 			scope:recipient = {
 				OR = {
 					AND = {
-						scope:actor = { faith = { 
-							has_doctrine_parameter = doctrine_parameter_bastards_always } }
+						scope:actor = { faith = { has_doctrine_parameter = bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
@@ -3382,7 +3380,7 @@ take_vows_interaction = {
 		modifier = { # MYMO Try to send bastards
 			add = 50
 			scope:recipient = {
-				scope:actor = { faith = { has_doctrine_parameter = doctrine_parameter_bastards_always } }
+				scope:actor = { faith = { has_doctrine_parameter = bastards_always } }
 				has_trait = bastard
 			}
 			desc = TAKE_THE_VOWS_BASTARD
@@ -3393,7 +3391,7 @@ take_vows_interaction = {
 				OR = {
 					AND = {
 						scope:actor = { faith = { 
-							has_doctrine_parameter = doctrine_parameter_bastards_always } }
+							has_doctrine_parameter = bastards_always } }
 						OR = {
 							has_trait = legitimized_bastard
 							has_trait = disputed_heritage 
