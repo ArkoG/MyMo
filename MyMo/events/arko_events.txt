@@ -2,6 +2,7 @@
 
 arko.1 = { # starting dev adjusting
 	type = character_event
+	#hidden = yes
 	title = arko.1.t
 	desc = {
 		desc = arko.1.desc0
@@ -9,218 +10,548 @@ arko.1 = { # starting dev adjusting
 	
 	right_portrait = {
 		character = root
+		animation = personality_rational
 	}
 
 	theme = stewardship
-	
-	option = {
-		name = arko.1.0_start_year	
+
+   trigger = {
+		#has_global_variable = arkomod_active_test
+		#NOT = { has_global_variable = game_started }
+    }
+
+ 	immediate = {
+		ROOT = { save_scope_as = target } #used for loc
+		scope:target.capital_county = { save_scope_as = target_kapital }
 		every_realm_county  = {
 			limit = { holder = ROOT }
-	
-			#START YEAR
+
+			#saving old vanilla value
+			set_variable = {
+				name = vanilla_dev
+				value = development_level
+			}
+			#reset dev value to 0
+			change_development_level = {
+				subtract = var:vanilla_dev
+			}
+			#check old value, should be if reset 
+			set_variable = {
+				name = old_dev
+				value = development_level
+			}
+			#old var cleanup for testing
+			set_variable = {
+				name = dev_changed_by_startdate
+				value = 0
+			}			
+			set_variable = {
+				name = dev_changed_by_terrain_fertile
+				value = 0
+			}
+			set_variable = {
+				name = dev_changed_by_terrain_fertile
+				value = 0
+			}
+			set_variable = {
+				name = dev_changed_by_terrain_plains
+				value = 0
+			}					
+			set_variable = {
+				name = dev_changed_by_terrain_hills
+				value = 0
+			}
+			set_variable = {
+				name = dev_changed_by_coast
+				value = 0
+			}
+			set_variable = {
+				name = dev_changed_by_title
+				value = 0
+			}
+			set_variable = {
+				name = dev_changed_by_innovation_mil
+				value = 0
+			}
+			set_variable = {
+				name = dev_changed_by_innovation_eco
+				value = 0
+			}				
+			set_variable = {
+				name = dev_changed_by_monument
+				value = 0
+			}
+
+			###SPECIAL BUILDINGS
+		
 			if = {
-				limit = { current_date < 1000 }
+				limit = {
+					title_province = {
+						has_special_building = yes
+						NOT = {
+							has_building_or_higher = hadrians_wall_01
+							has_building_or_higher = offas_dyke_01
+							has_building_or_higher = stonehenge_01
+							has_building_or_higher = the_pyramids_01
+							has_building_or_higher = the_colosseum_01
+						}
+					}
+				}
+				change_development_level = { add = 3 }
+				set_variable = {
+					name = dev_changed_by_monument
+					value = 3
+				}
+				custom_tooltip = dev_due_to_monument
+			}
+			
+			##then add dynamically  dev value...
+			#...START YEAR
+			if = {
+				limit = { 
+					NOT = { scope:target = { has_government = tribal_government }}
+					current_date < 1000
+				}
+				#capital 00 - 70 - 30
+				#rural   50 - 40 - 10
 				random_list = {
 					50 = {
+						modifier = {
+							add = -50
+							this = scope:target_kapital
+						}
+						modifier = {
+							add = 5
+							NOT = { this = scope:target_kapital }
+						}
 						set_variable = {
-							name = dev_changed_by_867
+							name = dev_changed_by_startdate
 							value = 0
 						}
 					}
-					50 = { 
+					30 = {
+						modifier = {
+							add = 40
+							this = scope:target_kapital
+						}
+						modifier = {
+							add = 10
+							NOT = { this = scope:target_kapital }
+						}
 						change_development_level = { add = 1 }
 						set_variable = {
-							name = dev_changed_by_867
+							name = dev_changed_by_startdate
 							value = 1
 						}
-						custom_tooltip = dev_due_to_867_random
+					}
+					20 = {
+						modifier = {
+							add = 10
+							this = scope:target_kapital
+						}
+						modifier = {
+							add = -10
+							NOT = { this = scope:target_kapital }
+						}
+						modifier = {
+							add = -20
+							scope:target = { highest_held_title_tier < tier_duchy }
+						}
+						change_development_level = { add = 3 }
+						set_variable = {
+							name = dev_changed_by_startdate
+							value = 3
+						}
+						custom_tooltip = dev_due_to_startdate_random
 					}
 				}
 			}
 			if = {
 				limit = { current_date > 1000 }
 				random_list = {
-					50 = {
+					#         for tribal, %chances = 75 - 25 - 00 - 00
+					#for feudal, province %chances = 30 - 50 - 20 - 00
+					#for feudal, capitals %chances = 00 - 50 - 30 - 20 (>county)
+					#for feudal, capitals %chances = 35 - 50 - 15 - 00 (<duchy)
+					25 = {
+						modifier = {
+							factor = 3
+							scope:target = { has_government = tribal_government }
+						}
+						modifier = {
+							add = -25
+							this = scope:target.capital_county
+							scope:target = { highest_held_title_tier >= tier_duchy }
+						}
+						modifier = {
+							add = 10
+							scope:target = { highest_held_title_tier < tier_duchy }
+						}
+						modifier = {
+							add = 5
+							NOT = { this = scope:target.capital_county }
+						}
 						change_development_level = { add = 1 }
 						set_variable = {
-							name = dev_changed_by_1066
+							name = dev_changed_by_startdate
 							value = 1
 						}
 					}
-					35 = {
+					50 = {
+						modifier = {
+							factor = 0.5
+							scope:target = { has_government = tribal_government }
+						}
+						modifier = {
+							add = 0
+							this = scope:target.capital_county
+						}
+						modifier = {
+							add = 0
+							NOT = { this = scope:target.capital_county }
+						}
 						change_development_level = { add = 2 }
 						set_variable = {
-							name = dev_changed_by_1066
+							name = dev_changed_by_startdate
 							value = 2
+						}
+					}
+					20 = {
+						modifier = {
+							add = -20
+							scope:target = { has_government = tribal_government }
+						}
+						modifier = {
+							add = 10
+							this = scope:target.capital_county
+						}
+						modifier = {
+							add = 0
+							NOT = { this = scope:target.capital_county }
+						}
+						modifier = {
+							add = -10
+							scope:target = { highest_held_title_tier < tier_duchy }
+						}
+						change_development_level = { add = 4 }
+						set_variable = {
+							name = dev_changed_by_startdate
+							value = 4
 						}
 					}
 					10 = {
-						change_development_level = { add = 3 }
-						set_variable = {
-							name = dev_changed_by_1066
-							value = 3
+						modifier = {
+							add = -10
+							scope:target = { has_government = tribal_government }
 						}
-					}
-					 5 = {
-						change_development_level = { add = 5 }
-						set_variable = {
-							name = dev_changed_by_1066
-							value = 5
+						modifier = {
+							add = -5
+							scope:target = { highest_held_title_tier < tier_duchy }
 						}
-					}
-				}
-				custom_tooltip = dev_due_to_1066_random
-			}
-		}
-	}
-
-	option = {
-		name = arko.1.A_innovation
-		trigger = {
-			any_realm_county = {
-				culture = { 
-					OR = {
-					#second era innovations
-						has_innovation = innovation_baliffs
-						has_innovation = innovation_manorialism
-						has_innovation = innovation_currency_02 #AKA Coinage
-						has_innovation = innovation_development_02 #AKA Communal governement
+						modifier = {
+							add = 10
+							this = scope:target.capital_county
+						}
+						modifier = {
+							add = -10
+							NOT = { this = scope:target.capital_county }
+						}
+						change_development_level = { add = 8 }
+						set_variable = {
+							name = dev_changed_by_startdate
+							value = 8
+						}
+						custom_tooltip = dev_due_to_startdate_random
 					}
 				}
 			}
 		}
-		every_realm_county  = {
-			limit = { holder = ROOT }			
-			#INNOVATIONS
-			if = {
-				limit = { 
-					culture = { 
-						OR = {
-						#second era innovations
-							has_innovation = innovation_baliffs
-							has_innovation = innovation_manorialism
-							has_innovation = innovation_currency_02 #AKA Coinage
-							has_innovation = innovation_development_02 #AKA Communal governement
-						}
-					}
-				}
-				random_list = {
-					50 = { 
-						change_development_level = { add = 0 }
-						custom_tooltip = dev_due_to_innovation1
-						set_variable = {
-							name = dev_changed_by_innovation1
-							value = 0
-						}
-					}
-					50 = { 
-						change_development_level = { add = 1 }
-						custom_tooltip = dev_due_to_innovation1
-						set_variable = {
-							name = dev_changed_by_innovation1
-							value = 0
-						}
-					}
-				}
-			}
-			if = {
-				limit = { 
-					culture = { 
-						OR = {
-						#second era innovations
-							has_innovation = innovation_manorialism
-							has_innovation = innovation_development_02 #AKA Communal governement
-						}
-					}
-				}
-				random_list = {
-					50 = { 
-						change_development_level = { add = 1 }
-						custom_tooltip = dev_due_to_innovation2
-						set_variable = {
-							name = dev_changed_by_innovation2
-							value = 1
-						}
-					}
-					50 = { 
-						change_development_level = { add = 2 }
-						custom_tooltip = dev_due_to_innovation2
-						set_variable = {
-							name = dev_changed_by_innovation2
-							value = 2
-						}
-					}
-				}
-			}
-		}
-	}
-	#TERRAIN
-	option = {
-		name = arko.1.B_terrain
-		trigger = {
-			any_realm_province = {
-				OR = {
-					terrain = floodplains
-					terrain = farmlands
-				}
-			}
-		}
+		#...TERRAIN
 		every_realm_province = {
-			limit = { county_controller = ROOT }
+			limit = { 
+				has_holding = yes
+				county_controller = ROOT
+			}
+			##fertile : feudal = 3 ; tribal = 2
 			if = {
 				limit = {
+					scope:target = { NOT = { has_government = tribal_government }}
 					OR = {
 						terrain = floodplains
 						terrain = farmlands
 					}
 				}
+				save_scope_as = province_origin_terrain #used for loc
 				county = {
-					change_development_level = { add = 7 }
-					custom_tooltip = dev_due_to_terrain_HQ7
+					change_development_level = { add = 3 }
+					custom_tooltip = dev_due_to_terrain_fertile
 					set_variable = {
-						name = dev_changed_by_terrain
-						value = 7
+						name = dev_changed_by_terrain_fertile
+						value = 3
 					}
 				}
 			}
 			if = {
-				limit = { terrain = oasis }
+				limit = {
+					scope:target = { has_government = tribal_government }
+					OR = {
+						terrain = floodplains
+						terrain = farmlands
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					random_list = {
+						40 = {
+							change_development_level = { add = 2 }
+							custom_tooltip = dev_due_to_terrain_fertile
+							set_variable = {
+								name = dev_changed_by_terrain_fertile
+								value = 2
+							}							
+						}
+						60 = {
+							change_development_level = { add = 1 }
+							custom_tooltip = dev_due_to_terrain_fertile
+							set_variable = {
+								name = dev_changed_by_terrain_fertile
+								value = 1
+							}							
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:target = { has_government = tribal_government }
+					terrain = hills
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					random_list = {
+						60 = {
+							modifier = {
+								any_neighboring_county = {
+									title_province = { 
+										NOR = {
+											terrain = floodplains
+											terrain = farmlands
+										}
+									}
+								}
+								add = 15
+							}
+							modifier = {
+								any_county_province = {
+									has_building_or_higher = monastery_01
+								}
+								add = -20
+							}
+						}
+						40 = {
+							modifier = {
+								any_neighboring_county = {
+									title_province = { 
+										OR = {
+											terrain = floodplains
+											terrain = farmlands
+										}
+									}
+								}
+								add = 15
+							}
+							modifier = {
+								any_county_province = {
+									has_building_or_higher = monastery_01
+								}
+								add = 20
+							}
+							change_development_level = { add = 1 }
+							custom_tooltip = dev_due_to_terrain_hills
+							set_variable = {
+								name = dev_changed_to_terrain_hills
+								value = 1
+							}							
+						}
+					}
+				}
+			}
+			##plains : feudal = 3 ; tribal = 2
+			if = {
+				limit = {
+					scope:target = { NOT = { has_government = tribal_government }}
+					OR = {
+						terrain = plains
+						terrain = oasis
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					change_development_level = { add = 1 }
+					custom_tooltip = dev_due_to_terrain_plains
+					set_variable = {
+						name = dev_changed_by_terrain_plains
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:target = { has_government = tribal_government }
+					OR = {
+						terrain = plains
+						terrain = oasis
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
 				county = {
 					random_list = {
 						50 = {
-							custom_tooltip = dev_due_to_terrain_Q0
-							set_variable = {
-								name = dev_changed_by_terrain
-								value = 0
+							modifier = {
+								any_neighboring_county = {
+									title_province = { 
+										OR = {
+											terrain = floodplains
+											terrain = farmlands
+										}
+									}
+								}
+								add = 10
 							}
 						}
-						50 = { 
-							change_development_level = { add = 8 }
-							custom_tooltip = dev_due_to_terrain_Q8
+						50 = {
+							modifier = {
+								any_neighboring_county = {
+									title_province = { 
+										NOR = {
+											terrain = floodplains
+											terrain = farmlands
+										}
+									}
+								}
+								add = -10
+							}
+							change_development_level = { add = 1 }
+							custom_tooltip = dev_due_to_terrain_plains
 							set_variable = {
-								name = dev_changed_by_terrain
-								value = 8
+								name = dev_changed_by_terrain_plains
+								value = 1
 							}
 						}
 					}
 				}
-				
-			}			
-		}		
-	}
-	option = {
-		name = arko.1.C_rank
-		#HOLDER HIGHEST RANK
+			}
+
+			##coastal : feudal = 1 ; tribal = 1*50%
+			if = {
+				limit = { 
+					scope:target = { NOT = { has_government = tribal_government }}
+					is_coastal = yes
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					random_list = {
+						65 = {
+							modifier = {
+								add = 20
+								any_county_province = {
+									OR = {
+										terrain = desert
+										terrain = desert_mountains
+										terrain = wetlands
+										terrain = taiga
+									}
+								}
+							}
+							modifier = {
+								add = -15
+								any_county_province = {
+									OR = {
+										terrain = floodplains
+										terrain = farmlands
+									}
+								}
+							}
+							modifier = {
+								add = -5
+								any_county_province = {
+									terrain = plains
+								}
+							}
+							change_development_level = { add = 1 }
+							custom_tooltip = dev_due_to_coast
+							set_variable = {
+								name = dev_changed_by_coast
+								value = 1
+							}							
+						}
+						35 = {
+							modifier = {
+								add = -20
+								any_county_province = {
+									OR = {
+										terrain = desert
+										terrain = desert_mountains
+										terrain = wetlands
+										terrain = taiga
+									}
+								}
+							}
+							modifier = {
+								add = 15
+								any_county_province = {
+									OR = {
+										terrain = floodplains
+										terrain = farmlands
+									}
+								}
+							}
+							modifier = {
+								add = 5
+								any_county_province = {
+									terrain = plains
+								}
+							}					
+							change_development_level = { add = 2 }
+							custom_tooltip = dev_due_to_coast
+							set_variable = {
+								name = dev_changed_by_coast
+								value = 2
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					scope:target = { has_government = tribal_government }
+					is_coastal = yes
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					random_list = {
+						50 = {}
+						50 = { 
+							change_development_level = { add = 1 }
+							set_variable = {
+								name = dev_changed_by_coast
+								value = 1
+							}
+							custom_tooltip = dev_due_to_coast
+						}
+					}
+				}
+			}
+		}
+		#...by ruler's rank, capital only, not for tribal
 		if = {
-			limit = {
-				highest_held_title_tier > 2 #Dukes or above
+			limit = { 
+				scope:target = { has_government = tribal_government }
+				highest_held_title_tier >= tier_duchy
 			}
 			capital_county = {
-				change_development_level = {
-					add = 1
-				}
-				custom_tooltip = dev_duke_or
+				change_development_level = { add = 1 }
+				custom_tooltip = dev_due_to_rank #to remove
 				set_variable = {
 					name = dev_changed_by_title
 					value = 1
@@ -229,13 +560,12 @@ arko.1 = { # starting dev adjusting
 		}
 		if = {
 			limit = { 
-				highest_held_title_tier > 3 #Kings or above
+				scope:target = { NOT = { has_government = tribal_government }}
+				highest_held_title_tier = tier_duchy
 			}
 			capital_county = {
-				change_development_level = {
-					add = 2
-				}
-				custom_tooltip = dev_king_or
+				change_development_level = { add = 2 }
+				custom_tooltip = dev_due_to_rank #to remove
 				set_variable = {
 					name = dev_changed_by_title
 					value = 2
@@ -244,21 +574,309 @@ arko.1 = { # starting dev adjusting
 		}
 		if = {
 			limit = { 
-				highest_held_title_tier > 4 #Emperor
+				scope:target = { NOT = { has_government = tribal_government }}
+				highest_held_title_tier > tier_duchy
 			}
 			capital_county = {
-				change_development_level = {
-					add = 3
-				}
-				custom_tooltip = dev_emperor
+				change_development_level = { add = 4 }
+				custom_tooltip = dev_due_to_rank #to remove
 				set_variable = {
 					name = dev_changed_by_title
-					value = 3
+					value = 4
+				}
+				if = {
+					limit = {
+						OR = {
+							scope:target.primary_title = title:k_papal_state
+							scope:target.primary_title = title:e_byzantium
+						}
+					}
+					change_development_level = { add = 2 }
+					change_variable = {
+						name = dev_changed_by_title
+						add = 2
+					}
+				}
+			}
+		}
+		
+		every_realm_county  = {
+			limit = { 
+				holder = ROOT
+			}			
+			##INNOVATIONS
+			if = {
+				limit = { 
+					scope:target = { has_government = tribal_government }
+					culture = { 
+						OR = {
+							#military buildings (building technics)
+							has_innovation = innovation_motte #era1 
+							has_innovation = innovation_barracks #era1
+						}
+					}
+				}
+				culture = { save_scope_as = culture_origin_innovation } #used for loc
+				random_list = {
+					50 = {}
+					50 = {
+						change_development_level = { add = 1 }
+						custom_tooltip = dev_due_to_innovation_mil
+						set_variable = {
+							name = dev_changed_by_innovation_mil
+							value = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					scope:target = { NOT = { has_government = tribal_government }}
+					culture = { 
+						OR = {
+							#military buildings (building technics)
+							has_innovation = innovation_motte #era1 
+							has_innovation = innovation_burhs #era2
+							has_innovation = innovation_hoardings #era3
+							has_innovation = innovation_royal_armory #era4
+						}
+					}
+				}
+				culture = { save_scope_as = culture_origin_innovation } #used for loc
+				change_development_level = { add = 1 }
+				custom_tooltip = dev_due_to_innovation_mil
+				set_variable = {
+					name = dev_changed_by_innovation_mil
+					value = 1
+				}
+			}
+			#economic innovations first era
+			if = {
+				limit = { 
+					scope:target = { NOT = { has_government = tribal_government }}
+					culture = { 
+						OR = {
+							#first era economic innovations
+							has_innovation = innovation_crop_rotation
+							has_innovation = innovation_city_planning
+							has_innovation = innovation_ledger
+							has_innovation = innovation_currency_01
+							has_innovation = innovation_development_01
+						}
+					}
+				}
+				culture = { save_scope_as = culture_origin_innovation } #used for loc
+				change_development_level = { add = 1 }
+				custom_tooltip = dev_due_to_innovation_eco
+				set_variable = {
+					name = dev_changed_by_innovation_eco
+					value = 1
+				}
+				if = {
+					limit = { 
+						#scope:target = { NOT = { has_government = tribal_government }}
+						culture = { 
+							OR = {
+							##second era innovations group1, building/domain related
+								has_innovation = innovation_baliffs
+								has_innovation = innovation_manorialism
+							}
+						}
+					}
+					culture = { save_scope_as = culture_origin_innovation } #used for loc
+					change_development_level = { add = 1 }
+					change_variable = {
+						name = dev_changed_by_innovation_eco
+						add = 1
+					}
+					custom_tooltip = dev_due_to_innovation_eco
+				}
+				if = {
+					limit = { 
+						#scope:target = { NOT = { has_government = tribal_government }}
+						culture = { 
+							OR = {
+							#second era innovations group 2, dev related
+								has_innovation = innovation_currency_02 #AKA Coinage
+								has_innovation = innovation_development_02 #AKA Communal governement
+							}
+						}
+					}
+					culture = { save_scope_as = culture_origin_innovation } #used for loc
+					change_development_level = { add = 1 }
+					#custom_tooltip = dev_due_to_innovation_eco
+					change_variable = {
+						name = dev_changed_by_innovation_eco
+						add = 1
+					}
+					custom_tooltip = dev_due_to_innovation_eco
+				}
+			}
+
+		}
+		##picking new dev value and calculate diff with previous one
+		every_realm_county  = {
+			limit = { holder = ROOT }
+			set_variable = {
+				name = new_dev
+				value = development_level
+			}
+			set_variable = {
+				name = diff_dev
+				value = {
+					value = var:new_dev
+					subtract = var:old_dev
 				}
 			}
 		}
 	}
 	
+
+	option = {
+		name = arko.1.immediate.synth
+	}
+
+	option = {
+		name = arko.1.synthesis	
+		
+		every_realm_county  = {
+			limit = { holder = ROOT }
+			save_scope_as = province_origin_startdate
+
+			custom_tooltip = dev_synthesis_0 #vanilla value+reset check
+			#custom_tooltip = dev_synthesis_A #new value and progression from event
+			custom_tooltip = dev_due_to_startdate_random #startdate bonus info
+			if = {
+				limit = {
+					title_province= {
+						has_special_building = yes
+						NOT = {
+							has_building_or_higher = hadrians_wall_01
+							has_building_or_higher = offas_dyke_01
+							has_building_or_higher = stonehenge_01
+							has_building_or_higher = the_pyramids_01
+							has_building_or_higher = the_colosseum_01
+						}
+					}
+				}
+				custom_tooltip = dev_due_to_monument
+			}
+		}
+		
+		#terrain bonus info
+		every_realm_province = {
+			limit = { 
+				has_holding = yes
+				county_controller = ROOT
+			}
+			if = {
+				limit = {
+					OR = {
+						terrain = floodplains
+						terrain = farmlands
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					custom_tooltip = dev_due_to_terrain_fertile
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						terrain = plains
+						terrain = oasis
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					custom_tooltip = dev_due_to_terrain_plains
+				}
+			}
+			if = {
+				limit = { 
+					terrain = hills
+					county = { 
+						var:dev_changed_by_terrain_plains = { compare_value > 0 }
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					custom_tooltip = dev_due_to_terrain_hills
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_coastal = yes
+					}
+				}
+				save_scope_as = province_origin_terrain #used for loc
+				county = {
+					custom_tooltip = dev_due_to_coast
+				}
+			}
+		}
+		every_realm_county  = {
+			limit = { holder = ROOT }			
+			##INNOVATIONS
+
+			#military architectural innovations
+			if = {
+				limit = { 
+					culture = { 
+						OR = {
+							#military buildings (building technics)
+							has_innovation = innovation_motte #era1
+								has_innovation = innovation_barracks #era1	#tribal only						
+							has_innovation = innovation_burhs #era2
+							has_innovation = innovation_hoardings #era3
+							has_innovation = innovation_royal_armory #era4
+						}
+					}
+					save_scope_as = province_origin_innovation #used for loc
+				}
+				custom_tooltip = dev_due_to_innovation_mil
+			}
+			if = {
+				limit = { 
+					culture = {
+						OR = {
+						#first era innovations (+1 dev)
+							has_innovation = innovation_crop_rotation
+							has_innovation = innovation_city_planning
+							has_innovation = innovation_ledger
+							has_innovation = innovation_currency_01
+							has_innovation = innovation_development_01
+						#second era innovations	
+							#G1 (+1 dev)
+							has_innovation = innovation_currency_02 #AKA Coinage
+							has_innovation = innovation_development_02 #AKA Communal governement
+							#G2 (+2 dev)
+							has_innovation = innovation_manorialism
+							has_innovation = innovation_development_02 #AKA Communal governement
+						}
+					}
+					save_scope_as = province_origin_innovation #used for loc
+				}
+				custom_tooltip = dev_due_to_innovation_eco
+			}
+		}
+		capital_county  = {
+			limit = { 
+				holder = ROOT
+				var:dev_changed_by_title = { compare_value > 0 }
+			}
+			custom_tooltip = dev_due_to_rank
+		}
+
+		
+		every_realm_county  = {
+			limit = { holder = ROOT }
+			#custom_tooltip = dev_synthesis_B
+		}
+	}
+
 	option = {
 		name = arko.1.D_quit
 		set_variable = not_changed
