@@ -435,7 +435,6 @@ succession_gender_laws = {
 	male_preference_law = {
 		can_title_have = {
 			can_title_have_law_general_trigger = yes
-			NOT = { has_government = monastic_government } ##MYMO
 		}
 		should_show_for_title = { # Never show this in the UI, just apply it through script
 			always = no
