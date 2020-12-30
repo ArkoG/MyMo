@@ -7,7 +7,7 @@
 
 	primary_holding = monastery_holding
 	religious = yes
-	required_county_holdings = { monastery_holding }
+	#required_county_holdings = { monastery_holding castle_holding }
 
 	can_get_government = {
 		religion = religion:christianity_religion
