@@ -1,0 +1,6 @@
+﻿can_be_monastic_assistant_of = {
+	is_courtier_of = $EMPLOYER$
+	is_adult = yes
+	basic_is_available_ai = yes
+	NOT = { has_trait = incapable }
+}
