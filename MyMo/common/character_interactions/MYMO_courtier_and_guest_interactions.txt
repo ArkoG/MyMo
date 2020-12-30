@@ -1,0 +1,301 @@
+﻿##MYMO hiring monastery assistants 
+
+#monastery_prior
+hire_monastery_prior_interaction = {
+	category = interaction_category_vassal
+
+	desc = hire_monastery_prior_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+			is_adult = yes
+		}
+		scope:actor = {
+			has_government = monastic_government
+			NOT = {
+				any_relation = {
+					type = monastery_prior
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cantor
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cellarer
+					this = scope:recipient
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			#only one at a time, must dismis previous one first
+			NOT = {
+				any_relation = {
+					type = monastery_prior
+				}
+			}
+		}
+		scope:recipient = {
+			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = msg_hired_monastery_prior_interaction_title
+				right_icon = scope:recipient
+
+				set_relation_monastery_prior = scope:recipient
+			}
+		}
+		scope:recipient = {
+			set_relation_monastery_liege = scope:actor
+			add_opinion = {
+				target = scope:actor
+				modifier = grateful_opinion
+				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
+			}
+
+		}
+		###########put bonus here
+	}
+	auto_accept = yes
+}
+
+fire_monastery_prior_interaction = {
+	category = interaction_category_vassal
+
+	desc = fire_monastery_prior_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+		}
+		scope:actor = {
+			has_government = monastic_government
+			any_relation = {
+				type = monastery_prior
+				this = scope:recipient
+			}
+		}
+	}
+	
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = msg_fired_monastery_prior_interaction_title
+				right_icon = scope:recipient
+
+				remove_relation_monastery_prior = scope:recipient
+			}
+		}
+		scope:recipient = { remove_relation_monastery_liege = scope:actor }
+	}
+	auto_accept = yes
+}
+#monastery_cantor
+hire_monastery_cantor_interaction = {
+	category = interaction_category_vassal
+
+	desc = hire_monastery_cantor_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+			is_adult = yes
+		}
+		scope:actor = {
+			has_government = monastic_government
+			NOT = {
+				any_relation = {
+					type = monastery_prior
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cantor
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cellarer
+					this = scope:recipient
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			#only one at a time, must dismis previous one first
+			NOT = {
+				any_relation = {
+					type = monastery_cantor
+				}
+			}
+		}
+		scope:recipient = {
+			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = msg_hired_monastery_cantor_interaction_title
+				right_icon = scope:recipient
+
+				set_relation_monastery_cantor = scope:recipient
+			}
+		}
+		scope:recipient = {
+			set_relation_monastery_liege = scope:actor
+			add_opinion = {
+				target = scope:actor
+				modifier = grateful_opinion
+				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
+			}
+
+		}
+	}
+	auto_accept = yes
+}
+
+fire_monastery_cantor_interaction = {
+	category = interaction_category_vassal
+
+	desc = fire_monastery_cantor_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+		}
+		scope:actor = {
+			has_government = monastic_government
+			any_relation = {
+				type = monastery_cantor
+				this = scope:recipient
+			}
+		}
+	}
+	
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = msg_fired_monastery_cantor_interaction_title
+				right_icon = scope:recipient
+
+				remove_relation_monastery_cantor = scope:recipient
+			}
+		}
+		scope:recipient = { remove_relation_monastery_liege = scope:actor }
+	}
+	auto_accept = yes
+}
+
+#monastery_cellarer
+hire_monastery_cellarer_interaction = {
+	category = interaction_category_vassal
+
+	desc = hire_monastery_cellarer_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+			is_adult = yes
+		}
+		scope:actor = {
+			has_government = monastic_government
+			NOT = {
+				any_relation = {
+					type = monastery_prior
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cantor
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cellarer
+					this = scope:recipient
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			#only one at a time, must dismis previous one first
+			NOT = {
+				any_relation = {
+					type = monastery_cellarer
+				}
+			}
+		}
+		scope:recipient = {
+			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = msg_hired_monastery_cellarer_interaction_title
+				right_icon = scope:recipient
+
+				set_relation_monastery_cellarer = scope:recipient
+			}
+		}
+		scope:recipient = {
+			set_relation_monastery_liege = scope:actor
+			add_opinion = {
+				target = scope:actor
+				modifier = grateful_opinion
+				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
+			}
+
+		}
+	}
+	auto_accept = yes
+}
+
+fire_monastery_cellarer_interaction = {
+	category = interaction_category_vassal
+
+	desc = fire_monastery_cellarer_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+		}
+		scope:actor = {
+			has_government = monastic_government
+			any_relation = {
+				type = monastery_cellarer
+				this = scope:recipient
+			}
+		}
+	}
+	
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = msg_fired_monastery_cellarer_interaction_title
+				right_icon = scope:recipient
+
+				remove_relation_monastery_cellarer = scope:recipient
+			}
+		}
+		scope:recipient = { remove_relation_monastery_liege = scope:actor }
+	}
+	auto_accept = yes
+}
