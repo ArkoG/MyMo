@@ -18,7 +18,10 @@ on_game_start = {
 				modifier = {
 					factor = 2
 					# List of baronies which will become Monastery
-					mymo_historic_abbey = yes
+					OR = {
+						mymo_historic_abbey = yes
+						mymo_historic_abbey_county_level = yes
+					}
 				}
 				modifier = {
 					factor = 0
