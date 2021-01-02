@@ -1,4 +1,4 @@
-l_spanish:
+﻿l_spanish:
 
  monastery_holding:0 "Monastery"
  monastery_holding_concept_key:0 "[Monastery|E]"
@@ -22,8 +22,8 @@ l_spanish:
  empire_monastic:0 "Imperial Abbey"
  
  monastic_succession_law: "Monastic election"
- monastic_succession_law_subname:2 "ggggfdh"
- monastic_succession_law_effects:2 "kkkkgfdgf"
+ monastic_succession_law_subname:2 "A [GetTrait('devoted').GetName( GetNullCharacter )] inherits"
+ monastic_succession_law_effects:2 "Upon succession all of the Abbot's [titles|e] will be given to their successor, who is generally the [GetTrait('devoted').GetName( GetNullCharacter )] with the highest [learning|E] skill."
  
  monastic_government:0 "Monachism"
  monastic_government_adjective:0 "Monastic"
@@ -49,3 +49,6 @@ l_spanish:
  avouerie_protection_desc:0 "Advocatus desc bla bla bla"
  
  actor_secondary_take_vows_interaction:0 "Host"
+ TAKE_THE_VOWS_BASTARD:0 "[bastard|E]: $VALUE|=+0$"
+ TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or disputed lineage|E]: $VALUE|=+0$"
+ RENOUNCE_CLAIMS_mymo:0 "Renounces to every held [claims|E]"
