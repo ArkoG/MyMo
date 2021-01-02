@@ -1,0 +1,22 @@
+﻿
+
+set_relation_monastery_prior = {
+	first = I_GAIN_MONASTERY_PRIOR
+	third = THEY_GAIN_MONASTERY_PRIOR
+	global = GAINS_MONASTERY_PRIOR
+}
+remove_monastery_prior = {
+	first = I_LOSE_MONASTERY_PRIOR
+	third = THEY_LOSE_MONASTERY_PRIOR
+	global = LOSES_MONASTERY_PRIOR
+}
+
+
+#set_relation_potential_lover = {
+#	first = I_GAIN_POTENTIAL_LOVER
+#	third = THEY_GAIN_POTENTIAL_LOVER
+#	global = GAINS_POTENTIAL_LOVER
+#	first_past = I_GOT_POTENTIAL_LOVER
+#	third_past = THEY_GAINED_POTENTIAL_LOVER
+#	global_past = GAINED_POTENTIAL_LOVER
+#}
