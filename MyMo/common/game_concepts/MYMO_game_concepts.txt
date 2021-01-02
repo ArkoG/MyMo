@@ -3,3 +3,33 @@
 	parent = holding_type
 	texture = "gfx/interface/icons/monastery_holding.dds"
 }
+
+#monastic minor titles and relations
+monastery_liege = {
+	texture = "gfx/interface/icons/message_feed/spy_master.dds"
+	alias = { monastery_lieges }
+}
+monastic_position = {
+	texture = "gfx/interface/icons/message_feed/religious.dds"
+	alias = { monastic_positions }
+}
+monastery_prior = {
+	texture = "gfx/interface/icons/message_feed/religious.dds"
+	alias = { monastery_priors }
+}
+monastery_cantor = {
+	texture = "gfx/interface/icons/message_feed/religious.dds"
+	alias = { monastery_cantors }
+}
+monastery_elder = {
+	texture = "gfx/interface/icons/message_feed/religious.dds"
+	alias = { monastery_elders }
+}
+monastery_cellarer = {
+	texture = "gfx/interface/icons/message_feed/religious.dds"
+	alias = { monastery_cellarers }
+}
+monastery_advocate = {
+	texture = "gfx/interface/icons/character_interactions/hire_monastery_advocate_interaction.dds"
+	alias = { monastery_advocates }
+}
