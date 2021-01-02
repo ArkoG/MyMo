@@ -1,6 +1,52 @@
 ﻿can_be_monastic_assistant_of = {
 	is_courtier_of = $EMPLOYER$
 	is_adult = yes
+
 	basic_is_available_ai = yes
 	NOT = { has_trait = incapable }
+	has_council_position = no
+	can_be_councillor_basics_trigger = yes #
+	#is_capable_adult = yes
+	#is_imprisoned = no
+	#is_at_war_with_liege = no
+}
+faith_gender_check_trigger = {
+	trigger_if = { 
+		limit = {
+			scope:actor.faith = { has_doctrine = doctrine_gender_male_dominated }
+			
+		}
+		is_female = no
+	}
+	trigger_if = { 
+		limit = {
+			scope:actor.faith = { has_doctrine = doctrine_gender_female_dominated }
+			
+		}
+		is_male = no
+	}
+}
+has_monastic_position_trigger = {
+	OR = {
+		any_relation = {
+			type = monastery_prior
+			this = scope:recipient
+		}
+		any_relation = {
+			type = monastery_cantor
+			this = scope:recipient
+		}
+		any_relation = {
+			type = monastery_elder
+			this = scope:recipient
+		}
+		any_relation = {
+			type = monastery_cellarer
+			this = scope:recipient
+		}
+		any_relation = {
+			type = monastery_advocate
+			this = scope:recipient
+		}
+	}
 }
