@@ -1,15 +1,65 @@
 ﻿
-
+set_relation_monastery_liege = {
+	first = I_GAIN_MONASTERY_LIEGE
+	third = THEY_GAIN_MONASTERY_LIEGE
+	global = GAINS_MONASTERY_LIEGE
+}
+remove_relation_monastery_liege = {
+	first = I_LOSE_MONASTERY_LIEGE
+	third = THEY_LOSE_MONASTERY_LIEGE
+	global = LOSES_MONASTERY_LIEGE
+}
 set_relation_monastery_prior = {
 	first = I_GAIN_MONASTERY_PRIOR
 	third = THEY_GAIN_MONASTERY_PRIOR
 	global = GAINS_MONASTERY_PRIOR
 }
-remove_monastery_prior = {
+remove_relation_monastery_prior = {
 	first = I_LOSE_MONASTERY_PRIOR
 	third = THEY_LOSE_MONASTERY_PRIOR
 	global = LOSES_MONASTERY_PRIOR
 }
+set_relation_monastery_cantor = {
+	first = I_GAIN_MONASTERY_CANTOR
+	third = THEY_GAIN_MONASTERY_CANTOR
+	global = GAINS_MONASTERY_CANTOR
+}
+remove_relation_monastery_cantor = {
+	first = I_LOSE_MONASTERY_CANTOR
+	third = THEY_LOSE_MONASTERY_CANTOR
+	global = LOSES_MONASTERY_CANTOR
+}
+set_relation_monastery_elder = {
+	first = I_GAIN_MONASTERY_ELDER
+	third = THEY_GAIN_MONASTERY_ELDER
+	global = GAINS_MONASTERY_ELDER
+}
+remove_relation_monastery_elder = {
+	first = I_LOSE_MONASTERY_ELDER
+	third = THEY_LOSE_MONASTERY_ELDER
+	global = LOSES_MONASTERY_ELDER
+}
+set_relation_monastery_cellarer = {
+	first = I_GAIN_MONASTERY_CELLARER
+	third = THEY_GAIN_MONASTERY_CELLARER
+	global = GAINS_MONASTERY_CELLARER
+}
+remove_relation_monastery_cellarer = {
+	first = I_LOSE_MONASTERY_CELLARER
+	third = THEY_LOSE_MONASTERY_CELLARER
+	global = LOSES_MONASTERY_CELLARER
+}
+set_relation_monastery_advocate = {
+	first = I_GAIN_MONASTERY_ADVOCATE
+	third = THEY_GAIN_MONASTERY_ADVOCATE
+	global = GAINS_MONASTERY_ADVOCATE
+}
+remove_relation_monastery_advocate = {
+	first = I_LOSE_MONASTERY_ADVOCATE
+	third = THEY_LOSE_MONASTERY_ADVOCATE
+	global = LOSES_MONASTERY_ADVOCATE
+}
+
 
 
 #set_relation_potential_lover = {
