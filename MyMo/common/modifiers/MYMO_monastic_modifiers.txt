@@ -1,0 +1,37 @@
+﻿##########################################
+# MyMo Monastic court minor titles bonus #
+##########################################
+
+##given and withdrawn by recruitement interactions + death maintenance event
+mymo_monastic_liege = { #cumulative
+	icon = prestige_positive
+	monthly_prestige = 0.02 #countyship = 0.05
+	courtier_opinion = 2
+	county_opinion_add = 2
+	monthly_lifestyle_xp_gain_mult = 0.02
+	stacking = yes
+}
+mymo_monastic_prior = { 
+	icon = diplomacy_positive
+	diplomacy = 1
+	intrigue = 1
+}
+mymo_monastic_cantor = { 
+	icon = learning_positive
+	learning = 1
+}
+mymo_monastic_elder = { #can't be fired
+	icon = learning_positive
+	monthly_piety = 0.10
+}
+mymo_monastic_cellarer = { #bilateral
+	icon = stewardship_positive
+	character_capital_county_monthly_development_growth_add = 0.1
+	stewardship = 1
+}
+mymo_monastic_advocate = { #can't be fired depending on avouerie vassal contract
+	icon = martial_positive
+	monthly_prestige = 0.05
+	martial = 1
+	prowess = 5
+}
