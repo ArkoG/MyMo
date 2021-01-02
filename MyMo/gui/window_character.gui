@@ -2474,21 +2474,6 @@ window = {
 								}
 								##mymo test
 								vbox_character_row_item = {
-									name = "monastic_assistants"
-									visible = "[CharacterWindow.GetCharacter.IsAdult]"									layoutpolicy_vertical = expanding
-
-									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_prior' ) )]"
-									}
-							
-									blockoverride "header_text"
-									{
-										text = "MONASTIC_ASSISTANTS_LABEL"
-									}
-
-									blockoverride "expand_button" {}
-								}
-								vbox_character_row_item = {
 									name = "monastic_assistants2"
 									visible = "[CharacterWindow.GetCharacter.IsAdult]"
 									layoutpolicy_vertical = expanding
@@ -2499,7 +2484,7 @@ window = {
 									
 									blockoverride "header_text"
 									{
-										text = ""
+										text = "MONASTIC_ASSISTANTS_LABEL1"
 									}
 
 									blockoverride "expand_button" {}
@@ -2521,6 +2506,22 @@ window = {
 									blockoverride "expand_button" {}
 								}
 
+								vbox_character_row_item = {
+									name = "monastic_assistants5"
+									visible = "[CharacterWindow.GetCharacter.IsAdult]"
+									layoutpolicy_vertical = expanding
+
+									blockoverride "portrait_datamodel" {
+										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_advocate' ) )]"
+									}
+									
+									blockoverride "header_text"
+									{
+										text = ""
+									}
+
+									blockoverride "expand_button" {}
+								}
 								#mymo test
 								expand = {}
 							}
@@ -2563,17 +2564,33 @@ window = {
 								}
 								##Mymo
 								vbox_character_row_item = {
+									name = "monastic_assistants1"
+									visible = "[CharacterWindow.GetCharacter.IsAdult]"									layoutpolicy_vertical = expanding
+
+									blockoverride "portrait_datamodel" {
+										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_prior' ) )]"
+									}
+							
+									blockoverride "header_text"
+									{
+										text = "MONASTIC_ASSISTANTS_LABEL2"
+									}
+
+									blockoverride "expand_button" {}
+								}
+		
+								vbox_character_row_item = {
 									name = "monastic_assistants4"
-									#visible = "[Not(CharacterWindow.GetCharacter.IsAdult)]"
+									visible = "[CharacterWindow.GetCharacter.IsAdult]"
 									layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_liege' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_elder' ) )]"
 									}
 									
 									blockoverride "header_text"
 									{
-										text = "MONASTIC_ASSISTANTS_LABEL"
+										text = ""
 									}
 
 									blockoverride "expand_button" {}
@@ -2655,7 +2672,24 @@ window = {
 
 									blockoverride "expand_button" {}
 								}
+								#mymo
+								vbox_character_row_item = {
+									name = "monastic_assistants0"
+									#visible = "[Not(CharacterWindow.GetCharacter.IsAdult)]"
+									layoutpolicy_vertical = expanding
 
+									blockoverride "portrait_datamodel" {
+										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_liege' ) )]"
+									}
+									
+									blockoverride "header_text"
+									{
+										text = "MONASTIC_RULER_LABEL"
+									}
+
+									blockoverride "expand_button" {}
+								}
+								#mymo
 								expand = {}
 							}
 						}
