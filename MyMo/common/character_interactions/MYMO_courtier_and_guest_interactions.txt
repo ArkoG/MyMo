@@ -3,9 +3,8 @@
 #monastery_prior
 hire_monastery_prior_interaction = {
 	category = interaction_category_vassal
-
 	desc = hire_monastery_prior_interaction_desc
-
+	
 	is_shown = {
 		scope:recipient = {
 			is_courtier_of = scope:actor
@@ -13,20 +12,7 @@ hire_monastery_prior_interaction = {
 		}
 		scope:actor = {
 			has_government = monastic_government
-			NOT = {
-				any_relation = {
-					type = monastery_prior
-					this = scope:recipient
-				}
-				any_relation = {
-					type = monastery_cantor
-					this = scope:recipient
-				}
-				any_relation = {
-					type = monastery_cellarer
-					this = scope:recipient
-				}
-			}
+			has_monastic_position_trigger = no
 		}
 	}
 
@@ -41,18 +27,22 @@ hire_monastery_prior_interaction = {
 		}
 		scope:recipient = {
 			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+			faith_gender_check_trigger = yes
+			#has_trait = devoted #temp not
 		}
 	}
 
 	on_accept = {
 		scope:actor = {
-			send_interface_message = {
-				type = event_generic_neutral
+			send_interface_toast = {
 				title = msg_hired_monastery_prior_interaction_title
-				right_icon = scope:recipient
-
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
+				
 				set_relation_monastery_prior = scope:recipient
 			}
+			
+			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
 			set_relation_monastery_liege = scope:actor
@@ -61,49 +51,35 @@ hire_monastery_prior_interaction = {
 				modifier = grateful_opinion
 				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
 			}
-
+			add_character_modifier = mymo_monastic_prior
 		}
-		###########put bonus here
 	}
 	auto_accept = yes
-}
 
-fire_monastery_prior_interaction = {
-	category = interaction_category_vassal
-
-	desc = fire_monastery_prior_desc
-
-	is_shown = {
-		scope:recipient = {
-			is_courtier_of = scope:actor
+	ai_potential = { is_adult = yes }
+	ai_target_quick_trigger = { adult = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 72
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:recipient = { has_education_diplomacy_trigger = yes }
 		}
-		scope:actor = {
-			has_government = monastic_government
-			any_relation = {
-				type = monastery_prior
-				this = scope:recipient
-			}
+		modifier = {
+			add = 50
+			scope:recipient = { has_education_intrigue_trigger = yes }
+		}
+		modifier = {
+			multiply = 0.5
+			scope:recipient = { num_sinful_traits >= 2 }
 		}
 	}
-	
-	on_accept = {
-		scope:actor = {
-			send_interface_message = {
-				type = event_generic_neutral
-				title = msg_fired_monastery_prior_interaction_title
-				right_icon = scope:recipient
-
-				remove_relation_monastery_prior = scope:recipient
-			}
-		}
-		scope:recipient = { remove_relation_monastery_liege = scope:actor }
-	}
-	auto_accept = yes
 }
+
 #monastery_cantor
 hire_monastery_cantor_interaction = {
 	category = interaction_category_vassal
-
 	desc = hire_monastery_cantor_interaction_desc
 
 	is_shown = {
@@ -113,20 +89,7 @@ hire_monastery_cantor_interaction = {
 		}
 		scope:actor = {
 			has_government = monastic_government
-			NOT = {
-				any_relation = {
-					type = monastery_prior
-					this = scope:recipient
-				}
-				any_relation = {
-					type = monastery_cantor
-					this = scope:recipient
-				}
-				any_relation = {
-					type = monastery_cellarer
-					this = scope:recipient
-				}
-			}
+			has_monastic_position_trigger = no
 		}
 	}
 
@@ -141,18 +104,22 @@ hire_monastery_cantor_interaction = {
 		}
 		scope:recipient = {
 			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+			faith_gender_check_trigger = yes
+			#has_trait = devoted #temp not
+			#has_education_learning_trigger = yes
 		}
 	}
 
 	on_accept = {
 		scope:actor = {
-			send_interface_message = {
-				type = event_generic_neutral
+			send_interface_toast = {
 				title = msg_hired_monastery_cantor_interaction_title
-				right_icon = scope:recipient
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
 
 				set_relation_monastery_cantor = scope:recipient
 			}
+			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
 			set_relation_monastery_liege = scope:actor
@@ -161,49 +128,128 @@ hire_monastery_cantor_interaction = {
 				modifier = grateful_opinion
 				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
 			}
-
+			add_character_modifier = mymo_monastic_cantor
 		}
 	}
 	auto_accept = yes
+
+	ai_potential = { is_adult = yes }
+	ai_target_quick_trigger = { adult = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 72
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:recipient = { has_education_learning_trigger = yes }
+		}
+		modifier = {
+			multiply = 0.5
+			scope:recipient = { num_sinful_traits >= 1 }
+		}
+	}
 }
 
-fire_monastery_cantor_interaction = {
+#monastery_elder
+hire_monastery_elder_interaction = {
 	category = interaction_category_vassal
-
-	desc = fire_monastery_cantor_desc
+	desc = hire_monastery_elder_interaction_desc
 
 	is_shown = {
 		scope:recipient = {
 			is_courtier_of = scope:actor
+			is_adult = yes
 		}
 		scope:actor = {
 			has_government = monastic_government
-			any_relation = {
-				type = monastery_cantor
-				this = scope:recipient
-			}
+			has_monastic_position_trigger = no
 		}
 	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			#only one at a time, must dismis previous one first
+			NOT = {
+				any_relation = {
+					type = monastery_elder
+					this = scope:recipient
+				}
+			}
+		}
+		scope:recipient = {
+			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+			faith_gender_check_trigger = yes
+			#has_trait = devoted #temp not
+			num_virtuous_traits >= 1
+			num_sinful_traits < 1
+		}
+	}
+	should_use_extra_icon = {
+		scope:recipient = { 
+			num_sinful_traits < num_virtuous_traits
+		}
+	}	
+	extra_icon = "gfx/interface/icons/character_interactions/virtue_big.dds"
 	
 	on_accept = {
 		scope:actor = {
-			send_interface_message = {
-				type = event_generic_neutral
-				title = msg_fired_monastery_cantor_interaction_title
-				right_icon = scope:recipient
+			send_interface_toast = {
+				title = msg_hired_monastery_elder_interaction_title
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
 
-				remove_relation_monastery_cantor = scope:recipient
+				set_relation_monastery_elder = scope:recipient
 			}
+			add_character_modifier = mymo_monastic_liege
 		}
-		scope:recipient = { remove_relation_monastery_liege = scope:actor }
+		scope:recipient = {
+			set_relation_monastery_liege = scope:actor
+			add_opinion = {
+				target = scope:actor
+				modifier = grateful_opinion
+				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
+			}
+			add_character_modifier = mymo_monastic_elder
+		}
 	}
 	auto_accept = yes
+
+	ai_potential = { is_adult = yes }
+	ai_target_quick_trigger = { adult = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 72
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:recipient = { has_education_learning_trigger = yes }
+		}
+		modifier = {
+			add = 50
+			scope:recipient = { num_virtuous_traits >=1 }
+		}
+		modifier = {
+			add = 75
+			scope:recipient = { num_virtuous_traits >=2 }
+		}
+		modifier = {
+			add = 150
+			scope:recipient = { num_virtuous_traits >=3 }
+		}
+		modifier = {
+			add = 300
+			scope:recipient = { num_virtuous_traits >=4 }
+		}
+		modifier = {
+			subtract = 1000
+			scope:recipient = { num_sinful_traits >= 1 }
+		}
+	}
 }
 
 #monastery_cellarer
 hire_monastery_cellarer_interaction = {
 	category = interaction_category_vassal
-
 	desc = hire_monastery_cellarer_interaction_desc
 
 	is_shown = {
@@ -213,20 +259,7 @@ hire_monastery_cellarer_interaction = {
 		}
 		scope:actor = {
 			has_government = monastic_government
-			NOT = {
-				any_relation = {
-					type = monastery_prior
-					this = scope:recipient
-				}
-				any_relation = {
-					type = monastery_cantor
-					this = scope:recipient
-				}
-				any_relation = {
-					type = monastery_cellarer
-					this = scope:recipient
-				}
-			}
+			has_monastic_position_trigger = no
 		}
 	}
 
@@ -241,18 +274,21 @@ hire_monastery_cellarer_interaction = {
 		}
 		scope:recipient = {
 			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+			faith_gender_check_trigger = yes
 		}
 	}
 
 	on_accept = {
 		scope:actor = {
-			send_interface_message = {
-				type = event_generic_neutral
+			send_interface_toast = {
+				#type = event_generic_neutral
 				title = msg_hired_monastery_cellarer_interaction_title
-				right_icon = scope:recipient
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
 
 				set_relation_monastery_cellarer = scope:recipient
 			}
+			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
 			set_relation_monastery_liege = scope:actor
@@ -261,16 +297,297 @@ hire_monastery_cellarer_interaction = {
 				modifier = grateful_opinion
 				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
 			}
-
+			add_character_modifier = mymo_monastic_cellarer
 		}
 	}
 	auto_accept = yes
+
+	ai_potential = { is_adult = yes }
+	ai_target_quick_trigger = { adult = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 72
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:recipient = { has_education_stewardship_trigger = yes }
+		}
+		modifier = {
+			multiply = 0.5
+			scope:recipient = { num_sinful_traits >= 2 }
+		}
+	}
 }
 
-fire_monastery_cellarer_interaction = {
+#monastery_advocate
+hire_monastery_advocate_interaction = {
 	category = interaction_category_vassal
+	desc = hire_monastery_advocate_interaction_desc
 
-	desc = fire_monastery_cellarer_desc
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+			is_adult = yes
+		}
+		scope:actor = {
+			has_government = monastic_government
+			has_monastic_position_trigger = no
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			#only one at a time, must dismis previous one first
+			NOT = {
+				any_relation = {
+					type = monastery_advocate
+				}
+			}
+		}
+		scope:recipient = {
+			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
+			custom_description = {
+				text = has_education_martial_tt
+				object = scope:recipient
+				has_education_martial_trigger = yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_toast = {
+				#type = event_generic_neutral
+				title = msg_hired_monastery_advocate_interaction_title
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
+
+				set_relation_monastery_advocate = scope:recipient
+			}
+			add_character_modifier = mymo_monastic_liege
+		}
+		scope:recipient = {
+			set_relation_monastery_liege = scope:actor
+			add_opinion = {
+				target = scope:actor
+				modifier = grateful_opinion
+				opinion = 15 #Should match the amount lost when fired so it's not a way to farm opinion
+			}
+			add_character_modifier = mymo_monastic_advocate
+		}
+	}
+	auto_accept = yes
+
+	ai_potential = { is_adult = yes }
+	ai_target_quick_trigger = { adult = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 72
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:recipient = { has_education_martial_trigger = yes }
+		}
+		modifier = {
+			subtract = 50
+			scope:recipient = { num_sinful_traits >= 1 }
+		}
+		modifier = {
+			subtract = 50
+			scope:recipient = { num_sinful_traits >= 2 }
+		}
+	}
+}
+
+#firing from any position (but Elder)
+fire_monastery_position_interaction = {
+	category = interaction_category_vassal
+	desc = fire_monastery_position_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+		}
+		scope:actor = {
+			has_government = monastic_government
+			OR = {
+				any_relation = {
+					type = monastery_prior
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cantor
+					this = scope:recipient
+				}
+				any_relation = {
+					type = monastery_cellarer
+					this = scope:recipient
+				}
+				AND = {
+					#!! scope #add contract condition here
+					any_relation = {
+						type = monastery_advocate
+						this = scope:recipient
+					}
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = {
+					has_character_modifier = mymo_monastic_prior
+				}
+				remove_character_modifier = mymo_monastic_prior
+			}
+			if = {
+				limit = {
+					has_character_modifier = mymo_monastic_cantor	
+				}
+				remove_character_modifier = mymo_monastic_cantor
+			}
+			if = {
+				limit = {
+					has_character_modifier = mymo_monastic_cellarer
+				}
+				remove_character_modifier = mymo_monastic_cellarer
+			}
+			if = {
+				limit = {
+					has_character_modifier = mymo_monastic_advocate	
+				}
+				remove_character_modifier = mymo_monastic_advocate
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_prior
+						this = scope:recipient
+					}	
+				}
+				remove_relation_monastery_liege = scope:actor
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_cantor
+						this = scope:recipient
+					}	
+				}
+				remove_relation_monastery_liege = scope:actor
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_cellarer
+						this = scope:recipient
+					}	
+				}
+				remove_relation_monastery_liege = scope:actor
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_advocate
+						this = scope:recipient
+					}	
+				}
+				remove_relation_monastery_liege = scope:actor
+			}
+		}
+		scope:actor = {
+			#outside toast, modifier stuff
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_prior
+						this = scope:recipient
+					}	
+				}
+				remove_character_modifier = mymo_monastic_liege
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_cantor
+						this = scope:recipient
+					}	
+				}
+				remove_character_modifier = mymo_monastic_liege
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_cellarer
+						this = scope:recipient
+					}	
+				}
+				remove_character_modifier = mymo_monastic_liege
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_advocate
+						this = scope:recipient
+					}	
+				}
+				remove_character_modifier = mymo_monastic_liege
+			}
+			#inside toast, relation auto-notification only
+			send_interface_toast = {
+				title = msg_fired_monastery_position_interaction_title
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
+				if = {
+					limit = {
+						any_relation = {
+							type = monastery_prior
+							this = scope:recipient
+						}	
+					}
+					remove_relation_monastery_prior = scope:recipient
+				}
+				if = {
+					limit = {
+						any_relation = {
+							type = monastery_cantor
+							this = scope:recipient
+						}	
+					}
+					remove_relation_monastery_cantor = scope:recipient
+				}
+				if = {
+					limit = {
+						any_relation = {
+							type = monastery_cellarer
+							this = scope:recipient
+						}	
+					}
+					remove_relation_monastery_cellarer = scope:recipient
+				}
+				if = {
+					limit = {
+						any_relation = {
+							type = monastery_advocate
+							this = scope:recipient
+						}	
+					}
+					remove_relation_monastery_advocate = scope:recipient
+				}
+			}
+		}
+	}
+	auto_accept = yes
+	
+	#AI won't do this
+}
+
+#firing from ELDER position (sinful)
+fire_monastery_elder_interaction = {
+	category = interaction_category_vassal
+	desc = fire_monastery_elder_interaction_desc
 
 	is_shown = {
 		scope:recipient = {
@@ -279,23 +596,119 @@ fire_monastery_cellarer_interaction = {
 		scope:actor = {
 			has_government = monastic_government
 			any_relation = {
-				type = monastery_cellarer
+				type = monastery_elder
 				this = scope:recipient
 			}
 		}
 	}
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+				num_sinful_traits >= 2
+		}
+	}
+
+	should_use_extra_icon = {
+		scope:recipient = { 
+			num_sinful_traits > num_virtuous_traits
+		}
+	}	
+	extra_icon = "gfx/interface/icons/character_interactions/sin_big.dds"
 	
 	on_accept = {
-		scope:actor = {
-			send_interface_message = {
-				type = event_generic_neutral
-				title = msg_fired_monastery_cellarer_interaction_title
-				right_icon = scope:recipient
-
-				remove_relation_monastery_cellarer = scope:recipient
+		scope:recipient = {
+			if = {
+				limit = {
+					has_character_modifier = mymo_monastic_elder
+				}
+				remove_character_modifier = mymo_monastic_elder
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_elder
+						this = scope:recipient
+					}	
+				}
+				remove_relation_monastery_liege = scope:actor
 			}
 		}
-		scope:recipient = { remove_relation_monastery_liege = scope:actor }
+		scope:actor = {
+				#outside toast, modifier stuff
+				if = {
+					limit = {
+						any_relation = {
+							type = monastery_elder
+							this = scope:recipient
+						}	
+					}
+					remove_character_modifier = mymo_monastic_liege
+				}
+				#inside toast, relation stuff
+				send_interface_toast = {
+				title = msg_fired_monastery_elder_interaction_title
+				left_icon = scope:recipient
+				right_icon = scope:actor.primary_title
+				if = {
+					limit = {
+						any_relation = {
+							type = monastery_elder
+							this = scope:recipient
+						}	
+					}
+					remove_relation_monastery_elder = scope:recipient
+				}
+			}
+		}
 	}
 	auto_accept = yes
+	
+	ai_potential = { is_adult = yes }
+	ai_target_quick_trigger = { adult = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 35
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 50
+			AND = {
+				scope:recipient = { 
+					num_sinful_traits >= 1
+				}
+				scope:actor = {
+					any_relation = {
+						type = monastery_elder
+						this = scope:recipient
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 100
+			AND = {
+				scope:recipient = { 
+					num_sinful_traits >= 2
+				}
+				scope:actor = {
+					any_relation = {
+						type = monastery_elder
+						this = scope:recipient
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 200
+			AND = {
+				scope:recipient = { 
+					num_sinful_traits >= 3
+				}
+				scope:actor = {
+					any_relation = {
+						type = monastery_elder
+						this = scope:recipient
+					}
+				}
+			}
+		}
+	}
 }
