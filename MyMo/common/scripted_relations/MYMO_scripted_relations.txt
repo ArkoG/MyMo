@@ -3,20 +3,9 @@
 monastery_liege = {
 	#the abbot
 	corresponding = monastery_assistant
-#	opposites = {
-		#monastery_liege
-		#monastery_prior
-		#monastery_cantor
-		#monastery_cellarer
-#	}
-	#hidden = yes #temporary shown
 	relation_aliases = { monastery_liege_alias }
 	opinion = 5
 	special_guest = yes #temporary
-		#modifier = {
-		monthly_piety = 10
-	#}
-
 }
 
 monastery_prior = {
@@ -24,19 +13,15 @@ monastery_prior = {
 	corresponding = monastery_liege_alias
 
 	opposites = {
-		#monastery_liege
 		#monastery_prior
 		monastery_cantor
+		monastery_elder
 		monastery_cellarer
+		monastery_advocate
 	}
-
 	special_guest = yes
 	relation_aliases = { monastery_assistant }
-	opinion_modifier = { opinion =10 }
-	modifier = {
-		monthly_prestige = 1
-	}
-	
+	opinion = 10
 }
 
 monastery_cantor = {
@@ -44,17 +29,31 @@ monastery_cantor = {
 	corresponding = monastery_liege_alias
 
 	opposites = {
-		#monastery_liege
 		monastery_prior
 		#monastery_cantor
+		monastery_elder
 		monastery_cellarer
+		monastery_advocate
 	}
 	special_guest = yes
 	relation_aliases = { monastery_assistant }
-	opinion_modifier = { opinion =10 }
-	modifier = {
-		monthly_piety = 1
+	opinion = 5
+}
+
+monastery_elder = {
+	#virtuous, piety guy
+	corresponding = monastery_liege_alias
+
+	opposites = {
+		monastery_prior
+		monastery_cantor
+		#monastery_elder
+		monastery_cellarer
+		monastery_advocate
 	}
+	special_guest = yes
+	relation_aliases = { monastery_assistant }
+	opinion = 5
 }
 
 monastery_cellarer = {
@@ -62,20 +61,29 @@ monastery_cellarer = {
 	corresponding = monastery_liege_alias
 
 	opposites = {
-		#monastery_liege
 		monastery_prior
 		monastery_cantor
+		monastery_elder
 		#monastery_cellarer
+		monastery_advocate
 	}
 	special_guest = yes
 	relation_aliases = { monastery_assistant }
-	opinion_modifier = { opinion =10 }
-	#modifier = {
-	#	stewardship = 2
-	#}
-	modifier = {
-		name = monastery_cellarer
-		stewardship = 1
-		#scale = monastery_cellarer_scale
+	opinion = 5
+}
+
+monastery_advocate = {
+	#rituals assistant, learning guy
+	corresponding = monastery_liege_alias
+
+	opposites = {
+		monastery_prior
+		monastery_cantor
+		monastery_elder
+		monastery_cellarer
+		#monastery_advocate
 	}
+	special_guest = yes
+	relation_aliases = { monastery_assistant }
+	opinion = 5
 }
