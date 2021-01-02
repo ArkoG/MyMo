@@ -33,5 +33,5 @@ mymo_monastic_advocate = { #can't be fired depending on avouerie vassal contract
 	icon = martial_positive
 	monthly_prestige = 0.05
 	martial = 1
-	prowess = 5
+	prowess = 3
 }
