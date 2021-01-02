@@ -64,28 +64,67 @@
  #set_relation_court_physician
  
  ###TEMP TO DO
- I_GAIN_MONASTERY_PRIOR:0 "I am appointing [TARGET_CHARACTER.GetShortUIName] as my [monastery_prior|E]"
- THEY_GAIN_MONASTERY_PRIOR:0 "Y is appointed X"
- I_LOSE_MONASTERY_PRIOR:0 "I am fired from the position of X"
- THEY_GAIN_MONASTERY_PRIOR:0 "Y is fired from the X position"
-    
- GET_MONASTERY_PRIOR:0 "Hires [TARGET_CHARACTER.GetShortUIName] as their [monastery_prior|E]"
- YOU_GET_MONASTERY_PRIOR:0 "You appoint [TARGET_CHARACTER.GetShortUIName] becomes our [monastery_prior|E]"
- THEY_GET_MONASTERY_PRIOR:0 "[CHARACTER.GetShortUIName|U] hires [TARGET_CHARACTER.GetShortUIName] as [CHARACTER.GetHerHis] [monastery_prior|E]"
- YOU_GOT_MONASTERY_PRIOR:0 "You 's nomination [TARGET_CHARACTER.GetShortUIName] as your [monastery_prior|E]"
- THEY_GOT_MONASTERY_PRIOR:0 "[CHARACTER.GetShortUIName|U] 's nomination [TARGET_CHARACTER.GetShortUIName] as [CHARACTER.GetHerHis] [monastery_prior|E]]"
+ #set_relation_monastery_liege
+ I_GAIN_MONASTERY_LIEGE:0 "Y becomes my N+1"
+ THEY_GAIN_MONASTERY_LIEGE:0 "X gets appointed to a monastic position"
+ GAINS_MONASTERY_LIEGE:1 "Gets a [monastic_position|lE] at your court"
+ #remove_monastery_liege
+ I_LOSE_MONASTERY_LIEGE:0 "I am no more Z of Y"
+ THEY_LOSE_MONASTERY_LIEGE:0 "X loses his/her monatic position"
+ LOSES_MONASTERY_LIEGE:1 "No more holds a [monastic_position|lE] at my court"
+ 
+ #no clue where is it used yet 
+ HAS_RELATION_MONASTERY_LIEGE_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] holds a [monastic_position|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_PRIOR_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_prior|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_CANTOR_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_cantor|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_ELDER_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_elder|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_CELLARER_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_cellarer|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_ADVOCATE_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is the [monastery_advocate|lE] and protector of [CHARACTER.GetShortUIName]'s [monastery|lE]"
 
- HAS_RELATION_monastery_prior_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [prior|lE] at [CHARACTER.GetShortUIName]'s court"
- HAS_RELATION_monastery_cantor_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [cantor|lE] at [CHARACTER.GetShortUIName]'s court"
- HAS_RELATION_monastery_cellarer_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [cellarer|lE] at [CHARACTER.GetShortUIName]'s court"
- HAS_RELATION_monastery_advocate_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is the [advocate|lE] and protector of [CHARACTER.GetShortUIName]'s [monastery|lE]"
+ #set_relation_monastery_prior
+ I_GAIN_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_prior|lE]"
+ THEY_GAIN_MONASTERY_PRIOR:0 "222"
+ GAINS_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_prior|lE]"
+ #remove_monastery_prior
+ LOSE_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_prior|lE]"
+ THEY_LOSE_MONASTERY_PRIOR:0 "rrrrrrr"
+ LOSES_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_prior|lE]"
+ 
+ #set_relation_monastery_cantor
+ I_GAIN_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_cantor|lE]"
+ THEY_GAIN_MONASTERY_CANTOR:0 "222"
+ GAINS_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_cantor|lE]"
+ #remove_monastery_cantor
+ I_LOSE_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cantor|lE]"
+ THEY_LOSE_MONASTERY_CANTOR:0 "555"
+ LOSES_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cantor|lE]"
 
- LOSE_monastery_prior:0 "Loses [TARGET_CHARACTER.GetShortUIName] as their [prior|lE]"
- YOU_LOSE_monastery_prior:0 "You lose [TARGET_CHARACTER.GetShortUIName] as your [prior|lE]"
- THEY_LOSE_monastery_prior:0 "[CHARACTER.GetShortUIName|U] loses [TARGET_CHARACTER.GetShortUIName] as [CHARACTER.GetHerHis] [prior|lE]"
- YOU_LOST_monastery_prior:0 "You lost [TARGET_CHARACTER.GetShortUIName] as your [prior|lE]"
- THEY_LOST_monastery_prior:0 "[CHARACTER.GetShortUIName|U] lost [TARGET_CHARACTER.GetShortUIName] as [CHARACTER.GetHerHis] [prior|lE]"
- ###TEMP TO DO
+ #set_relation_monastery_elder
+ I_GAIN_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_elder|lE]"
+ THEY_GAIN_MONASTERY_ELDER:0 "zzzz"
+ GAINS_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_elder|lE]"
+ #remove_monastery_elder
+ I_LOSE_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_elder|lE]"
+ THEY_LOSE_MONASTERY_ELDER:0 "tttt"
+ LOSES_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_elder|lE]"
+
+ #set_relation_monastery_cellarer
+ I_GAIN_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_cellarer|lE]"
+ THEY_GAIN_MONASTERY_CELLARER:0 "uuuuuu"
+ GAINS_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_cellarer|lE]"
+ #remove_relation_monastery_cellarer
+ I_LOSE_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cellarer|lE]"
+ THEY_LOSE_MONASTERY_CELLARER:0 "iiiiii"
+ LOSES_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cellarer|lE]"
+
+ #set_relation_monastery_advocate
+ I_GAIN_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_advocate|lE]"
+ THEY_GAIN_MONASTERY_ADVOCATE:0 "ppppppp"
+ GAINS_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_advocate|lE]"
+ #remove_monastery_advocate
+ I_LOSE_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_advocate|lE]"
+ THEY_LOSE_MONASTERY_ADVOCATE:0 "dddddd"
+ LOSES_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_advocate|lE]"
  
  #UI labels 
  MONASTIC_ASSISTANTS_LABEL1:0 "Monastic secondary positions"
@@ -114,7 +153,8 @@
  hire_monastery_cantor_interaction:0 "Appoint as Cantor"
  hire_monastery_cantor_interaction_desc:0 "Appoint this courtier to be your [monastery_cantor|E]"
  msg_hired_monastery_cantor_interaction_title:0 "Monastery Cantor's nomination"
-
+ has_education_learning_tt:0 "Should have a learning education"
+ 
  hire_monastery_elder_interaction:0 "Aknowledge as Elder"
  hire_monastery_elder_interaction_desc:0 "Appoint this courtier to be your [monastery_elder|E]"
  msg_hired_monastery_elder_interaction_title:0 "Monastery Elder's aknowledgment"
@@ -128,7 +168,6 @@
  hire_monastery_advocate_interaction:0 "Appoint as Advocatus"
  hire_monastery_advocate_interaction_desc:0 "Appoint this courtier to be your [monastery_advocate|E]"
  msg_hired_monastery_advocate_interaction_title:0 "Monastery Advocate's nomination"
-
  has_education_martial_tt:0 "Should have a martial education"
 
  #interactions, firing  
