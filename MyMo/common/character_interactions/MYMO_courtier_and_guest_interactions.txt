@@ -28,7 +28,7 @@ hire_monastery_prior_interaction = {
 		scope:recipient = {
 			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
 			faith_gender_check_trigger = yes
-			#has_trait = devoted #temp not
+			has_trait = devoted
 		}
 	}
 
@@ -105,8 +105,12 @@ hire_monastery_cantor_interaction = {
 		scope:recipient = {
 			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
 			faith_gender_check_trigger = yes
-			#has_trait = devoted #temp not
-			#has_education_learning_trigger = yes
+			has_trait = devoted
+			custom_description = {
+				text = has_education_learning_tt
+				object = scope:recipient
+				has_education_learning_trigger = yes
+			}
 		}
 	}
 
@@ -179,7 +183,7 @@ hire_monastery_elder_interaction = {
 		scope:recipient = {
 			can_be_monastic_assistant_of = { EMPLOYER = scope:actor }
 			faith_gender_check_trigger = yes
-			#has_trait = devoted #temp not
+			has_trait = devoted
 			num_virtuous_traits >= 1
 			num_sinful_traits < 1
 		}
@@ -326,7 +330,10 @@ hire_monastery_advocate_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			is_courtier_of = scope:actor
+			OR = {
+				is_courtier_of = scope:actor
+				is_vassal_of = scope:actor #open to vassals
+			}
 			is_adult = yes
 		}
 		scope:actor = {
@@ -406,7 +413,10 @@ fire_monastery_position_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			is_courtier_of = scope:actor
+			OR = {
+				is_courtier_of = scope:actor
+				is_vassal_of = scope:actor
+			}
 		}
 		scope:actor = {
 			has_government = monastic_government
@@ -429,6 +439,7 @@ fire_monastery_position_interaction = {
 						type = monastery_advocate
 						this = scope:recipient
 					}
+					scope:recipient = { is_vassal_of = scope:actor }
 				}
 			}
 		}
@@ -460,42 +471,7 @@ fire_monastery_position_interaction = {
 				}
 				remove_character_modifier = mymo_monastic_advocate
 			}
-			if = {
-				limit = {
-					any_relation = {
-						type = monastery_prior
-						this = scope:recipient
-					}	
-				}
-				remove_relation_monastery_liege = scope:actor
-			}
-			if = {
-				limit = {
-					any_relation = {
-						type = monastery_cantor
-						this = scope:recipient
-					}	
-				}
-				remove_relation_monastery_liege = scope:actor
-			}
-			if = {
-				limit = {
-					any_relation = {
-						type = monastery_cellarer
-						this = scope:recipient
-					}	
-				}
-				remove_relation_monastery_liege = scope:actor
-			}
-			if = {
-				limit = {
-					any_relation = {
-						type = monastery_advocate
-						this = scope:recipient
-					}	
-				}
-				remove_relation_monastery_liege = scope:actor
-			}
+			remove_relation_monastery_liege = scope:actor
 		}
 		scope:actor = {
 			#outside toast, modifier stuff
