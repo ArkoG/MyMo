@@ -2475,11 +2475,11 @@ window = {
 								##mymo test
 								vbox_character_row_item = {
 									name = "monastic_assistants2"
-									visible = "[CharacterWindow.GetCharacter.IsAdult]"
+									visible = "[And(CharacterWindow.GetCharacter.IsAdult, Character.GetGovernment.IsType( 'monastic_government' ) )]"
 									layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_cantor' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfTypeFillEmpty( GetRelation( 'monastery_cantor' ), '(int32)1' )]"
 									}
 									
 									blockoverride "header_text"
@@ -2491,11 +2491,11 @@ window = {
 								}
 								vbox_character_row_item = {
 									name = "monastic_assistants3"
-									visible = "[CharacterWindow.GetCharacter.IsAdult]"
+									visible = "[And(CharacterWindow.GetCharacter.IsAdult, Character.GetGovernment.IsType( 'monastic_government' ) )]"
 									layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_cellarer' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfTypeFillEmpty( GetRelation( 'monastery_cellarer' ), '(int32)1' )]"
 									}
 									
 									blockoverride "header_text"
@@ -2508,11 +2508,11 @@ window = {
 
 								vbox_character_row_item = {
 									name = "monastic_assistants5"
-									visible = "[CharacterWindow.GetCharacter.IsAdult]"
+									visible = "[And(CharacterWindow.GetCharacter.IsAdult, Character.GetGovernment.IsType( 'monastic_government' ) )]"
 									layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_advocate' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfTypeFillEmpty( GetRelation( 'monastery_advocate' ), '(int32)1' )]"
 									}
 									
 									blockoverride "header_text"
@@ -2565,10 +2565,10 @@ window = {
 								##Mymo
 								vbox_character_row_item = {
 									name = "monastic_assistants1"
-									visible = "[CharacterWindow.GetCharacter.IsAdult]"									layoutpolicy_vertical = expanding
+									visible = "[And(CharacterWindow.GetCharacter.IsAdult, Character.GetGovernment.IsType( 'monastic_government' ) )]"layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_prior' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfTypeFillEmpty( GetRelation( 'monastery_prior' ), '(int32)1' )]"
 									}
 							
 									blockoverride "header_text"
@@ -2581,11 +2581,11 @@ window = {
 		
 								vbox_character_row_item = {
 									name = "monastic_assistants4"
-									visible = "[CharacterWindow.GetCharacter.IsAdult]"
+									visible = "[And(CharacterWindow.GetCharacter.IsAdult, Character.GetGovernment.IsType( 'monastic_government' ) )]"
 									layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_elder' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfTypeFillEmpty( GetRelation( 'monastery_elder' ), '(int32)1' )]"
 									}
 									
 									blockoverride "header_text"
@@ -2675,11 +2675,12 @@ window = {
 								#mymo
 								vbox_character_row_item = {
 									name = "monastic_assistants0"
-									#visible = "[Not(CharacterWindow.GetCharacter.IsAdult)]"
+									visible = "[And(And(Character.HasRelationTo( GetPlayer ), Not(Character.IsPlayer)), CharacterWindow.GetCharacter.IsAdult)]"
+									#visible = "[CharacterWindow.GetCharacter.IsAdult]"
 									layoutpolicy_vertical = expanding
 
 									blockoverride "portrait_datamodel" {
-										datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'monastery_liege' ) )]"
+										datamodel = "[CharacterWindow.GetRelationsOfTypeFillEmpty( GetRelation( 'monastery_liege' ), '(int32)1' )]"
 									}
 									
 									blockoverride "header_text"
