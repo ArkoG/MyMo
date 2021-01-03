@@ -104,7 +104,7 @@ mymo_historic_bishopric_arkomod = {
 		#nowadays England
 		barony = title:b_canterbury
 		#spains
-		barony = title:b_andorra #Seu d'Urgell		
+		barony = title:b_andorra #Seu d'Urgell
 	}
 }		
 
@@ -130,6 +130,9 @@ mymo_historic_abbey_vanilla = {
 		#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
 		#nowadays HRE
 		barony = title:b_prum
+		#Italia
+		barony = title:b_farfa #territorial abbey	
+		barony = title:b_pomposa #territorial abbey
 	}
 }
 
@@ -159,6 +162,9 @@ mymo_historic_abbey_arkomod = {
 		#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
 		#nowadays HRE
 		barony = title:b_prum
+		#Italia
+		barony = title:b_farfa #territorial abbey	
+		barony = title:b_pomposa #territorial abbey
 	}
 }
 
