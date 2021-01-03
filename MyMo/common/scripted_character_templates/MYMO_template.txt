@@ -37,10 +37,6 @@ monk_broader_character = {
 		education_intrigue_2 = {}
 		education_intrigue_3 = {}
 		education_intrigue_4 = {}
-		education_learning_1 = {}
-		education_learning_2 = {}
-		education_learning_3 = {}
-		education_learning_4 = {}
 	}
 	trait = devoted
 	random_traits = yes
