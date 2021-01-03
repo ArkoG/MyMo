@@ -22,7 +22,6 @@ mymo.1 = { # Fill all the monastery courts which are empty
 				faith = scope:monastery_province.faith
 				after_creation = {
 					add_character_flag = blocked_from_leaving
-					add_character_flag = monastic_courtier
 				}
 			}			
 		}
@@ -47,7 +46,6 @@ mymo.1 = { # Fill all the monastery courts which are empty
 						faith = scope:monastery_province.faith
 						after_creation = {
 							add_character_flag = blocked_from_leaving
-							add_character_flag = monastic_courtier
 						}
 					}			
 				}
@@ -71,7 +69,6 @@ mymo.1 = { # Fill all the monastery courts which are empty
 						faith = scope:monastery_province.faith
 						after_creation = {
 							add_character_flag = blocked_from_leaving
-							add_character_flag = monastic_courtier
 						}
 					}			
 				}
@@ -96,7 +93,6 @@ mymo.1 = { # Fill all the monastery courts which are empty
 				faith = scope:monastery_province.faith
 				after_creation = {
 					add_character_flag = blocked_from_leaving
-					add_character_flag = monastic_courtier
 				}
 			}			
 		}
@@ -119,7 +115,6 @@ mymo.1 = { # Fill all the monastery courts which are empty
 				faith = scope:monastery_province.faith
 				after_creation = {
 					add_character_flag = blocked_from_leaving
-					add_character_flag = monastic_courtier
 				}
 			}			
 		}

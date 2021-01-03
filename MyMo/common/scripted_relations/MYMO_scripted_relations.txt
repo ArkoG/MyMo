@@ -2,15 +2,15 @@
 
 monastery_liege = {
 	#the abbot
-	corresponding = monastery_assistant
-	relation_aliases = { monastery_liege_alias }
+	#corresponding = monastery_assistant
+	#relation_aliases = { monastery_liege_alias }
 	opinion = 5
 	special_guest = yes #temporary
 }
 
 monastery_prior = {
 	#abbot assistant, diplo guy
-	corresponding = monastery_liege_alias
+	#corresponding = monastery_liege_alias
 
 	opposites = {
 		#monastery_prior
@@ -20,13 +20,13 @@ monastery_prior = {
 		monastery_advocate
 	}
 	special_guest = yes
-	relation_aliases = { monastery_assistant }
+	#relation_aliases = { monastery_assistant }
 	opinion = 10
 }
 
 monastery_cantor = {
 	#rituals assistant, learning guy
-	corresponding = monastery_liege_alias
+	#corresponding = monastery_liege_alias
 
 	opposites = {
 		monastery_prior
@@ -36,13 +36,13 @@ monastery_cantor = {
 		monastery_advocate
 	}
 	special_guest = yes
-	relation_aliases = { monastery_assistant }
+	#relation_aliases = { monastery_assistant }
 	opinion = 5
 }
 
 monastery_elder = {
 	#virtuous, piety guy
-	corresponding = monastery_liege_alias
+	#corresponding = monastery_liege_alias
 
 	opposites = {
 		monastery_prior
@@ -52,13 +52,13 @@ monastery_elder = {
 		monastery_advocate
 	}
 	special_guest = yes
-	relation_aliases = { monastery_assistant }
+	#relation_aliases = { monastery_assistant }
 	opinion = 5
 }
 
 monastery_cellarer = {
 	#rituals assistant, learning guy
-	corresponding = monastery_liege_alias
+	#corresponding = monastery_liege_alias
 
 	opposites = {
 		monastery_prior
@@ -68,13 +68,13 @@ monastery_cellarer = {
 		monastery_advocate
 	}
 	special_guest = yes
-	relation_aliases = { monastery_assistant }
+	#relation_aliases = { monastery_assistant }
 	opinion = 5
 }
 
 monastery_advocate = {
 	#rituals assistant, learning guy
-	corresponding = monastery_liege_alias
+	#corresponding = monastery_liege_alias
 
 	opposites = {
 		monastery_prior
@@ -84,6 +84,6 @@ monastery_advocate = {
 		#monastery_advocate
 	}
 	special_guest = yes
-	relation_aliases = { monastery_assistant }
+	#relation_aliases = { monastery_assistant }
 	opinion = 5
 }

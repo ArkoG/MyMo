@@ -24,7 +24,7 @@ mymo_monastic_elder = { #can't be fired
 	icon = learning_positive
 	monthly_piety = 0.10
 }
-mymo_monastic_cellarer = { #bilateral
+mymo_monastic_cellarer = { #
 	icon = stewardship_positive
 	character_capital_county_monthly_development_growth_add = 0.1
 	stewardship = 1

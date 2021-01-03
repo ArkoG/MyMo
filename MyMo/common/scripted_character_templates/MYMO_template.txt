@@ -1,7 +1,7 @@
 ﻿
 monk_character = {
 	age = { 20 50 }
-	gender_female_chance = root_faith_clergy_gender_female_chance
+	gender = male
 	random_traits_list = {
 		count = 1
 		education_learning_1 = {}
@@ -18,7 +18,7 @@ monk_character = {
 }
 monk_broader_character = {
 	age = { 16 65 }
-	gender_female_chance = root_faith_clergy_gender_female_chance
+	gender = male
 	random_traits_list = {
 		count = 1
 		education_diplomacy_1 = {}
@@ -47,7 +47,7 @@ monk_broader_character = {
 }
 monk_novice_character = {
 	age = { 16 25 }
-	gender_female_chance = root_faith_clergy_gender_female_chance
+	gender = male
 	random_traits_list = {
 		count = 1
 		education_learning_1 = {
@@ -69,7 +69,7 @@ monk_novice_character = {
 }
 monk_older_character = {
 	age = { 45 75 }
-	gender_female_chance = root_faith_clergy_gender_female_chance
+	gender = male
 	random_traits_list = {
 		count = 1
 		education_learning_2 = {
