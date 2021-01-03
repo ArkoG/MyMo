@@ -1,13 +1,90 @@
 ﻿
 monk_character = {
 	age = { 20 50 }
-	gender = male
+	gender_female_chance = root_faith_clergy_gender_female_chance
 	random_traits_list = {
 		count = 1
 		education_learning_1 = {}
 		education_learning_2 = {}
 		education_learning_3 = {}
 		education_learning_4 = {}
+	}
+	trait = devoted
+	random_traits = yes
+	learning = {
+		min_template_high_skill
+		max_template_high_skill
+	}
+}
+monk_broader_character = {
+	age = { 16 65 }
+	gender_female_chance = root_faith_clergy_gender_female_chance
+	random_traits_list = {
+		count = 1
+		education_diplomacy_1 = {}
+		education_diplomacy_2 = {}
+		education_diplomacy_3 = {}
+		education_diplomacy_4 = {}
+		education_stewardship_1 = {}
+		education_stewardship_2 = {}
+		education_stewardship_3 = {}
+		education_stewardship_4 = {}
+		education_martial_1 = {}
+		education_martial_prowess_2 = {}
+		education_martial_3 = {}
+		education_martial_prowess_4 = {}
+		education_intrigue_1 = {}
+		education_intrigue_2 = {}
+		education_intrigue_3 = {}
+		education_intrigue_4 = {}
+		education_learning_1 = {}
+		education_learning_2 = {}
+		education_learning_3 = {}
+		education_learning_4 = {}
+	}
+	trait = devoted
+	random_traits = yes
+	learning = {
+		min_template_high_skill
+		max_template_high_skill
+	}
+}
+monk_novice_character = {
+	age = { 16 25 }
+	gender_female_chance = root_faith_clergy_gender_female_chance
+	random_traits_list = {
+		count = 1
+		education_learning_1 = {
+			weight = { base = 50 }
+		}
+		education_learning_2 = {
+			weight = { base = 30 }
+		}
+		education_learning_3 = {
+			weight = { base = 20 }
+		}
+	}
+	trait = devoted
+	random_traits = yes
+	learning = {
+		min_template_high_skill
+		max_template_high_skill
+	}
+}
+monk_older_character = {
+	age = { 45 75 }
+	gender_female_chance = root_faith_clergy_gender_female_chance
+	random_traits_list = {
+		count = 1
+		education_learning_2 = {
+			weight = { base = 40 }
+		}
+		education_learning_3 = {
+			weight = { base = 40 }
+		}
+		education_learning_4 = {
+			weight = { base = 30 }
+		}
 	}
 	trait = devoted
 	random_traits = yes
