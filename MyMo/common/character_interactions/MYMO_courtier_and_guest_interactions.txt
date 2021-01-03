@@ -58,8 +58,10 @@ hire_monastery_prior_interaction = {
 
 	ai_potential = { is_adult = yes }
 	ai_target_quick_trigger = { adult = yes }
-	ai_targets = { ai_recipients = courtiers }
-	ai_frequency = 72
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+	ai_frequency = 18
 	ai_will_do = {
 		base = 0
 		modifier = {
@@ -71,8 +73,16 @@ hire_monastery_prior_interaction = {
 			scope:recipient = { has_education_intrigue_trigger = yes }
 		}
 		modifier = {
-			multiply = 0.5
+			add = -50
+			scope:recipient = { num_sinful_traits >= 1 }
+		}
+		modifier = {
+			add = -50
 			scope:recipient = { num_sinful_traits >= 2 }
+		}
+		modifier = {
+			add = -100
+			scope:recipient = { num_sinful_traits >= 3 }
 		}
 	}
 }
@@ -139,8 +149,10 @@ hire_monastery_cantor_interaction = {
 
 	ai_potential = { is_adult = yes }
 	ai_target_quick_trigger = { adult = yes }
-	ai_targets = { ai_recipients = courtiers }
-	ai_frequency = 72
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+	ai_frequency = 18
 	ai_will_do = {
 		base = 0
 		modifier = {
@@ -148,7 +160,7 @@ hire_monastery_cantor_interaction = {
 			scope:recipient = { has_education_learning_trigger = yes }
 		}
 		modifier = {
-			multiply = 0.5
+			add = -100
 			scope:recipient = { num_sinful_traits >= 1 }
 		}
 	}
@@ -220,8 +232,10 @@ hire_monastery_elder_interaction = {
 
 	ai_potential = { is_adult = yes }
 	ai_target_quick_trigger = { adult = yes }
-	ai_targets = { ai_recipients = courtiers }
-	ai_frequency = 72
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+	ai_frequency = 18
 	ai_will_do = {
 		base = 0
 		modifier = {
@@ -245,7 +259,7 @@ hire_monastery_elder_interaction = {
 			scope:recipient = { num_virtuous_traits >=4 }
 		}
 		modifier = {
-			subtract = 1000
+			add = -1000
 			scope:recipient = { num_sinful_traits >= 1 }
 		}
 	}
@@ -308,8 +322,10 @@ hire_monastery_cellarer_interaction = {
 
 	ai_potential = { is_adult = yes }
 	ai_target_quick_trigger = { adult = yes }
-	ai_targets = { ai_recipients = courtiers }
-	ai_frequency = 72
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_frequency = 18
 	ai_will_do = {
 		base = 0
 		modifier = {
@@ -317,8 +333,8 @@ hire_monastery_cellarer_interaction = {
 			scope:recipient = { has_education_stewardship_trigger = yes }
 		}
 		modifier = {
-			multiply = 0.5
-			scope:recipient = { num_sinful_traits >= 2 }
+			add = -50
+			scope:recipient = { num_sinful_traits >= 1 }
 		}
 	}
 }
@@ -333,6 +349,16 @@ hire_monastery_advocate_interaction = {
 			OR = {
 				is_courtier_of = scope:actor
 				is_vassal_of = scope:actor #open to vassals
+				AND = {
+					exists = scope:actor.liege
+					#target_is_liege_or_above = scope:recipient
+					scope:actor = {			
+						AND = {
+							exists = scope:actor.liege
+							target_is_liege_or_above = scope:recipient
+						}
+					}
+				}
 			}
 			is_adult = yes
 		}
@@ -358,6 +384,7 @@ hire_monastery_advocate_interaction = {
 				object = scope:recipient
 				has_education_martial_trigger = yes
 			}
+	
 		}
 	}
 
@@ -387,8 +414,13 @@ hire_monastery_advocate_interaction = {
 
 	ai_potential = { is_adult = yes }
 	ai_target_quick_trigger = { adult = yes }
-	ai_targets = { ai_recipients = courtiers }
-	ai_frequency = 72
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+	ai_frequency = 18
 	ai_will_do = {
 		base = 0
 		modifier = {
@@ -396,11 +428,11 @@ hire_monastery_advocate_interaction = {
 			scope:recipient = { has_education_martial_trigger = yes }
 		}
 		modifier = {
-			subtract = 50
+			add = -50
 			scope:recipient = { num_sinful_traits >= 1 }
 		}
 		modifier = {
-			subtract = 50
+			add = -50
 			scope:recipient = { num_sinful_traits >= 2 }
 		}
 	}
@@ -416,6 +448,8 @@ fire_monastery_position_interaction = {
 			OR = {
 				is_courtier_of = scope:actor
 				is_vassal_of = scope:actor
+				exists = liege
+				liege = scope:actor
 			}
 		}
 		scope:actor = {
@@ -439,7 +473,14 @@ fire_monastery_position_interaction = {
 						type = monastery_advocate
 						this = scope:recipient
 					}
-					scope:recipient = { is_vassal_of = scope:actor }
+					scope:recipient = { 
+						OR = { 
+							is_courtier_of = scope:actor 
+							is_vassal_of = scope:actor
+							exists = liege
+							liege = scope:actor
+						}
+					}
 				}
 			}
 		}
@@ -640,8 +681,13 @@ fire_monastery_elder_interaction = {
 	
 	ai_potential = { is_adult = yes }
 	ai_target_quick_trigger = { adult = yes }
-	ai_targets = { ai_recipients = courtiers }
-	ai_frequency = 35
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_frequency = 36
 	ai_will_do = {
 		base = 0
 		modifier = {
