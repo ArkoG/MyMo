@@ -1,13 +1,16 @@
 ﻿can_be_monastic_assistant_of = {
-	OR = {
-		is_courtier_of = $EMPLOYER$
-		is_vassal_of = $EMPLOYER$
-	}
-	is_adult = yes
+	#OR = {
+	#	is_courtier_of = $EMPLOYER$
+	#	is_vassal_of = $EMPLOYER$
+	#	AND = {
+	#		exists = scope:actor.liege
+	#		liege = scope:actor
+	#	}
+	#}
+	#is_adult = yes
 
 	basic_is_available_ai = yes
 	NOT = { has_trait = incapable }
-	NOT = { is_councillor_of = scope:actor }
 	can_be_councillor_basics_trigger = yes #
 	#is_capable_adult = yes
 	#is_imprisoned = no
