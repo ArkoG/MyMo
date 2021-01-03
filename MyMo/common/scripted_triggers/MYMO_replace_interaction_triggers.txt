@@ -1,0 +1,13 @@
+﻿#partial export 
+
+kick_from_court_validity_trigger = {
+	is_diplomatically_available = yes
+	NOR = {
+		is_spouse_of = scope:actor
+		is_concubine_of = scope:actor
+		is_close_family_of = scope:actor
+		has_council_position = councillor_court_chaplain
+		#MYMO
+		holds_monastic_position_trigger = yes
+	}
+}
