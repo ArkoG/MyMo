@@ -2675,7 +2675,7 @@ window = {
 								#mymo
 								vbox_character_row_item = {
 									name = "monastic_assistants0"
-									visible = "[And(And(Character.HasRelationTo( GetPlayer ), Not(Character.IsPlayer)), CharacterWindow.GetCharacter.IsAdult)]"
+									visible = "[CharacterWindow.GetCharacter.IsAdult]"
 									#visible = "[CharacterWindow.GetCharacter.IsAdult]"
 									layoutpolicy_vertical = expanding
 
