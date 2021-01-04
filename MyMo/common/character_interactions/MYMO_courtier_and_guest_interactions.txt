@@ -50,7 +50,13 @@ hire_monastery_prior_interaction = {
 			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
-			set_relation_monastery_liege = scope:actor
+			send_interface_toast = {
+				title = msg_hired_monastery_prior_interaction_title
+				left_icon = scope:actor
+				right_icon = scope:actor.primary_title
+							
+				set_relation_monastery_liege = scope:actor
+			}
 			add_opinion = {
 				target = scope:actor
 				modifier = grateful_opinion
@@ -148,7 +154,13 @@ hire_monastery_cantor_interaction = {
 			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
-			set_relation_monastery_liege = scope:actor
+			send_interface_toast = {
+				title = msg_hired_monastery_cantor_interaction_title
+				left_icon = scope:actor
+				right_icon = scope:actor.primary_title
+
+				set_relation_monastery_liege = scope:actor
+			}
 			add_opinion = {
 				target = scope:actor
 				modifier = grateful_opinion
@@ -237,7 +249,13 @@ hire_monastery_elder_interaction = {
 			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
-			set_relation_monastery_liege = scope:actor
+			send_interface_toast = {
+				title = msg_hired_monastery_elder_interaction_title
+				left_icon = scope:actor
+				right_icon = scope:actor.primary_title
+
+				set_relation_monastery_liege = scope:actor
+			}
 			add_opinion = {
 				target = scope:actor
 				modifier = grateful_opinion
@@ -333,7 +351,13 @@ hire_monastery_cellarer_interaction = {
 			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
-			set_relation_monastery_liege = scope:actor
+			send_interface_toast = {
+				title = msg_hired_monastery_cellarer_interaction_title
+				left_icon = scope:actor
+				right_icon = scope:actor.primary_title
+			
+				set_relation_monastery_liege = scope:actor
+			}
 			add_opinion = {
 				target = scope:actor
 				modifier = grateful_opinion
@@ -428,7 +452,13 @@ hire_monastery_advocate_interaction = {
 			add_character_modifier = mymo_monastic_liege
 		}
 		scope:recipient = {
-			set_relation_monastery_liege = scope:actor
+			send_interface_toast = {
+				title = msg_hired_monastery_advocate_interaction_title
+				left_icon = scope:actor
+				right_icon = scope:actor.primary_title
+
+				set_relation_monastery_liege = scope:actor
+			}
 			add_opinion = {
 				target = scope:actor
 				modifier = grateful_opinion
@@ -583,7 +613,13 @@ fire_monastery_position_interaction = {
 				}
 				remove_character_modifier = mymo_monastic_advocate
 			}
-			remove_relation_monastery_liege = scope:actor
+			send_interface_toast = {
+				title = msg_hired_monastery_advocate_interaction_title
+				left_icon = scope:actor
+				right_icon = scope:actor.primary_title
+				
+				remove_relation_monastery_liege = scope:actor
+			}
 			remove_character_flag = blocked_from_leaving
 		}
 		scope:actor = {
@@ -724,22 +760,28 @@ fire_monastery_elder_interaction = {
 						this = scope:recipient
 					}	
 				}
-				remove_relation_monastery_liege = scope:actor
+				send_interface_toast = {
+					title = msg_hired_monastery_advocate_interaction_title
+					left_icon = scope:actor
+					right_icon = scope:actor.primary_title
+				
+					remove_relation_monastery_liege = scope:actor
+				}
 			}
 		}
 		scope:actor = {
-				#outside toast, modifier stuff
-				if = {
-					limit = {
-						any_relation = {
-							type = monastery_elder
-							this = scope:recipient
-						}	
-					}
-					remove_character_modifier = mymo_monastic_liege
+			#outside toast, modifier stuff
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_elder
+						this = scope:recipient
+					}	
 				}
-				#inside toast, relation stuff
-				send_interface_toast = {
+				remove_character_modifier = mymo_monastic_liege
+			}
+			#inside toast, relation stuff
+			send_interface_toast = {
 				title = msg_fired_monastery_elder_interaction_title
 				left_icon = scope:recipient
 				right_icon = scope:actor.primary_title
