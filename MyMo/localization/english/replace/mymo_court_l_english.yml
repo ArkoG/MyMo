@@ -65,11 +65,11 @@
  
  ###TEMP TO DO
  #set_relation_monastery_liege
- I_GAIN_MONASTERY_LIEGE:0 "Y becomes my N+1"
+ I_GAIN_MONASTERY_LIEGE:0 "[TARGET_CHARACTER.GetShortUIName] gave me a [monastic_positions|E]"
  THEY_GAIN_MONASTERY_LIEGE:0 "X gets appointed to a monastic position"
  GAINS_MONASTERY_LIEGE:1 "Gets a [monastic_position|lE] at your court"
  #remove_monastery_liege
- I_LOSE_MONASTERY_LIEGE:0 "I am no more Z of Y"
+ I_LOSE_MONASTERY_LIEGE:0 "I lost my [monastic_positions|E] from [TARGET_CHARACTER.GetShortUIName]'s court"
  THEY_LOSE_MONASTERY_LIEGE:0 "X loses his/her monatic position"
  LOSES_MONASTERY_LIEGE:1 "No more holds a [monastic_position|lE] at my court"
  
