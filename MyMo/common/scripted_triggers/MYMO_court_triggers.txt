@@ -1,9 +1,12 @@
 ﻿can_be_monastic_assistant = {
-	basic_is_available_ai = yes
+	is_alive = yes
+	is_imprisoned = no
 	NOT = { has_trait = incapable }
+	has_contagious_deadly_disease_trigger = no
 	is_capable_adult = yes
 	is_imprisoned = no
 	is_at_war_with_liege = no
+	faith = scope:actor.faith
 }
 faith_gender_check_trigger = {
 	#scope:actor.faith = { has_allowed_gender_for_clergy = yes }
