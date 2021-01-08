@@ -3,12 +3,17 @@
 # by Arko & Mouchi
 
 
-current DEV for MYMO v0.5 for CK3 v1.2.1
+current DEV for MYMO v0.5 for CK3 v1.2.2
 CHANGES:
 -monks generated for courts are now of local province faith and culture
 -refined monastery holding icon
+-added monastery image for mediterranean culture
+-added holding button to convert monastery to church when the controller has faith without monachism doctrine
 -added proper monastery icon in the gamepedia
--
+-added decision to give gold to abbot to get piety and opinion bonus
+-added historical bishopric and abbeys (other church holding are randomly affected to these 2 types)
+-tweaked temple tax building modifier
+-fixed issue with take the vows coding
 
 MYMO v0.4 for CK3 v1.2.1
 
