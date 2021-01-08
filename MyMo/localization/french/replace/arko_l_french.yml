@@ -1,0 +1,15 @@
+﻿l_french:
+ dev_due_to_coast:0 "coasts of [province_origin_terrain.GetName] gave [THIS.Var('dev_changed_by_coast').GetValue|V0] [development|El]"
+ dev_due_to_terrain_fertile:0 "[province_origin_terrain.GetTerrain.GetName|El] of [province_origin_terrain.GetName] gave [THIS.Var('dev_changed_by_terrain_fertile').GetValue|V0] [development|El]"
+ dev_due_to_terrain_plains:0 "[province_origin_terrain.GetTerrain.GetName|El] of [province_origin_terrain.GetName] gave [THIS.Var('dev_changed_by_terrain_plains').GetValue|V0] [development|El]"
+ dev_due_to_terrain_hills:0 "[province_origin_terrain.GetTerrain.GetName|El] of [province_origin_terrain.GetName] gave [THIS.Var('dev_changed_by_terrain_hills').GetValue|V0] [development|El]"
+ dev_due_to_rank:0 "gained [THIS.Var('dev_changed_by_title').GetValue|V0] [development|El] from being the [target.GetPrimaryTitle.GetTierAsNameNoTooltip|E]'s capital"
+ dev_due_to_startdate_random:0 "gained [THIS.Var('dev_changed_by_startdate').GetValue|V0] [development|El] from startdate"
+ dev_synthesis_0:0 "Vanilla [development|E] value was [THIS.Var('vanilla_dev').GetValue|V0] it was set by Arko to [THIS.Var('old_dev').GetValue|V0]. It then grew by [THIS.Var('diff_dev').GetValue|V0] due to:"
+ dev_due_to_innovation_mil:0 "[THIS.Var('dev_changed_by_innovation_mil').GetValue|V0] [development|El] from [culture_origin_innovation.GetName] Military [innovations|El]"
+ dev_due_to_innovation_eco:0 "[THIS.Var('dev_changed_by_innovation_eco').GetValue|V0] [development|El] from [culture_origin_innovation.GetName] Economic [innovations|El]"
+ dev_due_to_monument:0 "gained [THIS.Var('dev_changed_by_monument').GetValue|V0] [development|El] from a [special_building|E]"
+
+ 
+
+#[CultureInnovation.GetName|E]"

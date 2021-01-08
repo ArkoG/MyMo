@@ -1,0 +1,12 @@
+﻿l_french:
+ FIND_VASSAL_HEADER:0 "Accorder à ..."
+ FIND_VASSAL_BUTTON_TOOLTIP:0 "#T $FIND_VASSAL_HEADER$#!\nChoisir quelqu'un à qui accorder ce [title|El].\n\n$FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT$"
+ FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT:0 "Vous pouvez accorder des [titles|El] à un de vos [vassals|El], ou un de vos [guests|El] ou un des [courtiers|El] de votre [realm|El]"
+ #GRANT_TO_LOCAL_NOBLE_HEADER:0 "Grant to Low Noble"
+ #GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP:0 "#T $GRANT_TO_LOCAL_NOBLE_HEADER$#!\nGrant this [barony|E] to a random notable member of the low nobility"
+
+ FIND_VASSAL_BUTTON_HOLDING_VIEW_TOOLTIP:0 "#T $FIND_VASSAL_HEADER$#!\nChoisir quelqu'un à qui accorder [HoldingView.GetCountyTitle.GetNameNoTooltip|E].\n\n$FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT$"
+
+ GRANT_TO_LOCAL_NOBLE_HEADER:0 "Accorder à ..."
+ GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP:0 "#T $GRANT_TO_LOCAL_NOBLE_HEADER$#!\nChoisir quelqu'un à qui accorder le [HoldingView.GetTitle.GetNameNoTooltip|E].\n\n$GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP_SEGMENT$"
+ GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP_SEGMENT:0 "Vous pouvez accorder des [titles|El] à un de vos [vassals|El], ou un de vos [guests|El] ou un des [courtiers|El] de votre [realm|El]"
