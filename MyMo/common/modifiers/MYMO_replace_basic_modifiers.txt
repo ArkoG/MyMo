@@ -1,0 +1,8 @@
+﻿##modified from vanilla
+
+baron_modifier = {
+	domain_limit = 1
+	# Barons don't get to have knights
+	knight_limit = 1 #might help abbots to get a martial guy
+}
+
