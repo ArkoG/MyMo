@@ -397,7 +397,7 @@ hire_monastery_advocate_interaction = {
 	is_shown = {
 		scope:recipient = {
 			OR = {
-				is_courtier_of = scope:actor
+				#is_courtier_of = scope:actor
 				is_vassal_of = scope:actor #open to vassals
 				AND = {
 					exists = scope:actor.liege
@@ -426,6 +426,7 @@ hire_monastery_advocate_interaction = {
 					type = monastery_advocate
 				}
 			}
+			liege = scope:recipient.liege #share same liege AKA co-vassals (peer_vassals)
 		}
 		scope:recipient = {
 			can_be_monastic_assistant = yes
@@ -477,7 +478,7 @@ hire_monastery_advocate_interaction = {
 	ai_target_quick_trigger = { adult = yes }
 	ai_targets = {
 		ai_recipients = vassals
-		ai_recipients = courtiers
+		ai_recipients = peer_vassals
 		ai_recipients = liege
 	}
 	ai_frequency = 18
@@ -492,27 +493,23 @@ hire_monastery_advocate_interaction = {
 			scope:recipient = { num_sinful_traits >= 1 }
 		}
 		modifier = {
-			add = -50
-			scope:recipient = { num_sinful_traits >= 2 }
+			add = 50
+			scope:recipient = { primary_title.tier == tier_barony } #+75
 		}
 		modifier = {
 			add = 25
-			scope:recipient = { primary_title.tier <= tier_barony } #+75
+			scope:recipient = { primary_title.tier <= tier_county } #+25
 		}
-		modifier = {
-			add = 25
-			scope:recipient = { primary_title.tier <= tier_county } #+50
-		}
-		modifier = {
-			add = 25
-			scope:recipient = { primary_title.tier <= tier_duchy } #+25
-		}
+		#modifier = {
+		#	add = 25
+		#	scope:recipient = { primary_title.tier <= tier_duchy } #+50
+		#}
 		modifier = {
 			add = -25
 			scope:recipient = { primary_title.tier >= tier_kingdom } #-25
 		}
 		modifier = {
-			add = -25
+			add = -50
 			scope:recipient = { primary_title.tier >= tier_empire } #-50
 		}
 	}
