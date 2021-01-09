@@ -1,0 +1,9 @@
+﻿# Fires when a character leaves a court. Not fired when leaving due to death or similar
+# Will still fire even if on_join_court is firing (fires just before it)
+# Root is the character
+# scope:old_employer is their old employer
+on_leave_court = {
+	events = {
+		mymo.2 # Remove monk title
+	}
+}

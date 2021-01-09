@@ -120,3 +120,58 @@ mymo.1 = { # Fill all the monastery courts which are empty
 		}
 	}
 }
+
+mymo.2 = { # Remove monk title (on_leave_court)
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_relation = {
+					type = monastery_liege
+					this = scope:old_employer
+				}	
+			}
+			remove_relation_monastery_liege = scope:old_employer
+		}
+		scope:old_employer = {
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_prior
+						this = root
+					}	
+				}
+				remove_relation_monastery_prior = root
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_cantor
+						this = root
+					}	
+				}
+				remove_relation_monastery_cantor = root
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_elder
+						this = root
+					}	
+				}
+				remove_relation_monastery_elder = root
+			}
+			if = {
+				limit = {
+					any_relation = {
+						type = monastery_cellarer
+						this = root
+					}	
+				}
+				remove_relation_monastery_cellarer = root
+			}
+		}
+	}
+}
+	
