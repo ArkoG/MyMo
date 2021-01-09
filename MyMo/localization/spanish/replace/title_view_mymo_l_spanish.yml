@@ -1,4 +1,4 @@
-l_spanish:
+﻿l_spanish:
  FIND_VASSAL_HEADER:0 "Grant to..."
  FIND_VASSAL_BUTTON_TOOLTIP:0 "#T $FIND_VASSAL_HEADER$#!\nChoose someone to grant this [title|El] to.\n\n$FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT$"
  FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT:0 "You can grant [titles|El] to one of your [vassals|El], or one of your [guests|El] or any [courtiers|El] in your [realm|El]"

@@ -1,4 +1,4 @@
-l_russian:
+﻿l_russian:
  fh_government_conversion:1 "Changing Administration (Holding Type Conversion)"
  holding_conversion_done:1 "Holding type in [title_county.GetNameNoTier] changes"
  holding_converts_toA:1 "[holding_2_convert.GetName] becomes a $building_type_monastery_01$"
