@@ -1,9 +1,7 @@
-l_german:
+﻿l_german:
 
  monastery_holding:0 "Monastery"
  monastery_holding_concept_key:0 "[Monastery|E]"
- game_concept_monastery_holding:0 "Monastic holding"
- game_concept_monastery_holding_desc:0 "[Monastery|E] holding"
  
  baron_monastic_male:0 "Abbot"
  baron_monastic_female:0 "Abbess"

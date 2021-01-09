@@ -1,4 +1,4 @@
-l_simp_chinese:
+﻿l_simp_chinese:
 
  BUILDING_REQUIREMENT_TRIBAL_HOLDING_IN_COUNTY:0 "[PROVINCE.GetCounty.GetTitle.GetName] has a [tribal|E] holding"
 
