@@ -1,0 +1,181 @@
+﻿l_korean:
+
+ #relations / minor titles
+ monastery_liege:0 "[monastery_liege|E]"
+ relation_monastery_liege:0 "[monastery_liege|E]"
+ relation_monastery_liege_male:0 "[monastery_liege|E]"
+ relation_monastery_liege_male_possessive:0 "[monastery_liege|E]'s"
+ relation_monastery_liege_female:0 "[monastery_liege|E]"
+ relation_monastery_liege_female_possessive:0 "[monastery_liege|E]'s"
+ monastery_prior:0 "[monastery_prior|E]"
+ relation_monastery_prior:0 "[monastery_prior|E]"
+ relation_monastery_prior_male:0 "[monastery_prior|E]"
+ relation_monastery_prior_male_possessive:0 "[monastery_prior|E]'s"
+ relation_monastery_prior_female:0 "[monastery_prior|E]"
+ relation_monastery_prior_female_possessive:0 "[monastery_prior|E]'s" 
+ monastery_cantor:0 "[monastery_cantor|E]"
+ relation_monastery_cantor:0 "[monastery_cantor|E]"
+ relation_monastery_cantor_male:0 "[monastery_cantor|E]"
+ relation_monastery_cantor_male_possessive:0 "[monastery_cantor|E]'s"
+ relation_monastery_cantor_female:0 "[monastery_cantor|E]"
+ relation_monastery_cantor_female_possessive:0 "[monastery_cantor|E]'s" 
+ monastery_elder:0 "[monastery_elder|E]"
+ relation_monastery_elder:0 "[monastery_elder|E]"
+ relation_monastery_elder_male:0 "[monastery_elder|E]"
+ relation_monastery_elder_male_possessive:0 "[monastery_elder|E]'s"
+ relation_monastery_elder_female:0 "[monastery_elder|E]"
+ relation_monastery_elder_female_possessive:0 "[monastery_elder|E]'s" 
+ relation_monastery_cellarer:0 "[monastery_cellarer|E]"
+ monastery_cellarer:0 "[monastery_cellarer|E]"
+ relation_monastery_cellarer_male:0 "[monastery_cellarer|E]"
+ relation_monastery_cellarer_male_possessive:0 "[monastery_cellarer|E]'s"
+ relation_monastery_cellarer_female:0 "[monastery_cellarer|E]"
+ relation_monastery_cellarer_female_possessive:0 "[monastery_cellarer|E]'s" 
+ monastery_advocate:0 "[monastery_advocate|E]"
+ relation_monastery_advocate:0 "[monastery_advocate|E]"
+ relation_monastery_advocate_male:0 "[monastery_advocate|E]"
+ relation_monastery_advocate_male_possessive:0 "[monastery_advocate|E]'s"
+ relation_monastery_advocate_female:0 "[monastery_advocate|E]"
+ relation_monastery_advocate_female_possessive:0 "[monastery_advocate|E]'s" 
+
+ #game concepts
+ game_concept_monastic_position:0 "Monastic position"
+ game_concept_monastic_positions:0 "Monastic positions"
+ game_concept_monastic_position_desc:0 "Monastic positions holders are proeminent voters for the [monastery_liege|lE]'s succession."
+ game_concept_monastery_liege:0 "Monastic ruler"
+ game_concept_monastery_lieges:0 "Monastic rulers"
+ game_concept_monastery_liege_desc:0 "Monastic ruler is elected among his pairs. Holders of various [monastic_positions|lE] are the proeminent electors for this election."
+ game_concept_monastery_prior:0 "Monastery prior"
+ game_concept_monastery_priors:0 "Monastery priors"
+ game_concept_monastery_prior_desc:0 "Monastery prior is a [monastic_position|lE] handled by the [monastery_liege|lE]. \nThe Abbot chooses a prior to assist him during his abbey years. He is in the first rank of "officers" who are charged with helping the abbot to govern men and administer things. \nThis [monastic_position|lE] provides voting rights to the [monastery_liege|lE]'s succession."
+ game_concept_monastery_cantor:0 "Monastery cantor"
+ game_concept_monastery_cantors:0 "Monastery cantors"
+ game_concept_monastery_cantor_desc:0 "Monastery cantor is a [monastic_position|lE] handled by the [monastery_liege|lE]. \nThe cantor who sets the tone for the church, regulates the rhythm of the services, teaches singing to the monks and is in charge of the library. \nThis [monastic_position|lE] provides voting rights to the [monastery_liege|lE]'s succession."
+ game_concept_monastery_elder:0 "Monastery elder"
+ game_concept_monastery_elders:0 "Monastery elders"
+ game_concept_monastery_elder_desc:0 "Monastery elder is a [monastic_position|lE] handled by the [monastery_liege|lE], it can't be revoked for no reason. \nThe Abbot aknwoledges as elder a brother of good reputation and of holy life, chosen not according to rank, but according to their merit of life and the wisdom of their doctrine, so that the abbot may, in all safety, be able to unburden himself partly on them. \nThis [monastic_position|lE] provides voting rights to the [monastery_liege|lE]'s succession."
+ game_concept_monastery_cellarer:0 "Monastery cellarer"
+ game_concept_monastery_cellarers:0 "Monastery cellarers"
+ game_concept_monastery_cellarer_desc:0 "Monastery cellarer is a [monastic_position|lE] handled by the [monastery_liege|lE]. \nThe cellararius is the bursar, the intendant, the general administrator. He takes care of the community's supplies, buys and sells the land and woods, supervises the barns and workshops. \nThis [monastic_position|lE] provides voting rights to the [monastery_liege|lE]'s succession."
+ game_concept_monastery_advocate:0 "Monastery advocatus"
+ game_concept_monastery_advocates:0 "Monastery advocatii"
+ game_concept_monastery_advocate_desc:0 "Monastery advocatus is a specific [monastic_position|lE] usually handled by the [monastery_liege|lE]. \nThe advocatus is the person in charge of the protection and juridical representation of an ecclesiastical institution, for secular matters of daily life. It can be someone attached to the Abbey or a lord who put his forces at the service of a church institution, in exchange for a remuneration received in the form of taxes or part of the fines."
+
+ #set_relation_court_physician
+ 
+ ###TEMP TO DO
+ #set_relation_monastery_liege
+ I_GAIN_MONASTERY_LIEGE:0 "[TARGET_CHARACTER.GetShortUIName] gave me a [monastic_positions|E]"
+ THEY_GAIN_MONASTERY_LIEGE:0 "X gets appointed to a monastic position"
+ GAINS_MONASTERY_LIEGE:1 "Gets a [monastic_position|lE] at your court"
+ #remove_monastery_liege
+ I_LOSE_MONASTERY_LIEGE:0 "I lost my [monastic_positions|E] from [TARGET_CHARACTER.GetShortUIName]'s court"
+ THEY_LOSE_MONASTERY_LIEGE:0 "X loses his/her monatic position"
+ LOSES_MONASTERY_LIEGE:1 "No more holds a [monastic_position|lE] at my court"
+ 
+ #no clue where is it used yet 
+ HAS_RELATION_MONASTERY_LIEGE_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] holds a [monastic_position|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_PRIOR_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_prior|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_CANTOR_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_cantor|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_ELDER_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_elder|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_CELLARER_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is [monastery_cellarer|lE] at [CHARACTER.GetShortUIName]'s court"
+ HAS_RELATION_MONASTERY_ADVOCATE_WITH_TARGET:0 "[TARGET_CHARACTER.GetShortUIName] is the [monastery_advocate|lE] and protector of [CHARACTER.GetShortUIName]'s [monastery|lE]"
+
+ #set_relation_monastery_prior
+ I_GAIN_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_prior|lE]"
+ THEY_GAIN_MONASTERY_PRIOR:0 "222"
+ GAINS_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_prior|lE]"
+ #remove_monastery_prior
+ LOSE_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_prior|lE]"
+ THEY_LOSE_MONASTERY_PRIOR:0 "rrrrrrr"
+ LOSES_MONASTERY_PRIOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_prior|lE]"
+ 
+ #set_relation_monastery_cantor
+ I_GAIN_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_cantor|lE]"
+ THEY_GAIN_MONASTERY_CANTOR:0 "222"
+ GAINS_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_cantor|lE]"
+ #remove_monastery_cantor
+ I_LOSE_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cantor|lE]"
+ THEY_LOSE_MONASTERY_CANTOR:0 "555"
+ LOSES_MONASTERY_CANTOR:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cantor|lE]"
+
+ #set_relation_monastery_elder
+ I_GAIN_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_elder|lE]"
+ THEY_GAIN_MONASTERY_ELDER:0 "zzzz"
+ GAINS_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_elder|lE]"
+ #remove_monastery_elder
+ I_LOSE_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_elder|lE]"
+ THEY_LOSE_MONASTERY_ELDER:0 "tttt"
+ LOSES_MONASTERY_ELDER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_elder|lE]"
+
+ #set_relation_monastery_cellarer
+ I_GAIN_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_cellarer|lE]"
+ THEY_GAIN_MONASTERY_CELLARER:0 "uuuuuu"
+ GAINS_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] becomes my [monastery_cellarer|lE]"
+ #remove_relation_monastery_cellarer
+ I_LOSE_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cellarer|lE]"
+ THEY_LOSE_MONASTERY_CELLARER:0 "iiiiii"
+ LOSES_MONASTERY_CELLARER:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_cellarer|lE]"
+
+ #set_relation_monastery_advocate
+ I_GAIN_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_advocate|lE]"
+ THEY_GAIN_MONASTERY_ADVOCATE:0 "ppppppp"
+ GAINS_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] became my [monastery_advocate|lE]"
+ #remove_monastery_advocate
+ I_LOSE_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_advocate|lE]"
+ THEY_LOSE_MONASTERY_ADVOCATE:0 "dddddd"
+ LOSES_MONASTERY_ADVOCATE:1 "[TARGET_CHARACTER.GetShortUIName] is no more my [monastery_advocate|lE]"
+ 
+ #UI labels 
+ MONASTIC_ASSISTANTS_LABEL1:0 "Monastic secondary positions"
+ MONASTIC_ASSISTANTS_LABEL2:0 "Monastic first positions"
+ MONASTIC_RULER_LABEL:0 "Monastery ruler"
+ 
+ #modifiers
+ mymo_monastic_liege:0 "Monastery Ruler"
+ mymo_monastic_liege_desc:0 "The [monastery_liege|El] can delegate [monastic_positions|El] to other monks. \nIt is a source of benefits, the more are given the better.\n\n"
+ mymo_monastic_prior:0 "Monastery Prior"
+ mymo_monastic_prior_desc:0 "$game_concept_monastery_prior_desc$\n\n"
+ mymo_monastic_cantor:0 "Monastery Cantor"
+ mymo_monastic_cantor_desc:0 "$game_concept_monastery_cantor_desc$\n\n"
+ mymo_monastic_elder:0 "Monastery Elder"
+ mymo_monastic_elder_desc:0 "$game_concept_monastery_elder_desc$\n\n"
+ mymo_monastic_cellarer:0 "Monastery Cellarer"
+ mymo_monastic_cellarer_desc:0 "$game_concept_monastery_cellarer_desc$\n\n"
+ mymo_monastic_advocate:0 "Monastery Advocatus"
+ mymo_monastic_advocate_desc:0 "$game_concept_monastery_advocate_desc$\n\n"
+
+ #interactions, appointments 
+ hire_monastery_prior_interaction:0 "Appoint as Prior"
+ hire_monastery_prior_interaction_desc:0 "Appoint this courtier to be your [monastery_prior|E]"
+ msg_hired_monastery_prior_interaction_title:0 "Monastery Prior's nomination"
+ 
+ hire_monastery_cantor_interaction:0 "Appoint as Cantor"
+ hire_monastery_cantor_interaction_desc:0 "Appoint this courtier to be your [monastery_cantor|E]"
+ msg_hired_monastery_cantor_interaction_title:0 "Monastery Cantor's nomination"
+ has_education_learning_tt:0 "Should have a learning education"
+ 
+ hire_monastery_elder_interaction:0 "Aknowledge as Elder"
+ hire_monastery_elder_interaction_desc:0 "Appoint this courtier to be your [monastery_elder|E]"
+ msg_hired_monastery_elder_interaction_title:0 "Monastery Elder's aknowledgment"
+ should_be_virtuous_tt:0 "Should have at least one virtue"
+ hire_monastery_elder_interaction_extra_icon:0 "@virtue_icon! Virtuous character"
+ 
+ hire_monastery_cellarer_interaction:0 "Appoint as Cellarer"
+ hire_monastery_cellarer_interaction_desc:0 "Appoint this courtier to be your [monastery_cellarer|E]"
+ msg_hired_monastery_cellarer_interaction_title:0 "Monastery Cellarer's nomination"
+
+ hire_monastery_advocate_interaction:0 "Appoint as Advocatus"
+ hire_monastery_advocate_interaction_desc:0 "Appoint this courtier to be your [monastery_advocate|E]"
+ msg_hired_monastery_advocate_interaction_title:0 "Monastery Advocate's nomination"
+ has_education_martial_tt:0 "Should have a martial education"
+
+ #interactions, firing  
+ fire_monastery_position_interaction:0 "Fire from monastic position"
+ fire_monastery_position_interaction_desc:0 "Fire [recipient.GetName] from any [monastic_position|lE] [recipient.GetSheHe] currently holds within [actor.GetPrimaryTitle.GetName]"
+ msg_fired_monastery_position_interaction_title:0 "Fired from a monastic position"
+ 
+ fire_monastery_elder_interaction:0 "Disavow monastic Elder"
+ fire_monastery_elder_interaction_desc:0 "Disavow [recipient.GetName] from being our [monastery_elder|E]"
+ msg_fired_monastery_elder_interaction_title:0 "Disavowed monastic Elder"
+ fire_monastery_elder_interaction_extra_icon:0 "@sin_icon! Sinful character"
