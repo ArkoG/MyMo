@@ -4,10 +4,12 @@
 		builder
     }
     is_shown = {
-		ROOT = { has_holding_type = monastery_holding }
-		NOT = { 
-			has_province_modifier = fh_government_conversion
-			#+other funding methods
+		ROOT = { 
+			has_holding_type = monastery_holding 
+			NOT = { 
+				has_province_modifier = fh_government_conversion
+				#+other funding methods
+			}
 		}
 
 		OR = {
@@ -63,11 +65,13 @@ make_monastery_button = {
 		builder
     }
     is_shown = {
-		ROOT = { has_holding_type = church_holding }
-		NOT = { 
-			has_province_modifier = fh_government_conversion
-			#+other funding methods
-		}	
+		ROOT = { 
+			has_holding_type = church_holding 
+			NOT = { 
+				has_province_modifier = fh_government_conversion
+				#+other funding methods
+			}
+		}
 		OR = {
 			province_owner = scope:builder
 			AND = {
