@@ -2854,10 +2854,10 @@ take_vows_interaction = {
 	ai_accept = {
 		base = 0 # Try to make it 0 for most interactions
 
-		modifier = { #MYMO debug
-			debug_only = yes
-			add = 150
-		}
+		#modifier = { #MYMO debug
+		#	debug_only = yes
+		#	add = 150
+		#}
 		modifier = {
 			scope:hook = yes
 			add = 50
