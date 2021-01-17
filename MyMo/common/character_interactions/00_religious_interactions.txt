@@ -2746,7 +2746,7 @@ take_vows_interaction = {
 			}
 			scope:recipient = {
 				custom_tooltip = RENOUNCE_CLAIMS_mymo
-				hidden_tooltip = {
+				hidden_effect = {
 					every_claim = {
 						scope:recipient = { remove_claim = prev }
 					}
