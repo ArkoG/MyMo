@@ -3,7 +3,7 @@
 # by Arko & Mouchi
 
 
-current DEV for MYMO v0.5 for CK3 v1.2.2
+current DEV for MYMO v0.6 for CK3 v1.2.2
 CHANGES:
 
 -converting the monastery before county faith conversion has an influence on the latter
