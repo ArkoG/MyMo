@@ -3,7 +3,12 @@
 # by Arko & Mouchi
 
 
-current DEV for MYMO v0.4 for CK3 v1.2.1
+MYMO v0.5 for CK3 v1.2.2
+CHANGES:
+-updating the mod to vanilla's 1.2.2 version
+-fixing various small bugs
+
+MYMO v0.4 for CK3 v1.2.1
 CHANGES:
 -updating the mod to vanilla's 1.2.1 version
 -monastic/religion schools are buildable both in temple holdings and monastic ones
