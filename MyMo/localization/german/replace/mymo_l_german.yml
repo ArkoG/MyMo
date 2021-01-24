@@ -55,3 +55,7 @@
  gold_donation_interaction_desc:0 "Make a [gift|El] to increase the opinion [recipient.Custom('EN_du_Char_U_Pi')][recipient.GetShortUINameNoTooltip] towards you and to obtain piety.\n\nThe donation to monasteries aims, through the monks, to fulfill the obligation of assistance to the needy, to practice caritas, to reproduce the love of God who \"so loved the world that he gave his only Son to it\" (Jn 3:13). Charity is the condition of the spiritual value of almsgiving.\n\nThe gift thus allows the lay donor to integrate the ritual community of the monastery and to take his place in the exchange with God. For medieval man is conscious of the debt he owes to Him who gave to man all the earthly riches, of which he is indebted and for which he must be paid." # Source : https://www.cairn.info/revue-du-mauss-2002-1-page-309.htm
  NO_PIETY_GIFT_WARNING:0 "@warning_icon!#X You have already made a donation to a monastery less than a year ago. You will not earn #underline piety#! with a new donation.#!"
  
+ COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO:0 "Both [faith|lE]s get $tenet_monasticism_name$ [core_tenet|lE]"
+ COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO_NOT_T:0 "[faiths|E] don't share $tenet_monasticism_name$ [core_tenet|lE]"
+ COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO_NOT_B1:0 "County hosts a small [monastery|E]"
+ COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO_NOT_B2:0 "County has a well developped [monastery|E]"
