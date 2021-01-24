@@ -1,0 +1,17 @@
+﻿l_french:
+#holding conversion stuff
+ holding_conversion_done:1 "Le type de domaine de [title_county.GetNameNoTier] change"
+ holding_converts_toA:1 "[holding_2_convert.GetName] est devenu un $building_type_monastery_01$"
+ holding_converts_toB:1 "[holding_2_convert.GetName] est devenu un $building_type_temple_01$"
+ #holding_converts_toA:1 "The $building_type_temple_01$ in [holding_2_convert.GetName] becomes a [holding_2_convert.GetTitle.GetTierAsNameNoTooltip]."
+ #holding_converts_toB:1 "The $building_type_monastery_01$ in [holding_2_convert.GetName] becomes a [holding_2_convert.GetTitle.GetTierAsNameNoTooltip].$"
+
+ temple_convert_to_church.tt:1 "Sera converti en église"
+ temple_convert_to_monastery.tt:0 "Sera converti en monastère"
+
+#modifiers 
+ temple_conversion_province_pays:1 "Populace pays for the holding conversion"
+ temple_conversion_province_pays:1 "Populace pays for the holding conversion"
+ temple_conversion_county_clergy_pays:1 "Clergy pays for the holding conversion"
+ temple_conversion_county_burghers_pays:1 "Burghers pay for the holding conversion"
+ temple_conversion_blocker:1 "temple_conversion_blocker (hidden)"
