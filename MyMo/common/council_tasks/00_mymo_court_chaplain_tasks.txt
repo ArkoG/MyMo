@@ -340,7 +340,7 @@ task_conversion = {
 		}
 
 		##MYMO
-		#county to convert faith's has monasticism tenet eases conversion
+		#county to convert and converter faithes both has monasticism tenet, eases conversion
 		if = {
 			limit = {
 				exists = scope:county
