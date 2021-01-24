@@ -1137,7 +1137,7 @@ window = {
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								size = { 52 52 }
+								size = { 50 50 }
 							}
 							button = {
 								name = "gui_make_monastery_button"
@@ -1147,7 +1147,7 @@ window = {
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
 								tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).AddScope('builder', GetPlayer .MakeScope ).End )]"
-								size = { 52 52 }
+								size = { 50 50 }
 							}
 						}
 					 }
@@ -1164,7 +1164,7 @@ window = {
 						name = "terrain"
 						datacontext = "[HoldingView.GetProvince.GetTerrain]"
 						texture = "[Terrain.GetIcon]"
-						size = { 52 52 }
+						size = { 50 50 }
 						tooltip = "HOLDING_TERRAIN_TOOLTIP"
 					}
 
@@ -1175,7 +1175,7 @@ window = {
 
 						item = {
 							icon = {
-								size = { 40 40 }
+								size = { 33 33 }
 								alwaystransparent = no
 								texture = "[ModifierItem.GetIcon]"
 								using = tooltip_ne
