@@ -28,7 +28,7 @@
 			NOT = { exists = var:convert_prop }
 			#NOT = { has_variable = convert_prop } #same
 		}
-		NOT = { faith = { has_doctrine = tenet_monasticism }}
+		scope:builder = { NOT = { faith = { has_doctrine = tenet_monasticism }}}
 		has_ongoing_construction = no
 		NOT = { has_province_modifier = fh_government_conversion }
 		NOT = { has_variable = recent_temple_conversion }
@@ -87,7 +87,7 @@ make_monastery_button = {
 			text = "CONVERT_PROP_mymo"
 			NOT = { has_variable = convert_prop }
 		}
-		faith = { has_doctrine = tenet_monasticism }
+		scope:builder = { faith = { has_doctrine = tenet_monasticism }}
 		has_ongoing_construction = no
 		NOT = { has_province_modifier = fh_government_conversion }
 		NOT = { has_variable = recent_temple_conversion }
