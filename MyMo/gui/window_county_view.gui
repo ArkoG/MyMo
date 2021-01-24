@@ -1114,7 +1114,7 @@ window = {
 
 				expand = {}
 
-			###FROM convert holding mod
+			###FROM convert holding mod #MYMO
 
 				vbox = {
 					layoutpolicy_vertical = expanding
@@ -1154,7 +1154,7 @@ window = {
 					expand = {}
 				}
 
-			###END FROM convert holding mod
+			###END FROM convert holding mod #MYMO
 
 				vbox = {
 					layoutpolicy_vertical = expanding
