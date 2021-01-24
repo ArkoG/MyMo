@@ -1,0 +1,43 @@
+﻿##MYMO temple conversion consequences
+temple_conversion_province_pays = {
+	#drains compeltly the province
+	icon = economy_negative 
+	tax_mult = -1.0
+
+	build_speed = 0.5
+	build_gold_cost = 0.5
+	#due for 10 years
+}
+temple_conversion_county_peasants_pays = {
+	#taken from taxes, mostly from peasants, unpopular for some reason
+	icon = county_modifier_opinion_negative
+	tax_mult = -0.5
+
+	build_speed = 0.25
+	build_gold_cost = 0.25
+	county_opinion_add = -20
+	#due for 5 years
+}
+temple_conversion_county_clergy_pays = {
+	#additional taxes, clergy disagrees
+	icon = county_modifier_control_negative
+	tax_mult = 0.2
+
+	#change_county_control = -20 #put in the event, can't do it through modifiers	
+	monthly_county_control_change_factor = -0.5
+	#due for 5 years
+}
+temple_conversion_county_burghers_pays = {
+	#additional taxes, burghers are less efficient
+	#only if there is a city in the county
+	icon = county_modifier_development_negative
+	republic_government_tax_contribution_add = 0.3
+
+	development_growth_factor = -0.5
+	#due for 5 years
+}
+#hidden modifiers
+temple_conversion_blocker = {
+	#icon = county_modifier_development_negative
+	tax_mult = -0.66
+}
