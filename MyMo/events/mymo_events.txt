@@ -110,9 +110,10 @@ mymo.2 = {
 			}
 			scope:builder = { get_title = scope:title_revoke }
 			scope:holding_current_holder = { revoke_lease = yes }
-			add_province_modifier = { modifier = temple_conversion_province_pays = 10 }
-
-		
+			add_province_modifier = { 
+				modifier = temple_conversion_province_pays
+				years = 10
+			}
 
 			trigger_event = {id = mymo.3 days = 1} #test value
 			trigger_event = {id = mymo.3 years = 2}
@@ -188,7 +189,7 @@ mymo.2 = {
 		#county burghers pays, needs a city in there
 		name = mymo.2.D
 		trigger = {
-			scope:holding_2_convert.county
+			scope:holding_2_convert.county = {
 				any_county_province = {
 					has_building_with_flag = city
 				}
@@ -205,6 +206,10 @@ mymo.2 = {
 				set_holding_type = monastery_holding
 			}
 			scope:builder = { get_title = scope:title_revoke }
+			#
+			#
+			#
+			#!! lease thingy doesn't work
 			scope:holding_current_holder = { revoke_lease = yes }
 			
 

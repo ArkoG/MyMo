@@ -11,7 +11,7 @@
 
 #modifiers 
  temple_conversion_province_pays:1 "Populace pays for the holding conversion"
- temple_conversion_province_pays:1 "Populace pays for the holding conversion"
+ temple_conversion_county_peasants_pays:1 "Populace pays for the holding conversion"
  temple_conversion_county_clergy_pays:1 "Clergy pays for the holding conversion"
  temple_conversion_county_burghers_pays:1 "Burghers pay for the holding conversion"
  temple_conversion_blocker:1 "temple_conversion_blocker (hidden)"
