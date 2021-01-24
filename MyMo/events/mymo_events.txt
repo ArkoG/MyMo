@@ -73,8 +73,9 @@ mymo.2 = {
 				has_holding_type = church_holding
 				has_holding_type = monastery_holding
 			}
-			NOT = {
-				has_province_modifier = fh_government_conversion
+			NOT = { 
+				has_province_modifier = temple_conversion_blocker
+				scope:county = { has_county_modifier = temple_conversion_blocker }
 			}
 			OR = {
 				province_owner = scope:builder
@@ -90,45 +91,36 @@ mymo.2 = {
     }
 	
  	immediate = {
-		scope:holding_2_convert.barony = { save_scope_as = title_revoke }
+		scope:holding_2_convert.barony = { save_scope_as = title_revoke } #.barony should be the same thing ?
 		scope:holding_2_convert.county = { save_scope_as = title_county }
 	}
 
 	option = {
-		#immediate
+		#province pays
 		name = mymo.2.A	
 		scope:holding_2_convert = {
 			
 			if = {
-				limit = {has_variable = fh_convert_to_church}
+				limit = {has_variable = temple_convert_to_church}
 				set_holding_type = church_holding
 			}
 			if = {
-				limit = {has_variable = fh_convert_to_monastery}
+				limit = {has_variable = temple_convert_to_monastery}
 				set_holding_type = monastery_holding
 			}
 			scope:builder = { get_title = scope:title_revoke }
-			
-			scope:builder = { remove_long_term_gold = 500 }
-			add_province_modifier = { modifier = fh_government_conversion months = 6 } #totoro use a different modifiers there
+			scope:holding_current_holder = { revoke_lease = yes }
+			add_province_modifier = { modifier = temple_conversion_province_pays = 10 }
 
-			
-			
+		
 
-			#scope:holding_current_holder = { revoke_title_interaction_effect = yes }
-			#scope:holding_current_holder = {add_character_modifier = { modifier = taxing_reduction years = 5 }}
-#revoke_lease = yes
-			set_variable = recent_temple_conversion
 			trigger_event = {id = mymo.3 days = 1} #test value
 			trigger_event = {id = mymo.3 years = 2}
 		
-
-			
-			
+		
 			#
 			#deal with building levels
 			#			
-			
 			#
 			#
 
@@ -136,58 +128,100 @@ mymo.2 = {
 
 	}
 	option = {
-		#front cost + taxes
+		#county people pays
 		name = mymo.2.B	
 		scope:holding_2_convert = {
 			
 			if = {
-				limit = {has_variable = fh_convert_to_church}
+				limit = {has_variable = temple_convert_to_church}
 				set_holding_type = church_holding
 			}
 			if = {
-				limit = {has_variable = fh_convert_to_monastery}
+				limit = {has_variable = temple_convert_to_monastery}
 				set_holding_type = monastery_holding
 			}
 			scope:builder = { get_title = scope:title_revoke }
+			scope:holding_current_holder = { revoke_lease = yes }
 			
-			scope:builder = { remove_long_term_gold = 250 }
-			add_province_modifier = { modifier = fh_government_conversion years = 1 } #totoro use a different modifiers there
-			
-			set_variable = recent_temple_conversion
+
+
 			trigger_event = {id = mymo.3 days = 1} #test value
 			trigger_event = {id = mymo.3 years = 2}
 		}
+		scope:holding_2_convert.county = {
+			add_county_modifier = { 
+				modifier = temple_conversion_county_peasants_pays 
+				years = 5
+			}
+		}
 	}
 	option = {
-		#taxes only
+		#county clergy pays
 		name = mymo.2.C	
 		scope:holding_2_convert = {
 			
 			if = {
-				limit = {has_variable = fh_convert_to_church}
+				limit = {has_variable = temple_convert_to_church}
 				set_holding_type = church_holding
 			}
 			if = {
-				limit = {has_variable = fh_convert_to_monastery}
+				limit = {has_variable = temple_convert_to_monastery}
 				set_holding_type = monastery_holding
 			}
 			scope:builder = { get_title = scope:title_revoke }
-			
-			add_province_modifier = { modifier = fh_government_conversion years = 2 }
-			
-			set_variable = recent_temple_conversion
+			scope:holding_current_holder = { revoke_lease = yes }
+
+
 			trigger_event = {id = mymo.3 days = 1} #test value
 			trigger_event = {id = mymo.3 years = 2}
+		}
+			
+		scope:holding_2_convert.county = {
+			add_county_modifier = { 
+				modifier = temple_conversion_county_clergy_pays 
+				years = 5
+			}
+			change_county_control = -20
+		}
+	}
+	option = {
+		#county burghers pays, needs a city in there
+		name = mymo.2.D
+		trigger = {
+			scope:holding_2_convert.county
+				any_county_province = {
+					has_building_with_flag = city
+				}
+			}
+		}
+		scope:holding_2_convert = {
+			
+			if = {
+				limit = {has_variable = temple_convert_to_church}
+				set_holding_type = church_holding
+			}
+			if = {
+				limit = {has_variable = temple_convert_to_monastery}
+				set_holding_type = monastery_holding
+			}
+			scope:builder = { get_title = scope:title_revoke }
+			scope:holding_current_holder = { revoke_lease = yes }
+			
+
+			trigger_event = {id = mymo.3 days = 1} #test value
+			trigger_event = {id = mymo.3 years = 2}
+		}
+		scope:holding_2_convert.county = {
+			add_county_modifier = { 
+				modifier = temple_conversion_county_burghers_pays 
+				years = 5
+			}
 		}
 
 	}
 	option = {
 		#no/not yet
-		name = mymo.2.D
-		#scope:holding_2_convert = { 
-		#	add_province_modifier = { modifier = fh_government_conversion years = 2 }
-		#	trigger_event = {id = fh.10 years = 2}
-		#}
+		name = mymo.2.E
 	}
 	after = {
 		scope:holding_2_convert = { remove_variable = convert_prop }
@@ -229,7 +263,7 @@ mymo.3 = { # Notification
 		}
 	}
 	after = {
-		remove_variable = fh_convert_to_church
-		remove_variable = fh_convert_to_monastery
+		remove_variable = temple_convert_to_church
+		remove_variable = temple_convert_to_monastery
 	}
 }
