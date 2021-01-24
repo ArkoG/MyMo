@@ -1,0 +1,26 @@
+﻿#######################
+# Conversion
+#######################
+
+##MYMO additional values
+conversion_monasticism_metoo_bonus = {
+	value = 0
+	add = court_chaplain_conversion_base_total
+	multiply = 0.5
+}
+conversion_monasticism_metoo_malus_tenet = {
+	value = 0
+	subtract = court_chaplain_conversion_base_total
+	multiply = 0.25
+}
+conversion_monasticism_metoo_malus_building1 = {
+	value = 0
+	subtract = court_chaplain_conversion_base_total
+	multiply = 0.2
+}
+conversion_monasticism_metoo_malus_building2 = {
+	value = 0
+	subtract = court_chaplain_conversion_base_total
+	multiply = 0.4
+}
+#MYMO
