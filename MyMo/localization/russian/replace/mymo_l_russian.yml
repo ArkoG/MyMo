@@ -1,9 +1,9 @@
 ﻿l_russian:
 
  monastery_holding:0 "Monastery"
- monastery_holding_concept_key:0 "[Monastery|E]"
+ monastery_holding_concept_key:0 "[monastery_holding|E]"
  game_concept_monastery_holding:0 "Monastic holding"
- game_concept_monastery_holding_desc:0 "[Monastery|E] holding"
+ game_concept_monastery_holding_desc:0 "[monastery_holding|E] holding"
  
  baron_monastic_male:0 "Abbot"
  baron_monastic_female:0 "Abbess"

@@ -1,9 +1,9 @@
 ﻿l_french:
 
  monastery_holding:0 "Monastère"
- monastery_holding_concept_key:0 "[Monastère|E]"
+ monastery_holding_concept_key:0 "[monastery_holding|E]"
  game_concept_monastery_holding:0 "Propriété monastique"
- game_concept_monastery_holding_desc:0 "[Propriété monastique|E]"
+ game_concept_monastery_holding_desc:0 "Propriété [monastery_holding|El]"
  
  baron_monastic_male:0 "Abbé"
  baron_monastic_female:0 "Abbesse"
@@ -49,6 +49,6 @@
  avouerie_protection_desc:0 "Avouerie desc bla bla bla"
  
  actor_secondary_take_vows_interaction:0 "Hôte"
- TAKE_THE_VOWS_BASTARD:0 "[batârdise|E]: $VALUE|=+0$"
- TAKE_THE_VOWS_DOUBTFULL:0 "[lignage douteux ou contesté|E]: $VALUE|=+0$"
- RENOUNCE_CLAIMS_mymo:0 "Renonce à toutes ses [revendications|E]"
+ TAKE_THE_VOWS_BASTARD:0 "[bastard|E]: $VALUE|=+0$"
+ TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or disputed lineage|E]: $VALUE|=+0$"
+ RENOUNCE_CLAIMS_mymo:0 "Renonce à toutes ses [claims|El]"
