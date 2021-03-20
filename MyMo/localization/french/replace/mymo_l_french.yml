@@ -1,7 +1,7 @@
 ﻿l_french:
 
  monastery_holding:0 "Monastère"
- monastery_holding_concept_key:0 "[Monastère|E]"
+ monastery_holding_concept_key:0 "[monastery_holding|E]"
  
  baron_monastic_male:0 "Abbé"
  baron_monastic_female:0 "Abbesse"
@@ -47,9 +47,9 @@
  avouerie_protection_desc:0 "Avouerie desc bla bla bla"
  
  actor_secondary_take_vows_interaction:0 "Hôte"
- TAKE_THE_VOWS_BASTARD:0 "[batârdise|E]: $VALUE|=+0$"
- TAKE_THE_VOWS_DOUBTFULL:0 "[lignage douteux ou contesté|E]: $VALUE|=+0$"
- RENOUNCE_CLAIMS_mymo:0 "Renonce à toutes ses [revendications|E]"
+ TAKE_THE_VOWS_BASTARD:0 "[bastard|E]: $VALUE|=+0$"
+ TAKE_THE_VOWS_DOUBTFULL:0 "[doubtfull or disputed lineage|E]: $VALUE|=+0$"
+ RENOUNCE_CLAIMS_mymo:0 "Renonce à toutes ses [claims|El]"
  
  gold_donation_interaction:0 "Faire un don au monastère"
  gold_donation_interaction_desc:0 "Faire un [gift|El] pour augmenter l'opinion [recipient.Custom('FR_du_Char_U_Pi')][recipient.GetShortUINameNoTooltip] envers vous et obtenir de la piété.\n\nLe don aux monastères vise, par l’intermédiaire des moines, à accomplir l’obligation d’assistance aux nécessiteux, de pratiquer la caritas, de reproduire l’amour de Dieu qui \"a tant aimé le monde qu’il lui a donné son Fils unique\" (Jn 3,13). La charité est la condition de la valeur spirituelle de l’aumône.\n\nLe don permet ainsi au donateur laïc d’intégrer la communauté rituelle du monastère et de prendre place dans les échanges avec Dieu. Car l’homme médiéval est conscient de la dette envers Celui qui a donné à l’homme toutes les richesses terrestres, dont on est débiteur et qu’il faut rétribuer." # Source : https://www.cairn.info/revue-du-mauss-2002-1-page-309.htm
@@ -59,4 +59,3 @@
  COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO_NOT_T:0 "Le $tenet_monasticism_name$ n'est pas un [core_tenet|lE] partagé"
  COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO_NOT_B1:0 "Le comté héberge un petit [monastery|E]"
  COURT_CHAPLAIN_CONVERSION_MONASTICISM_METOO_NOT_B2:0 "Le comté héberge un [monastery|E] bien développé"
- 

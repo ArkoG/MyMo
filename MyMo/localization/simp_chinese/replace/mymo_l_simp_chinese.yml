@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
 
  monastery_holding:0 "Monastery"
- monastery_holding_concept_key:0 "[Monastery|E]"
+ monastery_holding_concept_key:0 "[monastery_holding|E]"
  
  baron_monastic_male:0 "Abbot"
  baron_monastic_female:0 "Abbess"

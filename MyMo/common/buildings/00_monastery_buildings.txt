@@ -250,10 +250,6 @@ monastery_04 = {
 monastic_schools_01 = {
 	construction_time = standard_construction_time
 
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
-
 	can_construct_potential = {
 		OR = {
 			has_building_or_higher = monastery_01
@@ -269,10 +265,10 @@ monastic_schools_01 = {
 	
 	character_modifier = {
 		monthly_piety = 0.1
-		learning_per_prestige_level = 1
+		learning_per_prestige_level = 1 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.1
+		development_growth_factor = 0.1 # Mymo replacement (previous monthly_county_control_change_add = 0.1)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_1
@@ -300,10 +296,6 @@ monastic_schools_01 = {
 monastic_schools_02 = {
 	construction_time = standard_construction_time
 
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
-
 	can_construct_potential = {
 		OR = {
 			has_building_or_higher = monastery_01
@@ -322,10 +314,10 @@ monastic_schools_02 = {
 	
 	character_modifier = {
 		monthly_piety = 0.2
-		learning_per_prestige_level = 1
+		learning_per_prestige_level = 1 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.12
+		development_growth_factor = 0.12 # Mymo replacement (previous monthly_county_control_change_add = 0.2)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_2
@@ -339,10 +331,6 @@ monastic_schools_02 = {
 
 monastic_schools_03 = {
 	construction_time = standard_construction_time
-
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
 
 	can_construct = {
 		OR = {
@@ -362,10 +350,10 @@ monastic_schools_03 = {
 	
 	character_modifier = {
 		monthly_piety = 0.3
-		learning_per_prestige_level = 2
+		learning_per_prestige_level = 2 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.15
+		development_growth_factor = 0.15 # Mymo replacement (previous monthly_county_control_change_add = 0.3)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_3
@@ -379,10 +367,6 @@ monastic_schools_03 = {
 
 monastic_schools_04 = {
 	construction_time = standard_construction_time
-
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
 
 	can_construct = {
 		OR = {
@@ -402,10 +386,10 @@ monastic_schools_04 = {
 	
 	character_modifier = {
 		monthly_piety = 0.4
-		learning_per_prestige_level = 2
+		learning_per_prestige_level = 2 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.17
+		development_growth_factor = 0.17 # Mymo replacement (previous monthly_county_control_change_add = 0.4)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_4
@@ -419,10 +403,6 @@ monastic_schools_04 = {
 
 monastic_schools_05 = {
 	construction_time = standard_construction_time
-
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
 
 	can_construct = {
 		OR = {
@@ -442,10 +422,10 @@ monastic_schools_05 = {
 	
 	character_modifier = {
 		monthly_piety = 0.5
-		learning_per_prestige_level = 2
+		learning_per_prestige_level = 2 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.2
+		development_growth_factor = 0.2 # Mymo replacement (previous monthly_county_control_change_add = 0.5)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_5
@@ -459,10 +439,6 @@ monastic_schools_05 = {
 
 monastic_schools_06 = {
 	construction_time = standard_construction_time
-
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
 
 	can_construct = {
 		OR = {
@@ -482,10 +458,10 @@ monastic_schools_06 = {
 	
 	character_modifier = {
 		monthly_piety = 0.6
-		learning_per_prestige_level = 2
+		learning_per_prestige_level = 2 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.25
+		development_growth_factor = 0.25 # Mymo replacement (previous monthly_county_control_change_add = 0.6)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_6
@@ -499,10 +475,6 @@ monastic_schools_06 = {
 
 monastic_schools_07 = {
 	construction_time = standard_construction_time
-
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
 
 	can_construct = {
 		OR = {
@@ -522,10 +494,10 @@ monastic_schools_07 = {
 	
 	character_modifier = {
 		monthly_piety = 0.7
-		learning_per_prestige_level = 3
+		learning_per_prestige_level = 3 # Mymo addition
 	}
 	county_modifier = {
-		development_growth_factor = 0.3
+		development_growth_factor = 0.3 # Mymo replacement (previous monthly_county_control_change_add = 0.7)
 	}
 	province_modifier = {
 		monthly_income = poor_building_tax_tier_7
@@ -539,10 +511,6 @@ monastic_schools_07 = {
 
 monastic_schools_08 = {
 	construction_time = standard_construction_time
-
-	is_enabled = {
-		building_disable_if_vastly_over_domain_limit_trigger = yes
-	}
 
 	can_construct = {
 		OR = {
@@ -562,13 +530,13 @@ monastic_schools_08 = {
 	
 	character_modifier = {
 		monthly_piety = 0.8
-		learning_per_prestige_level = 3
+		learning_per_prestige_level = 3 # Mymo addition
 	}
 	county_modifier = {
 		development_growth_factor = 0.35
 	}
 	province_modifier = {
-		monthly_income = poor_building_tax_tier_8
+		monthly_income = poor_building_tax_tier_8 # Mymo replacement (previous monthly_county_control_change_add = 0.8)
 	}
 	
 	ai_value = {
