@@ -73,6 +73,31 @@ This mod's core feature is adding a new holding type: the monastery, as well as 
 [/LIST]
 
 
+##DESC FR
+La caractéristique principale de ce mod est l'ajout d'un nouveau type de domaine : le monastère, ainsi que certaines saveurs autour de celui-ci.
+
+[u]Contenu actuel, à développer :[/u][LIST]
+[*]ordonner de prendre des vœux envoyer à une cour monastique, vous pouvez choisir laquelle. les femmes deviendront des invitées ou des vagabondes
+[*]peuplé de monastères (aléatoires + historiques)
+[*]toutes les fois ayant un monachisme (historique ou issu de la réforme) peuvent tenir ou construire des monastères
+[*]certains moines sont générés pour peupler les cours, ils peuvent être élus abbé sur succession
+[*]les personnes ayant reçu l'ordre de prononcer des vœux peuvent être élues abbés
+[/LIST]
+
+[u]Fonctionnalités planifiées ou en cours de réalisation :[/u][LIST]
+[*]gérer l'incompatibilité avec la religion (conversion ou destruction de l'exploitation du monastère)
+[*]développer des chaînes de construction spécifiques, retravailler la chaîne de construction principale
+[*]contrats vassaux spécifiques
+[*]diverses interactions ou événements liés aux saveurs
+[/LIST]
+
+[u]Crédits :[/u][LIST]
+[*]mon équipier Mouchi
+[*]pour le modèle 3D du monastère : MattAlexi
+[*]pour l'illustration de la propriété de monastère : Scratch
+[/LIST]
+
+
 ##############################GITHUB
 
 ##TAG
