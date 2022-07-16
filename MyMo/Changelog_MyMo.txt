@@ -3,11 +3,15 @@
 # by Arko & Mouchi
 
 
-CURRENT DEV MYMO v0.8 for CK3 v1.5
+CURRENT DEV MYMO v0.9 for CK3 v1.6
+CHANGES:
+-updating the mod to vanilla's 1.6 version
+
+MYMO v0.8 for CK3 v1.5
 CHANGES:
 -updating the mod to vanilla's 1.5 version
 
-CURRENT DEV MYMO v0.7 for CK3 v1.4
+MYMO v0.7 for CK3 v1.4
 CHANGES:
 -updating the mod to vanilla's 1.4 version
 
